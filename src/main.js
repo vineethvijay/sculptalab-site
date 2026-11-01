@@ -317,3 +317,8 @@ if (!reduced) {
   setInterval(() => { prs.forEach((p) => (p.style.background = "")); prs[pi++ % prs.length].style.background = "rgba(59,227,154,.08)"; }, 1800);
   gsap.utils.toArray(".comp.mini i").forEach((b) => gsap.to(b, { "--k": () => gsap.utils.random(.85, 1.05), duration: 2.4, yoyo: true, repeat: -1, ease: "sine.inOut" }));
 }
+if (!reduced) {
+  gsap.from(".hx li", { x: 12, opacity: 0, stagger: .15, duration: .7, ease: "expo.out", delay: 3.6 });
+  const hx = [...document.querySelectorAll(".hx li")]; let xi = 0;
+  setInterval(() => { hx.forEach((l) => (l.style.background = "")); hx[xi++ % hx.length].style.background = "rgba(255,138,61,.14)"; }, 1600);
+}

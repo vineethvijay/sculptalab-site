@@ -490,3 +490,5 @@ em{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-.0
   .tabs2{display:none}
 }
 .heat{grid-template-rows:repeat(7,13px)}.pip-hud{right:8px}.hero-phone .mbars{gap:6px;margin-top:6px}.hero-phone .mb{grid-template-columns:60px 1fr;font-size:9.5px}
+.hx{margin-top:6px;gap:4px}.hx li{padding:4px 8px;border-radius:8px;background:rgba(255,255,255,.04)}
+@media (min-width:981px){.c2{bottom:4%!important;right:-2%}}
