@@ -274,9 +274,46 @@ if (!reduced) {
     hist.querySelectorAll("li em").forEach((x, k) => k > 0 && x.textContent === "Now" && (x.textContent = "Today"));
   }, 4200);
   // dashboard score subtly updates
-  const ds = document.querySelector(".d-score b"); let dv = 82;
+  const ds = document.querySelector(".kpi:first-child b"); let dv = 82;
   setInterval(() => { dv = dv >= 86 ? 82 : dv + 1; ds.textContent = dv; gsap.fromTo(ds, { scale: 1.12 }, { scale: 1, duration: .5 }); }, 5200);
   // big sculpt ring gently fills/adjusts
   // cardio points pulse
   gsap.to(".pts", { scale: 1.06, transformOrigin: "left center", duration: 1.2, yoyo: true, repeat: -1, ease: "sine.inOut" });
+}
+
+/* ---------- v4 living app + dashboard ---------- */
+if (!reduced) {
+  // hero score bar fill
+  gsap.from(".hero-phone .pbar i", { scaleX: 0, duration: 1.8, ease: "expo.out", delay: 3.4 });
+  // live workout: sets tick off in a loop
+  const sets = [...document.querySelectorAll(".s-live .set")]; const setc = document.querySelector(".setc"); let si = 2;
+  setInterval(() => {
+    sets.forEach((x) => x.classList.remove("cur"));
+    if (si >= sets.length) { sets.forEach((x, k) => x.classList.toggle("done", k < 2)); si = 2; }
+    else { sets[si].classList.add("done"); gsap.fromTo(sets[si].querySelector("i"), { scale: 1.5 }, { scale: 1, duration: .5, ease: "back.out(3)" }); si++; }
+    if (sets[si]) sets[si].classList.add("cur");
+    if (setc) setc.textContent = 2 + si;
+  }, 2400);
+  // progress sparkline draws
+  gsap.fromTo(".spark path", { strokeDasharray: 1, strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 2, repeat: -1, repeatDelay: 3, ease: "power2.inOut" });
+  // dashboard
+  const dtl = gsap.timeline({ scrollTrigger: { trigger: ".dash2", start: "top 70%" } });
+  dtl.from(".kpi", { y: 20, opacity: 0, stagger: .08, duration: .7, ease: "expo.out" })
+     .from(".vbar", { scaleY: 0, stagger: .05, duration: .8, ease: "expo.out" }, .3)
+     .from(".heat i", { scale: 0, opacity: 0, stagger: { each: .006, from: "start" }, duration: .3 }, .3)
+     .from(".r-now", { scale: .2, transformOrigin: "100px 100px", opacity: 0, duration: 1.4, ease: "expo.out" }, .4)
+     .fromTo(".dn", { strokeDashoffset: 1 }, { strokeDashoffset: .11, duration: 1.6, ease: "expo.out" }, .5)
+     .fromTo(".pr-ring", { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 1.6, ease: "expo.out" }, .6)
+     .from(".macro i", { flexBasis: 0, duration: 1.2, stagger: .1, ease: "expo.out" }, .8)
+     .from(".diet2 li", { x: -16, opacity: 0, stagger: .12, duration: .5 }, .7)
+     .from(".prs li", { x: 16, opacity: 0, stagger: .1, duration: .5 }, .6);
+  // radar breathing between states
+  gsap.to(".r-now", { scale: 1.03, transformOrigin: "100px 100px", duration: 2.4, yoyo: true, repeat: -1, ease: "sine.inOut", delay: 3 });
+  // heatmap shimmer: random cells pulse
+  const hc = [...document.querySelectorAll(".heat i")];
+  setInterval(() => { const c = hc[(Math.random() * hc.length) | 0]; gsap.fromTo(c, { scale: 1.5 }, { scale: 1, duration: .6, ease: "expo.out" }); }, 300);
+  // PR row highlight cycles
+  const prs = [...document.querySelectorAll(".prs li")]; let pi = 0;
+  setInterval(() => { prs.forEach((p) => (p.style.background = "")); prs[pi++ % prs.length].style.background = "rgba(59,227,154,.08)"; }, 1800);
+  gsap.utils.toArray(".comp.mini i").forEach((b) => gsap.to(b, { "--k": () => gsap.utils.random(.85, 1.05), duration: 2.4, yoyo: true, repeat: -1, ease: "sine.inOut" }));
 }
