@@ -93,6 +93,7 @@ function intro() {
   document.body.classList.add("loading");
   gsap.set(".hero-title .w", { yPercent: 110 });
   gsap.set(".reveal-up", { y: 24, opacity: 0 });
+  gsap.set(".sculpt", { opacity: 0, scale: .85 });
   gsap.set(".hero-phone", { y: 120, opacity: 0, rotate: -6, scale: .9 });
   gsap.set(".float-chip,.orbit", { opacity: 0, scale: .8 });
   gsap.set(".nav", { y: -40, opacity: 0 });
@@ -108,8 +109,10 @@ function intro() {
     .to(".hero-title .w", { yPercent: 0, duration: 1.3, stagger: 0.08 }, 2.4)
     .to(".reveal-up", { y: 0, opacity: 1, duration: 1.1, stagger: 0.1 }, 2.7)
     .to(".contour .cl", { strokeDashoffset: 0, duration: 2.4, stagger: 0.12, ease: "power2.inOut" }, 2.3)
+    .to(".sculpt", { opacity: 1, scale: 1, duration: 2, ease: "expo.out" }, 2.2)
     .to(".orbit", { opacity: 1, scale: 1, duration: 1.6 }, 2.4)
     .to(".hero-phone", { y: 0, opacity: 1, rotate: 0, scale: 1, duration: 1.6 }, 2.6)
+    .to(".mpin", { scale: 1, duration: .8, stagger: .12, ease: "back.out(3)" }, 3.4)
     .to(".float-chip", { opacity: 1, scale: 1, duration: 1, stagger: 0.15, ease: "back.out(2)" }, 3.2);
   gsap.set(".loader", { clipPath: "circle(100% at 50% 50%)" });
 }
@@ -123,13 +126,16 @@ if (!reduced) {
   if (matchMedia("(pointer:fine)").matches) {
     const qx = gsap.quickTo(".hero-phone", "rotationY", { duration: 1, ease: "power3" });
     const qy = gsap.quickTo(".hero-phone", "rotationX", { duration: 1, ease: "power3" });
-    const cx = gsap.quickTo(".contour", "x", { duration: 1.4, ease: "power3" });
+    const cx = gsap.quickTo(".sculpt", "x", { duration: 1.4, ease: "power3" });
+    const cy = gsap.quickTo(".sculpt-body", "rotationY", { duration: 1.6, ease: "power3" });
     gsap.set(".hero-stage", { perspective: 1200 });
     addEventListener("pointermove", (e) => {
       const nx = e.clientX / innerWidth - 0.5, ny = e.clientY / innerHeight - 0.5;
-      qx(nx * 16); qy(-ny * 12); cx(nx * -30);
+      qx(nx * 16); qy(-ny * 12); cx(nx * -36); cy(nx * 10);
     });
   }
+  gsap.to(".body-glow", { opacity: .4, scale: 1.04, transformOrigin: "50% 60%", duration: 3.5, yoyo: true, repeat: -1, ease: "sine.inOut" });
+  gsap.to(".sculpt", { yPercent: -8, ease: "none", scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true } });
   /* hero scroll-out */
   gsap.to(".hero-copy", { yPercent: -18, opacity: 0.2, ease: "none", scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true } });
   gsap.to(stage, { yPercent: 12, scale: 0.92, ease: "none", scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true } });
@@ -150,6 +156,10 @@ if (!reduced) {
   gsap.fromTo(".dl-glow", { scale: 0.6 }, { scale: 1.15, ease: "none", scrollTrigger: { trigger: ".download", start: "top bottom", end: "bottom bottom", scrub: true } });
   gsap.to(".mq-track", { x: "-=200", ease: "none", scrollTrigger: { trigger: ".marquee", start: "top bottom", end: "bottom top", scrub: true } });
 
+  /* score bars + ring */
+  gsap.utils.toArray(".mlist,.comp").forEach((l) => gsap.from(l.querySelectorAll(".bar i"), { scaleX: 0, duration: 1, stagger: 0.04, ease: "expo.out", scrollTrigger: { trigger: l, start: "top 95%" } }));
+  gsap.fromTo(".sring", { strokeDashoffset: 1 }, { strokeDashoffset: .18, duration: 2, ease: "expo.out", scrollTrigger: { trigger: ".sbox-score", start: "top 80%" }, onComplete: () => gsap.to(".sring", { strokeDashoffset: .13, duration: 3, yoyo: true, repeat: -1, ease: "sine.inOut" }) });
+  gsap.set(".mpin", { scale: 0, transformOrigin: "center", transformBox: "fill-box" });
   /* live pose skeleton: hip thrust loop */
   const rep = gsap.timeline({ repeat: -1, repeatDelay: 0.3, defaults: { duration: 0.9, ease: "sine.inOut" } });
   const up = { torso: "M 80 245 L 160 215", thigh: "M 160 215 L 215 220" };
@@ -168,9 +178,9 @@ const show = (i) => {
   if (i === cur) return; cur = i;
   steps.forEach((s, k) => s.classList.toggle("is-active", k === i));
   screens.forEach((s, k) => s.classList.toggle("is-on", k === i));
+  if (i === 1 && !reduced) gsap.fromTo(".plan-row", { x: 30, opacity: 0 }, { x: 0, opacity: (k, el) => el.classList.contains("rest") ? .45 : 1, stagger: .08, duration: .7, ease: "expo.out" });
   if (i === 3 && !reduced) {
-    gsap.fromTo(".bars i", { scaleY: 0 }, { scaleY: 1, stagger: 0.05, duration: 0.8, ease: "expo.out" });
-    gsap.fromTo(".ring-fg", { strokeDashoffset: 1 }, { strokeDashoffset: 0.22, duration: 1.4, ease: "expo.out" });
+    gsap.fromTo(".mb i", { scaleX: 0 }, { scaleX: 1, stagger: 0.06, duration: 1, ease: "expo.out" });
   }
 };
 const mm = gsap.matchMedia();
@@ -214,3 +224,59 @@ document.querySelectorAll("[data-store]").forEach((a) => {
     toast.classList.add("show"); clearTimeout(toast._t); toast._t = setTimeout(() => toast.classList.remove("show"), 3200);
   });
 });
+
+/* nav: hide on scroll down, show on scroll up */
+{ const nav = document.querySelector(".nav"); let last = 0;
+  addEventListener("scroll", () => { const y = scrollY; if (Math.abs(y - last) < 4) return; nav.classList.toggle("hide", y > 200 && y > last); last = y; }, { passive: true }); }
+
+/* ---------- living mockups ---------- */
+const fmt = (t) => `${Math.floor(t / 60)}:${String(t % 60).padStart(2, "0")}`;
+// count-up numbers when they enter view
+document.querySelectorAll("[data-count]").forEach((el) => {
+  const to = +el.dataset.count;
+  if (reduced) return;
+  ScrollTrigger.create({ trigger: el, start: "top 92%", once: false, onEnter: () => {
+    const o = { v: 0 }; gsap.to(o, { v: to, duration: 1.6, ease: "expo.out", onUpdate: () => (el.textContent = Math.round(o.v)) });
+  } });
+});
+if (!reduced) {
+  // timers
+  document.querySelectorAll(".tick-up").forEach((el) => { let t = +el.dataset.start; setInterval(() => (el.textContent = fmt(++t)), 1000); });
+  document.querySelectorAll(".tick-down").forEach((el) => { let t = +el.dataset.start; setInterval(() => { t = t <= 0 ? 45 : t - 1; el.textContent = fmt(t); }, 1000); });
+  document.querySelectorAll(".cycle").forEach((el) => { const v = el.dataset.vals.split(","); let i = 0; setInterval(() => { i = (i + 1) % v.length; gsap.fromTo(el, { opacity: 0, y: 6 }, { opacity: 1, y: 0, duration: .4 }); el.textContent = v[i]; }, 2600); });
+  // hero phone: week dots light up in sequence, start button shimmer
+  gsap.fromTo(".hero-phone .d.done", { scale: .6 }, { scale: 1, duration: .6, ease: "back.out(3)", stagger: .3, repeat: -1, repeatDelay: 4 });
+  gsap.to(".tc-btn", { boxShadow: "0 0 0 6px rgba(30,20,16,.15)", duration: 1.2, yoyo: true, repeat: -1, ease: "sine.inOut" });
+  // muscle bars breathing (app + scores section + dashboard)
+  gsap.utils.toArray(".mb i, .mlist .bar i, .comp .bar i, .parts i").forEach((b, i) => {
+    gsap.to(b, { "--k": () => gsap.utils.random(.9, 1.06), duration: () => gsap.utils.random(2, 3.5), yoyo: true, repeat: -1, ease: "sine.inOut", delay: 2 + i * .1 });
+  });
+  // plan rows stagger when visible, then the 'now' row glows
+  gsap.to(".plan-row.now .pc", { boxShadow: "0 0 24px rgba(255,138,61,.45)", duration: 1.4, yoyo: true, repeat: -1 });
+  // dashboard: trend line draws, dot pulses, history list rotates, diet items fill in
+  const tl = gsap.timeline({ scrollTrigger: { trigger: ".browser", start: "top 75%" } });
+  tl.from(".browser", { rotateX: 18, y: 80, opacity: 0, duration: 1.4, ease: "expo.out" })
+    .from(".tr-line", { strokeDashoffset: 1, duration: 2, ease: "power2.inOut" }, .3)
+    .from(".tr-area", { opacity: 0, duration: 1.2 }, 1)
+    .from(".parts i", { scaleX: 0, duration: 1.2, stagger: .06, ease: "expo.out" }, .4)
+    .from(".diet li", { x: -20, opacity: 0, stagger: .25, duration: .6 }, 1)
+    .from(".hist li", { y: 14, opacity: 0, stagger: .12, duration: .6 }, .6);
+  gsap.to(".tr-dot", { attr: { r: 9 }, opacity: .5, duration: 1, yoyo: true, repeat: -1 });
+  const hist = document.querySelector(".hist");
+  const extra = [["Lower A", "Hip thrust 4×10 · 10/10 clean", "Now"], ["Cardio", "40 min walk · +12 pts", "Now"], ["Upper", "Lateral raise · Row", "Now"]];
+  let hi = 0;
+  setInterval(() => {
+    if (!hist) return;
+    const [b, sp, e] = extra[hi++ % extra.length];
+    const li = document.createElement("li"); li.innerHTML = `<b>${b}</b><span>${sp}</span><em>${e}</em>`;
+    hist.prepend(li); hist.lastElementChild.remove();
+    gsap.from(li, { height: 0, opacity: 0, background: "rgba(255,138,61,.3)", duration: .8, ease: "expo.out" });
+    hist.querySelectorAll("li em").forEach((x, k) => k > 0 && x.textContent === "Now" && (x.textContent = "Today"));
+  }, 4200);
+  // dashboard score subtly updates
+  const ds = document.querySelector(".d-score b"); let dv = 82;
+  setInterval(() => { dv = dv >= 86 ? 82 : dv + 1; ds.textContent = dv; gsap.fromTo(ds, { scale: 1.12 }, { scale: 1, duration: .5 }); }, 5200);
+  // big sculpt ring gently fills/adjusts
+  // cardio points pulse
+  gsap.to(".pts", { scale: 1.06, transformOrigin: "left center", duration: 1.2, yoyo: true, repeat: -1, ease: "sine.inOut" });
+}

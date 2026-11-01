@@ -3,12 +3,16 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>SculptaLab — Sculpt your strongest shape</title>
-<meta name="description" content="SculptaLab is a guided glute and lower-body training app with live form tracking, smart plans and progress you can see. Android, iOS and watch." />
+<title>SculptaLab — Sculpt your foundation</title>
+<meta name="description" content="SculptaLab helps you sculpt your foundation: a training plan personalised to your body, a score for every muscle, and a coach that watches your form. Android and iOS, in English and Dutch." />
 <meta name="theme-color" content="#120D0B" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-<meta property="og:title" content="SculptaLab — Sculpt your strongest shape" />
-<meta property="og:description" content="Guided glute training with live form tracking, plans and progress." />
+<link rel="icon" href="/favicon-32.png" sizes="32x32" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="og:title" content="SculptaLab — Sculpt your foundation" />
+<meta property="og:description" content="Sculpt your foundation. Personal plans, a score for every muscle, live form tracking." />
 <meta property="og:image" content="/og.png" />
 <meta property="og:type" content="website" />
 </head>
@@ -39,8 +43,9 @@
   </a>
   <nav aria-label="Primary">
     <a href="#features">Features</a>
-    <a href="#form">Form AI</a>
-    <a href="#progress">Progress</a>
+    <a href="#scores">Scores</a>
+    <a href="#form">Form</a>
+    <a href="#trainer">Trainers</a>
     <a href="#soon">Coming soon</a>
   </nav>
   <a href="#download" class="btn btn-sm">Get the app</a>
@@ -57,44 +62,40 @@
 <!-- HERO -->
 <section class="hero" id="top">
   <div class="hero-copy">
-    <p class="eyebrow reveal-up"><span class="dot"></span> Glute &amp; lower-body training, reimagined</p>
+    <p class="eyebrow reveal-up"><span class="dot"></span> Strength training, made personal</p>
     <h1 class="hero-title">
       <span class="line"><span class="w">Sculpt</span> <span class="w">your</span></span>
-      <span class="line"><em class="w grad">strongest</em></span>
-      <span class="line"><span class="w">shape.</span></span>
+      <span class="line"><em class="w grad">foundation.</em></span>
     </h1>
-    <p class="hero-sub reveal-up">Guided workouts, a coach that watches your form in real time, and progress you can actually see. Built for glutes. Made for you.</p>
+    <p class="hero-sub reveal-up">Better shape, better strength, better everything. A plan shaped around your body, not a template, that progresses you naturally into your best shape. It takes time, and SculptaLab shows you every step.</p>
     <div class="cta-row reveal-up">
-      <a class="store" href="#download" aria-label="Get it on Google Play">
+      <a class="store" href="#download">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3.6 1.8 13.8 12 3.6 22.2c-.4-.2-.6-.6-.6-1.1V2.9c0-.5.2-.9.6-1.1Zm11.6 11.6 2.4 2.4-11 6.3 8.6-8.7Zm4.3-2.5c.6.4.6 1.8 0 2.2l-2.5 1.4-2.6-2.5 2.6-2.5 2.5 1.4ZM6.6 1.9l11 6.3-2.4 2.4-8.6-8.7Z"/></svg>
         <span><small>Get it on</small>Google Play</span>
       </a>
-      <a class="store" href="#download" aria-label="Download on the App Store">
+      <a class="store" href="#download">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.4 12.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.4-.9-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.7 1.3 10.2.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8 1.6 0 2 .8 3.4.8 1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9-.1 0-2.7-1-2.7-4.1ZM13.9 4.9c.7-.9 1.2-2 1.1-3.2-1 0-2.3.7-3 1.6-.7.8-1.3 2-1.1 3.1 1.1.1 2.3-.6 3-1.5Z"/></svg>
         <span><small>Download on the</small>App Store</span>
       </a>
     </div>
-    <p class="micro reveal-up">Android &amp; iOS · Wear OS &amp; Apple Watch coming soon · English &amp; Nederlands</p>
+    <p class="micro reveal-up">Android &amp; iOS · English &amp; Nederlands · Watch apps coming soon</p>
   </div>
 
   <div class="hero-stage" aria-hidden="true">
     <div class="orbit o1"></div><div class="orbit o2"></div>
-    <svg class="contour" viewBox="0 0 400 520">
-      <defs>
-        <linearGradient id="cg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFB56B"/><stop offset=".5" stop-color="#FF7A45"/><stop offset="1" stop-color="#FF5E8A"/></linearGradient>
-      </defs>
-      <!-- stylised abstract silhouette — flowing contour lines -->
-      <g fill="none" stroke="url(#cg)" stroke-linecap="round">
-        <path class="cl" d="M150 20 C 140 90, 118 140, 128 200 C 136 250, 96 290, 98 350 C 100 420, 150 470, 160 510"/>
-        <path class="cl" d="M250 20 C 262 90, 282 140, 272 200 C 264 250, 310 290, 306 350 C 302 420, 250 470, 240 510"/>
-        <path class="cl thin" d="M170 30 C 162 110, 140 160, 150 215 C 158 262, 122 300, 124 352 C 126 410, 168 460, 176 505"/>
-        <path class="cl thin" d="M230 30 C 240 110, 262 160, 252 215 C 244 262, 284 300, 280 352 C 276 410, 232 460, 224 505"/>
-        <path class="cl thin" d="M110 300 C 150 270, 250 270, 292 300"/>
-        <path class="cl thin" d="M104 345 C 160 312, 240 312, 300 345"/>
-        <path class="cl" d="M108 360 C 150 410, 196 400, 200 372 C 204 400, 252 410, 294 360"/>
-        <path class="cl thin" d="M122 395 C 160 440, 196 430, 200 410 C 204 430, 242 440, 280 395"/>
-      </g>
-    </svg>
+    <div class="sculpt" aria-hidden="true">
+      <div class="statue-wrap">
+        <img class="statue" src="/statue.webp" width="768" height="1024" alt="" fetchpriority="high" />
+        <div class="statue-tint"></div>
+        <svg class="mpins" viewBox="0 0 768 1024" font-family="Inter Variable" font-size="22" font-weight="600">
+          <g class="mpin" transform="translate(310 150)"><circle r="8"/><text x="-18" y="-14" text-anchor="end">Shoulders</text></g>
+          <g class="mpin" transform="translate(420 230)"><circle r="8"/><text x="20" y="-12">Back</text></g>
+          <g class="mpin" transform="translate(250 380)"><circle r="8"/><text x="-18" y="6" text-anchor="end">Arms</text></g>
+          <g class="mpin" transform="translate(470 520)"><circle r="8"/><text x="20" y="6">Glutes</text></g>
+          <g class="mpin" transform="translate(300 880)"><circle r="8"/><text x="-18" y="6" text-anchor="end">Calves</text></g>
+        </svg>
+      </div>
+    </div>
     <div class="phone hero-phone">
       <div class="screen s-today">
         <div class="sb"><span>9:41</span><span class="sb-r"></span></div>
@@ -102,8 +103,8 @@
         <h3>Today is your<br/>workout day</h3>
         <div class="today-card">
           <div class="tc-top"><span class="tag">Lower A · 42 min</span><span class="clock">18:30</span></div>
-          <p class="tc-title">Glute Builder</p>
-          <p class="tc-meta">Hip thrust · RDL · Split squat</p>
+          <p class="tc-title">Lower + upper</p>
+          <p class="tc-meta">Hip thrust · Face pull · Lateral raise</p>
           <span class="tc-btn">Start workout</span>
         </div>
         <div class="week">
@@ -111,12 +112,12 @@
         </div>
         <div class="mini-cards">
           <div class="mc"><i style="--a:#FFD7C2"></i><b>Hip thrust</b><small>4 × 10</small></div>
-          <div class="mc"><i style="--a:#DCCFFF"></i><b>Romanian DL</b><small>3 × 12</small></div>
+          <div class="mc"><i style="--a:#CFE6FF"></i><b>Face pull</b><small>3 × 15</small></div>
         </div>
       </div>
     </div>
-    <div class="float-chip c1"><span class="ok"></span>Clean rep</div>
-    <div class="float-chip c2"><svg viewBox="0 0 100 100" width="18" height="18"><use href="#s-mark"/></svg>12:48</div>
+    <div class="float-chip c1"><span class="ok"></span>Clean rep · <span class="cycle" data-vals="92,88,95,90,97">92</span></div>
+    <div class="float-chip c2"><svg viewBox="0 0 100 100" width="18" height="18"><use href="#s-mark"/></svg><span class="tick-up" data-start="768">12:48</span></div>
   </div>
   <div class="scroll-cue" aria-hidden="true"><span></span></div>
 </section>
@@ -124,14 +125,14 @@
 <!-- MARQUEE -->
 <div class="marquee" aria-hidden="true">
   <div class="mq-track">
-    <span>Hip thrust</span><i>✦</i><span>Romanian deadlift</span><i>✦</i><span>Bulgarian split squat</span><i>✦</i><span>Glute bridge</span><i>✦</i><span>Air squat</span><i>✦</i><span>Cable kickback</span><i>✦</i>
-    <span>Hip thrust</span><i>✦</i><span>Romanian deadlift</span><i>✦</i><span>Bulgarian split squat</span><i>✦</i><span>Glute bridge</span><i>✦</i><span>Air squat</span><i>✦</i><span>Cable kickback</span><i>✦</i>
+    <span>Hip thrust</span><i>✦</i><span>Face pull</span><i>✦</i><span>Romanian deadlift</span><i>✦</i><span>Lateral raise</span><i>✦</i><span>Bulgarian split squat</span><i>✦</i><span>Seated cable row</span><i>✦</i><span>Glute bridge</span><i>✦</i><span>Shoulder press</span><i>✦</i><span>Copenhagen plank</span><i>✦</i><span>Cardio</span><i>✦</i>
+    <span>Hip thrust</span><i>✦</i><span>Face pull</span><i>✦</i><span>Romanian deadlift</span><i>✦</i><span>Lateral raise</span><i>✦</i><span>Bulgarian split squat</span><i>✦</i><span>Seated cable row</span><i>✦</i><span>Glute bridge</span><i>✦</i><span>Shoulder press</span><i>✦</i><span>Copenhagen plank</span><i>✦</i><span>Cardio</span><i>✦</i>
   </div>
 </div>
 
 <!-- MANIFESTO -->
 <section class="manifesto">
-  <p class="big-text" data-split>Most apps count reps. <em>SculptaLab</em> watches every one — the depth, the lockout, the squeeze at the top — and shapes your training around what your body actually did.</p>
+  <p class="big-text" data-split>No two bodies are the same, so no two plans should be. <em>SculptaLab</em> learns yours, scores every muscle, and builds you up naturally, week by week, into your strongest, best-looking shape.</p>
 </section>
 
 <!-- FEATURES: pinned phone story -->
@@ -141,9 +142,9 @@
       <p class="eyebrow">How it works</p>
       <ol class="steps">
         <li class="step is-active" data-i="0"><span class="num">01</span><h2>Your day, decided.</h2><p>The Today card knows your plan and your usual workout time. Training day? One tap to start. Rest day? It quietly shows what’s next.</p></li>
-        <li class="step" data-i="1"><span class="num">02</span><h2>A coach in your camera.</h2><p>Prop your phone up and train. On-device pose tracking follows your hips and knees, counts clean reps and flags the ones that didn’t count.</p></li>
-        <li class="step" data-i="2"><span class="num">03</span><h2>Plans that build you.</h2><p>Structured weekly plans around the moves that matter for glutes — with sets, reps and rest laid out so you just show up.</p></li>
-        <li class="step" data-i="3"><span class="num">04</span><h2>See yourself change.</h2><p>Every session lands in your stats: volume, streaks and rep quality over time, so progress is something you see, not guess.</p></li>
+        <li class="step" data-i="1"><span class="num">02</span><h2>A plan made for your body.</h2><p>Answer three questions and get a week that fits you: 3–4 days built on legs and glutes, with back, shoulders and arms mixed in, and cardio that earns points. It adapts as you progress.</p></li>
+        <li class="step" data-i="2"><span class="num">03</span><h2>A coach in your camera.</h2><p>Prop your phone up and train. Pose tracking follows your hips and knees, counts clean reps and scores your range, tempo and stability.</p></li>
+        <li class="step" data-i="3"><span class="num">04</span><h2>Watch your foundation grow.</h2><p>Each set lands on your muscle map. See which muscles hit their weekly target, which are lagging, and how your Sculpt score moves week to week.</p></li>
       </ol>
     </div>
     <div class="story-stage" aria-hidden="true">
@@ -162,7 +163,20 @@
           </div>
           <div class="rest-card"><span>Sat</span><p>Rest day · next: Lower B on Sunday</p></div>
         </div>
-        <!-- 1 live -->
+        <!-- 1 plan -->
+        <div class="screen sc s-plan">
+          <div class="sb"><span>9:41</span><span class="sb-r"></span></div>
+          <h3>This week</h3>
+          <div class="plan-row"><span class="pd">Mon</span><div class="pc" style="--a:#FFD7C2"><b>Lower A</b><small>Hip thrust · RDL · Face pull</small></div></div>
+          <div class="plan-row rest"><span class="pd">Tue</span><div class="pc"><b>Cardio</b><small>30 min walk · +points</small></div></div>
+          <div class="plan-row"><span class="pd">Wed</span><div class="pc" style="--a:#CFE6FF"><b>Upper</b><small>Row · Lateral raise · Arms</small></div></div>
+          <div class="plan-row rest"><span class="pd">Thu</span><div class="pc"><b>Rest</b><small>Recovery</small></div></div>
+          <div class="plan-row now"><span class="pd">Fri</span><div class="pc" style="--a:#C8F2E0"><b>Lower B</b><small>Split squat · Kickback · Core</small></div></div>
+                  <div class="plan-row rest"><span class="pd">Tue</span><div class="pc"><b>Rest</b><small>Walk &amp; mobility</small></div></div>
+          <div class="plan-row rest"><span class="pd">Thu</span><div class="pc"><b>Rest</b><small>Recovery</small></div></div>
+          <div class="plan-row now"><span class="pd">Fri</span><div class="pc" style="--a:#C8F2E0"><b>Lower A</b><small>Progressive overload</small></div></div>
+        </div>
+        <!-- 2 live -->
         <div class="screen sc s-live">
           <div class="live-top"><span class="rec"></span>LIVE · Hip thrust</div>
           <svg class="pose" viewBox="0 0 300 420">
@@ -185,32 +199,70 @@
             <div class="quality"><span class="q ok">Lockout ✓</span><span class="q ok">Depth ✓</span></div>
           </div>
         </div>
-        <!-- 2 plan -->
-        <div class="screen sc s-plan">
-          <div class="sb"><span>9:41</span><span class="sb-r"></span></div>
-          <h3>This week</h3>
-          <div class="plan-row"><span class="pd">Mon</span><div class="pc" style="--a:#FFD7C2"><b>Lower A</b><small>Hip thrust · RDL · Bridge</small></div></div>
-          <div class="plan-row rest"><span class="pd">Tue</span><div class="pc"><b>Rest</b><small>Walk &amp; mobility</small></div></div>
-          <div class="plan-row"><span class="pd">Wed</span><div class="pc" style="--a:#DCCFFF"><b>Lower B</b><small>Split squat · Kickback</small></div></div>
-          <div class="plan-row rest"><span class="pd">Thu</span><div class="pc"><b>Rest</b><small>Recovery</small></div></div>
-          <div class="plan-row now"><span class="pd">Fri</span><div class="pc" style="--a:#C8F2E0"><b>Lower A</b><small>Progressive overload</small></div></div>
-        </div>
-        <!-- 3 stats -->
+        <!-- 3 muscles -->
         <div class="screen sc s-stats">
           <div class="sb"><span>9:41</span><span class="sb-r"></span></div>
-          <h3>Progress</h3>
-          <div class="ring-wrap">
-            <svg viewBox="0 0 120 120" class="ring"><circle cx="60" cy="60" r="50" stroke="#ffffff14" stroke-width="10" fill="none"/><circle class="ring-fg" cx="60" cy="60" r="50" stroke="url(#sg2)" stroke-width="10" fill="none" stroke-linecap="round" pathLength="1" transform="rotate(-90 60 60)"/></svg>
-            <div class="ring-lbl"><b>Weekly</b><small>goal</small></div>
+          <h3>Muscle balance</h3>
+          <div class="mbars">
+            <div class="mb"><span>Glutes</span><i style="--v:.92"></i></div>
+            <div class="mb"><span>Hamstrings</span><i style="--v:.74"></i></div>
+            <div class="mb"><span>Quads</span><i style="--v:.66"></i></div>
+            <div class="mb"><span>Back</span><i style="--v:.58"></i></div>
+            <div class="mb lag"><span>Shoulders</span><i style="--v:.34"></i></div>
+            <div class="mb"><span>Arms</span><i style="--v:.5"></i></div>
+            <div class="mb"><span>Core</span><i style="--v:.62"></i></div>
           </div>
-          <div class="bars">
-            <i style="--h:.35"></i><i style="--h:.5"></i><i style="--h:.42"></i><i style="--h:.62"></i><i style="--h:.58"></i><i style="--h:.74"></i><i style="--h:.86"></i><i style="--h:.95"></i>
-          </div>
-          <p class="cap">Training volume · illustrative</p>
+          <div class="hint"><b>Lagging: Shoulders</b><small>Add 2 sets of lateral raises this week</small></div>
+          <p class="cap">Illustrative</p>
         </div>
       </div>
     </div>
   </div>
+</section>
+
+<!-- SCORES -->
+<section class="scores" id="scores">
+  <div class="scores-head">
+    <p class="eyebrow">Scored, muscle by muscle</p>
+    <h2 class="h2" data-split>Know exactly what <em>you’re building.</em></h2>
+    <p class="lede">Every set you log is mapped to the muscles it trains. SculptaLab tracks weekly sets for each one against a science-based target range, then rolls it all into your Sculpt score.</p>
+  </div>
+  <div class="scores-grid">
+    <article class="sbox sbox-map">
+      <h3>Your muscle map</h3>
+      <ul class="mlist">
+        <li><span>Glutes</span><b class="bar"><i style="--v:.9"></i><s style="--a:.55;--b:.85"></s></b></li>
+        <li><span>Hamstrings</span><b class="bar"><i style="--v:.72"></i><s style="--a:.45;--b:.8"></s></b></li>
+        <li><span>Quads</span><b class="bar"><i style="--v:.64"></i><s style="--a:.5;--b:.85"></s></b></li>
+        <li><span>Calves</span><b class="bar"><i style="--v:.48"></i><s style="--a:.4;--b:.75"></s></b></li>
+        <li><span>Back</span><b class="bar"><i style="--v:.56"></i><s style="--a:.4;--b:.75"></s></b></li>
+        <li class="lag"><span>Shoulders</span><b class="bar"><i style="--v:.3"></i><s style="--a:.4;--b:.75"></s></b></li>
+        <li><span>Arms</span><b class="bar"><i style="--v:.5"></i><s style="--a:.4;--b:.75"></s></b></li>
+        <li><span>Core</span><b class="bar"><i style="--v:.6"></i><s style="--a:.4;--b:.75"></s></b></li>
+      </ul>
+      <p class="legend"><span class="sw"></span>weekly target range · lagging muscles get a gentle nudge</p>
+    </article>
+    <article class="sbox sbox-score">
+      <div class="big-ring">
+        <svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="86" stroke="#ffffff12" stroke-width="14" fill="none"/><circle class="sring" cx="100" cy="100" r="86" stroke="url(#sg2)" stroke-width="14" fill="none" stroke-linecap="round" pathLength="1" transform="rotate(-90 100 100)"/></svg>
+        <div class="br-lbl"><small>Sculpt score</small><b data-count="82">82</b></div>
+      </div>
+      <h3>One score for your week</h3>
+      <p>Balance across lower body, upper body and consistency, plus a bonus from cardio points. Cardio can only add to it, never take away.</p>
+    </article>
+    <article class="sbox sbox-rep">
+      <h3>A score for every rep</h3>
+      <p>Film a set and each rep is scored from 0 to 100 on four things:</p>
+      <ul class="comp">
+        <li><span>Range of motion</span><b class="bar"><i style="--v:.88"></i></b><em class="num-s" data-count="88">88</em></li>
+        <li><span>Tempo</span><b class="bar"><i style="--v:.76"></i></b><em class="num-s" data-count="76">76</em></li>
+        <li><span>Consistency</span><b class="bar"><i style="--v:.82"></i></b><em class="num-s" data-count="82">82</em></li>
+        <li><span>Stability</span><b class="bar"><i style="--v:.7"></i></b></li>
+      </ul>
+      <p class="fine-c">When the camera can’t see you well, it tells you instead of guessing.</p>
+    </article>
+  </div>
+  <p class="cap center">Example values for illustration</p>
 </section>
 
 <!-- FORM AI deep dive -->
@@ -218,13 +270,13 @@
   <div class="formai-head">
     <p class="eyebrow">Live form tracking</p>
     <h2 class="h2" data-split>Every rep, <em>seen.</em></h2>
-    <p class="lede">Your phone’s camera becomes a training partner. Pose tracking runs on your device, so it’s quick — and your video doesn’t have to leave your phone.</p>
+    <p class="lede">Your phone’s camera becomes a training partner. Train live with pose tracking, or upload a set you filmed earlier and get the same breakdown.</p>
   </div>
   <div class="formai-grid">
-    <article class="fcard"><div class="fico">◎</div><h3>Depth &amp; lockout</h3><p>Checks you reach full hip extension and come back down with control.</p></article>
-    <article class="fcard"><div class="fico">✓</div><h3>Clean-rep counting</h3><p>Only reps that hit the mark count. The rest get flagged so you know why.</p></article>
-    <article class="fcard"><div class="fico">⟲</div><h3>Upload &amp; score</h3><p>Filmed it earlier? Upload a set and get the same breakdown afterwards.</p></article>
-    <article class="fcard"><div class="fico">◐</div><h3>Multiple movements</h3><p>Hip thrusts, squats and more — with modes tuned to each movement.</p></article>
+    <article class="fcard"><div class="fico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></svg></div><h3>Depth &amp; lockout</h3><p>Checks you reach full range and come back down with control. Hip thrusts and squats today, more moves on the way.</p></article>
+    <article class="fcard"><div class="fico"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div><h3>Clean-rep counting</h3><p>Only reps that hit the mark count. The rest get flagged so you know why.</p></article>
+    <article class="fcard"><div class="fico"><svg viewBox="0 0 24 24"><path d="M12 16V4m0 0L7 9m5-5 5 5M5 20h14"/></svg></div><h3>Upload &amp; score</h3><p>Filmed it earlier? Upload the video and get your reps scored afterwards, with an honest label for when it was recorded.</p></article>
+    <article class="fcard"><div class="fico"><svg viewBox="0 0 24 24"><circle cx="7" cy="7" r="2.5"/><circle cx="17" cy="7" r="2.5"/><path d="M4 20c0-4 2-6 3-6s3 2 3 6M14 20c0-4 2-6 3-6s3 2 3 6"/></svg></div><h3>Learn every move</h3><p>Nearly 80 exercises, upper and lower body, each with how-to steps and short science notes.</p></article>
   </div>
 </section>
 
@@ -240,38 +292,104 @@
     <article class="bx bx-notif">
       <div class="notif" aria-hidden="true">
         <svg viewBox="0 0 100 100" width="28" height="28"><use href="#s-mark"/></svg>
-        <div><b>Lower A · Rest</b><small>Next: Hip thrust · set 3 of 4</small></div><span class="t">0:45</span>
+        <div><b>Lower A · Rest</b><small>Next: Hip thrust · set 3 of 4</small></div><span class="t tick-down" data-start="45">0:45</span>
       </div>
       <h3>Timer in your notifications</h3>
       <p>Your session and rest timer live in an ongoing notification, so you never lose your place.</p>
     </article>
     <article class="bx bx-remind">
-      <div class="bell" aria-hidden="true">🔔</div>
+      <div class="bell" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z"/><path d="M10 20.5a2.2 2.2 0 0 0 4 0"/></svg></div>
       <h3>Gentle reminders</h3>
-      <p>A nudge at your usual time, only on days you’ve planned to train.</p>
+      <p>A calm nudge 30 minutes before your usual time, only on days you’ve planned to train.</p>
     </article>
     <article class="bx bx-sync">
       <div class="sync-dots" aria-hidden="true"><i></i><i></i><i></i></div>
       <h3>Synced across devices</h3>
-      <p>Your plans and history follow you to a new phone.</p>
+      <p>Sessions, plan edits and progress sync in the background. Sign in on a new phone and it’s all there.</p>
+    </article>
+    <article class="bx bx-cardio">
+      <div class="pts" aria-hidden="true">+<span data-count="12">12</span><small>pts</small></div>
+      <h3>Cardio that counts</h3>
+      <p>Log a walk, run, bike or class. Minutes and intensity turn into points that boost your Sculpt score.</p>
     </article>
     <article class="bx bx-dutch">
       <div class="lang" aria-hidden="true"><span>Hallo!</span><span>Hi!</span></div>
       <h3>Spreekt Nederlands</h3>
-      <p>Use the whole app in English or Dutch.</p>
+      <p>The whole app in English or Dutch. It follows your phone, or switch in Settings.</p>
     </article>
   </div>
+</section>
+
+<!-- TRAINER WEB -->
+<section class="trainer" id="trainer">
+  <div class="trainer-head">
+    <p class="eyebrow"><span class="pill pill-inline">Coming soon</span> For your trainer</p>
+    <h2 class="h2" data-split>Your progress, on <em>your trainer’s screen.</em></h2>
+    <p class="lede">Share your stats with your personal trainer and go through them together at the gym. They see your muscle scores and history, and can suggest a diet plan made for you.</p>
+  </div>
+  <div class="browser" aria-hidden="true">
+    <div class="br-bar"><i></i><i></i><i></i><span>trainer.sculptalab.com</span></div>
+    <div class="dash">
+      <aside class="d-side">
+        <div class="d-brand"><svg viewBox="0 0 100 100" width="22" height="22"><use href="#s-mark"/></svg>Trainer</div>
+        <p class="d-lbl">Clients</p>
+        <div class="d-client on"><span class="av" style="--c:#FF8A3D">S</span><div><b>Sanne</b><small>Shared · 1 month</small></div></div>
+        <div class="d-client"><span class="av" style="--c:#B57BFF">L</span><div><b>Lotte</b><small>Shared · ongoing</small></div></div>
+        <div class="d-client"><span class="av" style="--c:#3BE39A">E</span><div><b>Emma</b><small>Shared · 1 month</small></div></div>
+      </aside>
+      <div class="d-main">
+        <div class="d-top"><div><small>Client</small><h4>Sanne</h4></div><div class="d-score"><small>Sculpt score</small><b data-count="82">82</b><span class="up">▲ <span data-count="6">6</span></span></div></div>
+        <div class="d-grid">
+          <div class="d-card d-parts"><p class="d-t">Scores by body part</p>
+            <div class="parts">
+              <div><span>Glutes</span><b data-count="91">91</b><i style="--v:.91"></i></div>
+              <div><span>Hamstrings</span><b data-count="78">78</b><i style="--v:.78"></i></div>
+              <div><span>Quads</span><b data-count="74">74</b><i style="--v:.74"></i></div>
+              <div><span>Back</span><b data-count="66">66</b><i style="--v:.66"></i></div>
+              <div class="lag"><span>Shoulders</span><b data-count="48">48</b><i style="--v:.48"></i></div>
+              <div><span>Core</span><b data-count="70">70</b><i style="--v:.7"></i></div>
+            </div></div>
+          <div class="d-card d-trend"><p class="d-t">Sculpt score · 12 weeks</p>
+            <svg viewBox="-10 -10 320 140" class="trend"><defs><linearGradient id="tf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FF8A3D" stop-opacity=".45"/><stop offset="1" stop-color="#FF8A3D" stop-opacity="0"/></linearGradient></defs>
+              <path class="tr-area" d="M0 100 C 30 96, 50 90, 75 86 S 120 80, 150 70 S 200 62, 225 50 S 270 36, 300 28 L300 120 L0 120Z" fill="url(#tf)"/>
+              <path class="tr-line" pathLength="1" d="M0 100 C 30 96, 50 90, 75 86 S 120 80, 150 70 S 200 62, 225 50 S 270 36, 300 28" fill="none" stroke="url(#sg2)" stroke-width="3" stroke-linecap="round"/>
+              <circle class="tr-dot" cx="300" cy="28" r="5" fill="#FFB56B"/></svg></div>
+          <div class="d-card d-hist"><p class="d-t">Recent sessions</p>
+            <ul class="hist">
+              <li><b>Lower A</b><span>Hip thrust 4×10 · 9/10 clean</span><em>Today</em></li>
+              <li><b>Cardio</b><span>35 min bike · +14 pts</span><em>Thu</em></li>
+              <li><b>Upper</b><span>Row · Face pull · Arms</span><em>Wed</em></li>
+              <li><b>Lower B</b><span>Split squat · RDL</span><em>Mon</em></li>
+            </ul></div>
+          <div class="d-card d-diet"><p class="d-t">Diet plan · draft for Sanne</p>
+            <ul class="diet">
+              <li><span class="ml">Breakfast</span><span>Greek yoghurt, oats, berries</span></li>
+              <li><span class="ml">Lunch</span><span>Lentil salad, feta, wholegrain bread</span></li>
+              <li><span class="ml">Snack</span><span>Cottage cheese, fruit</span></li>
+              <li><span class="ml">Dinner</span><span>Tofu stir-fry, rice, greens</span></li>
+            </ul>
+            <span class="d-btn">Send to Sanne’s Diet tab</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="cap center">Concept design. Names and numbers are made up.</p>
 </section>
 
 <!-- COMING SOON -->
 <section class="soon" id="soon">
   <div class="soon-inner">
     <p class="eyebrow">On the horizon</p>
-    <h2 class="h2" data-split>Train together with <em>your coach.</em></h2>
+    <h2 class="h2" data-split>Next: train with <em>your trainer.</em></h2>
+    <p class="lede">These are on the way and not in the app yet. Here’s what we’re building.</p>
     <div class="soon-grid">
-      <article class="sc-card"><span class="pill">Coming soon</span><h3>Share with your trainer</h3><p>Give your personal trainer a live view of your sessions and stats — for a month or for good, and revoke it whenever you like.</p></article>
-      <article class="sc-card"><span class="pill">Coming soon</span><h3>On your wrist</h3><p>Wear OS and Apple Watch companions to keep your sets and rest timer one glance away.</p></article>
-      <article class="sc-card"><span class="pill">Coming soon</span><h3>On the web</h3><p>Your stats on a big screen, with deeper insights for those who want them.</p></article>
+      <article class="sc-card sc-wide"><span class="pill">Coming soon</span><h3>Share with your trainer</h3><p>Send a link or code from the app. Your trainer sees your workouts, muscle scores and progress, and you can go through them together on a big screen at the gym. Share for a month or for good, with as many trainers as you like (they can’t see each other), and stop sharing anytime.</p></article>
+      <article class="sc-card"><span class="pill">Coming soon</span><h3>AI form checker</h3><p>Record a set and our models score your form, so you and your trainer can see what to fix.</p></article>
+      <article class="sc-card"><span class="pill">Coming soon</span><h3>Diet from your trainer</h3><p>Your trainer builds a diet plan around you, and it shows up in a read-only Diet tab in the app.</p></article>
+      <article class="sc-card"><span class="pill">Coming soon</span><h3>Plans from your trainer</h3><p>Your trainer can adjust your plan, and the changes show up on your phone.</p></article>
+
+      <article class="sc-card"><span class="pill">Coming soon</span><h3>On your wrist</h3><p>Wear OS and Apple Watch apps, plus Live Activities on iPhone, to keep sets and rest a glance away.</p></article>
+      <article class="sc-card sc-full"><span class="pill">Coming soon</span><h3>SculptaLab on the web</h3><p>Everything from the app on a bigger screen, plus deeper insights if you want them.</p></article>
     </div>
   </div>
 </section>
@@ -280,18 +398,18 @@
 <section class="download" id="download">
   <div class="dl-glow" aria-hidden="true"></div>
   <svg class="dl-mark" viewBox="0 0 100 100" aria-hidden="true"><use href="#s-mark"/></svg>
-  <h2 class="dl-title" data-split>Your shape starts <em>today.</em></h2>
-  <p class="lede center">SculptaLab is in early access. Grab it on your phone and start your first session tonight.</p>
+  <h2 class="dl-title" data-split>Your foundation starts <em>today.</em></h2>
+  <p class="lede center">SculptaLab is in early access. Get it on your phone, answer three questions, and your first plan is ready.</p>
   <div class="cta-row center">
-    <a class="store big" href="#" data-store="play" aria-label="Get it on Google Play (early access)">
+    <a class="store big" href="#" data-store="play">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3.6 1.8 13.8 12 3.6 22.2c-.4-.2-.6-.6-.6-1.1V2.9c0-.5.2-.9.6-1.1Zm11.6 11.6 2.4 2.4-11 6.3 8.6-8.7Zm4.3-2.5c.6.4.6 1.8 0 2.2l-2.5 1.4-2.6-2.5 2.6-2.5 2.5 1.4ZM6.6 1.9l11 6.3-2.4 2.4-8.6-8.7Z"/></svg>
       <span><small>Get it on</small>Google Play</span>
     </a>
-    <a class="store big" href="#" data-store="ios" aria-label="Download on the App Store (early access)">
+    <a class="store big" href="#" data-store="ios">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.4 12.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.4-.9-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.7 1.3 10.2.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8 1.6 0 2 .8 3.4.8 1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9-.1 0-2.7-1-2.7-4.1ZM13.9 4.9c.7-.9 1.2-2 1.1-3.2-1 0-2.3.7-3 1.6-.7.8-1.3 2-1.1 3.1 1.1.1 2.3-.6 3-1.5Z"/></svg>
       <span><small>Download on the</small>App Store</span>
     </a>
-    <span class="store big ghost" aria-label="Watch app coming soon">
+    <span class="store big ghost">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M8 6V2h8v4M8 18v4h8v-4"/><rect x="5" y="6" width="14" height="12" rx="4" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
       <span><small>Watch app</small>Coming soon</span>
     </span>

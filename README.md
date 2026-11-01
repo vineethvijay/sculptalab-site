@@ -1,10 +1,12 @@
 # SculptaLab — marketing site
 
-The landing page for **SculptaLab**, the guided glute and lower-body training app (Android, iOS, with watch apps coming).
+The landing page for **SculptaLab**: *sculpt your foundation*. Personalised strength training for women, with per-muscle scores, live form tracking and a Sculpt score (Android, iOS, English and Dutch). Trainer sharing, an AI form checker, a web version and watch apps are coming soon.
 
 **Stack:** Vite (static build), vanilla JS, GSAP + ScrollTrigger, Lenis smooth scroll, a WebGL gradient shader for the background (falls back to CSS), and self-hosted Inter Variable and Instrument Serif fonts. There is no framework runtime, and the JS is about 54 KB gzipped.
 
-**Sections:** an animated S-mark loader, the hero (word reveal, contour art, 3D-tilt phone), an exercise marquee, a manifesto with a scroll-scrubbed word reveal, a pinned "How it works" story where the phone screen changes per step (Today, Live pose, Plan, Progress), Form AI cards, a bento grid (bubble, notification timer, reminders, sync, Dutch), Coming soon (trainer sharing, watch, web), and a download CTA.
+**Sections (v2):** loader, a hero with an original AI-generated marble statue (`public/statue.webp`, generated for this project with no third-party copyright) plus muscle pins, a manifesto, a pinned How it works story (Today, Plan, Live pose, Muscle balance), Scores (muscle map, Sculpt score, per-rep scores), Form, a bento grid, a Trainer web dashboard concept (coming soon), Coming soon, and Download. Every mockup is animated (counters, timers, drawing charts, rotating lists) and stays static under reduced motion.
+
+**v1 sections:** an animated S-mark loader, the hero (word reveal, contour art, 3D-tilt phone), an exercise marquee, a manifesto with a scroll-scrubbed word reveal, a pinned "How it works" story where the phone screen changes per step (Today, Live pose, Plan, Progress), Form AI cards, a bento grid (bubble, notification timer, reminders, sync, Dutch), Coming soon (trainer sharing, watch, web), and a download CTA.
 
 Brand tokens come from `packages/ui-tokens` in the app repo. All screens are illustrative mockups. The site uses no real user data, metrics or testimonials.
 
