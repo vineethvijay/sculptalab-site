@@ -1,0 +1,764 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-11-08",
+  "qaRoot": "/Users/vineeth/PROJECTS/sculptalab/docs/build/visual-qa-2026-11-08",
+  "assets": [
+    {
+      "id": "A01",
+      "role": "hero-app",
+      "altKey": "images.a01.alt",
+      "captionKey": "images.a01.caption",
+      "provenance": {
+        "modelOrTool": "sharp+device-frame",
+        "generationDate": "2026-11-08",
+        "promptSummary": "Batch 3 sanitized composite per site-rebuild-brief §7",
+        "sourceScreenshotCommit": "visual-qa-2026-11-08",
+        "sourceScreenshotPath": "sculptalab/docs/build/visual-qa-2026-11-08/systest/02_home.png"
+      },
+      "classification": "sanitized_app_composite",
+      "privacyReviewStatus": "sanitized_demo_only",
+      "aspectRatio": "4:5",
+      "dimensions": [
+        {
+          "width": 480,
+          "height": 600,
+          "suffix": "480w"
+        },
+        {
+          "width": 768,
+          "height": 960,
+          "suffix": "768w"
+        },
+        {
+          "width": 1200,
+          "height": 750,
+          "suffix": "desktop-1200w"
+        },
+        {
+          "width": 480,
+          "height": 600,
+          "suffix": "480w"
+        },
+        {
+          "width": 768,
+          "height": 960,
+          "suffix": "768w"
+        },
+        {
+          "width": 1200,
+          "height": 750,
+          "suffix": "desktop-1200w"
+        }
+      ],
+      "publicPaths": {
+        "webp": [
+          "public/images/hero/a01-hero-app-480w.webp",
+          "public/images/hero/a01-hero-app-768w.webp",
+          "public/images/hero/a01-hero-app-desktop-1200w.webp"
+        ],
+        "avif": [
+          "public/images/hero/a01-hero-app-480w.avif",
+          "public/images/hero/a01-hero-app-768w.avif",
+          "public/images/hero/a01-hero-app-desktop-1200w.avif"
+        ],
+        "png": [],
+        "svg": []
+      },
+      "maxMobileBytes": 143360,
+      "actualMobileBytes": 1226
+    },
+    {
+      "id": "A02",
+      "role": "plan",
+      "altKey": "images.a02.alt",
+      "captionKey": "images.a02.caption",
+      "provenance": {
+        "modelOrTool": "sharp+device-frame",
+        "generationDate": "2026-11-08",
+        "promptSummary": "Batch 3 sanitized composite per site-rebuild-brief §7",
+        "sourceScreenshotCommit": "visual-qa-2026-11-08",
+        "sourceScreenshotPath": "sculptalab/docs/build/visual-qa-2026-11-08/systest/05_plan.png"
+      },
+      "classification": "sanitized_app_composite",
+      "privacyReviewStatus": "sanitized_demo_only",
+      "aspectRatio": "3:4",
+      "dimensions": [
+        {
+          "width": 400,
+          "height": 533,
+          "suffix": "400w"
+        },
+        {
+          "width": 640,
+          "height": 853,
+          "suffix": "640w"
+        },
+        {
+          "width": 960,
+          "height": 1280,
+          "suffix": "960w"
+        },
+        {
+          "width": 400,
+          "height": 533,
+          "suffix": "400w"
+        },
+        {
+          "width": 640,
+          "height": 853,
+          "suffix": "640w"
+        },
+        {
+          "width": 960,
+          "height": 1280,
+          "suffix": "960w"
+        }
+      ],
+      "publicPaths": {
+        "webp": [
+          "public/images/screens/a02-plan-400w.webp",
+          "public/images/screens/a02-plan-640w.webp",
+          "public/images/screens/a02-plan-960w.webp"
+        ],
+        "avif": [
+          "public/images/screens/a02-plan-400w.avif",
+          "public/images/screens/a02-plan-640w.avif",
+          "public/images/screens/a02-plan-960w.avif"
+        ],
+        "png": [],
+        "svg": []
+      },
+      "maxMobileBytes": 102400,
+      "actualMobileBytes": 940
+    },
+    {
+      "id": "A03",
+      "role": "workout",
+      "altKey": "images.a03.alt",
+      "captionKey": "images.a03.caption",
+      "provenance": {
+        "modelOrTool": "sharp+device-frame",
+        "generationDate": "2026-11-08",
+        "promptSummary": "Batch 3 sanitized composite per site-rebuild-brief §7",
+        "sourceScreenshotCommit": "visual-qa-2026-11-08",
+        "sourceScreenshotPath": "sculptalab/docs/build/visual-qa-2026-11-08/systest/04_workouts_sessions.png"
+      },
+      "classification": "sanitized_app_composite",
+      "privacyReviewStatus": "sanitized_demo_only",
+      "aspectRatio": "3:4",
+      "dimensions": [
+        {
+          "width": 400,
+          "height": 533,
+          "suffix": "400w"
+        },
+        {
+          "width": 640,
+          "height": 853,
+          "suffix": "640w"
+        },
+        {
+          "width": 960,
+          "height": 1280,
+          "suffix": "960w"
+        },
+        {
+          "width": 400,
+          "height": 533,
+          "suffix": "400w"
+        },
+        {
+          "width": 640,
+          "height": 853,
+          "suffix": "640w"
+        },
+        {
+          "width": 960,
+          "height": 1280,
+          "suffix": "960w"
+        }
+      ],
+      "publicPaths": {
+        "webp": [
+          "public/images/screens/a03-workout-400w.webp",
+          "public/images/screens/a03-workout-640w.webp",
+          "public/images/screens/a03-workout-960w.webp"
+        ],
+        "avif": [
+          "public/images/screens/a03-workout-400w.avif",
+          "public/images/screens/a03-workout-640w.avif",
+          "public/images/screens/a03-workout-960w.avif"
+        ],
+        "png": [],
+        "svg": []
+      },
+      "maxMobileBytes": 102400,
+      "actualMobileBytes": 940
+    },
+    {
+      "id": "A04",
+      "role": "muscle-front",
+      "altKey": "images.a04.front.alt",
+      "captionKey": "images.a04.caption",
+      "provenance": {
+        "modelOrTool": "sharp+cover",
+        "generationDate": "2026-11-08",
+        "promptSummary": "Batch 3 sanitized composite per site-rebuild-brief §7",
+        "sourceScreenshotCommit": "visual-qa-2026-11-08",
+        "sourceScreenshotPath": "sculptalab/docs/build/visual-qa-2026-11-08/mi-anatomy-v4/mobile-front.png"
+      },
+      "classification": "sanitized_app_composite",
+      "privacyReviewStatus": "sanitized_demo_only",
+      "aspectRatio": "4:5",
+      "dimensions": [
+        {
+          "width": 390,
+          "height": 844,
+          "suffix": "480w"
+        },
+        {
+          "width": 390,
+          "height": 844,
+          "suffix": "800w"
+        },
+        {
+          "width": 390,
+          "height": 844,
+          "suffix": "1200w"
+        },
+        {
+          "width": 390,
+          "height": 844,
+          "suffix": "480w"
+        },
+        {
+          "width": 390,
+          "height": 844,
+          "suffix": "800w"
+        },
+        {
+          "width": 390,
+          "height": 844,
+          "suffix": "1200w"
+        },
+        {
+          "width": 1280,
+          "height": 800,
+          "suffix": "480w"
+        },
+        {
+          "width": 1280,
+          "height": 800,
+          "suffix": "800w"
+        },
+        {
+          "width": 1280,
+          "height": 800,
+          "suffix": "1200w"
+        }
+      ],
+      "publicPaths": {
+        "webp": [
+          "public/images/anatomy/a04-muscle-front-480w.webp",
+          "public/images/anatomy/a04-muscle-front-800w.webp",
+          "public/images/anatomy/a04-muscle-front-1200w.webp",
+          "public/images/anatomy/a04-muscle-back-480w.webp",
+          "public/images/anatomy/a04-muscle-back-800w.webp",
+          "public/images/anatomy/a04-muscle-back-1200w.webp"
+        ],
+        "avif": [
+          "public/images/anatomy/a04-muscle-front-480w.avif",
+          "public/images/anatomy/a04-muscle-front-800w.avif",
+          "public/images/anatomy/a04-muscle-front-1200w.avif",
+          "public/images/anatomy/a04-muscle-back-480w.avif",
+          "public/images/anatomy/a04-muscle-back-800w.avif",
+          "public/images/anatomy/a04-muscle-back-1200w.avif"
+        ],
+        "png": [],
+        "svg": []
+      },
+      "maxMobileBytes": 163840,
+      "actualMobileBytes": 19394
+    },
+    {
+      "id": "A05",
+      "role": "studio-overview",
+      "altKey": "images.a05.alt",
+      "captionKey": "images.a05.caption",
+      "provenance": {
+        "modelOrTool": "sharp+browser-frame",
+        "generationDate": "2026-11-08",
+        "promptSummary": "Batch 3 sanitized composite per site-rebuild-brief §7",
+        "sourceScreenshotCommit": "visual-qa-2026-11-08",
+        "sourceScreenshotPath": "sculptalab/docs/build/visual-qa-2026-11-08/systest/02_home.png"
+      },
+      "classification": "sanitized_app_composite",
+      "privacyReviewStatus": "sanitized_demo_only",
+      "aspectRatio": "4:5 / 16:10",
+      "dimensions": [
+        {
+          "width": 640,
+          "height": 800,
+          "suffix": "640w"
+        },
+        {
+          "width": 960,
+          "height": 1200,
+          "suffix": "960w"
+        },
+        {
+          "width": 1440,
+          "height": 900,
+          "suffix": "desktop-1440w"
+        },
+        {
+          "width": 640,
+          "height": 800,
+          "suffix": "640w"
+        },
+        {
+          "width": 960,
+          "height": 1200,
+          "suffix": "960w"
+        },
+        {
+          "width": 1440,
+          "height": 900,
+          "suffix": "desktop-1440w"
+        }
+      ],
+      "publicPaths": {
+        "webp": [
+          "public/images/screens/a05-studio-640w.webp",
+          "public/images/screens/a05-studio-960w.webp",
+          "public/images/screens/a05-studio-desktop-1440w.webp"
+        ],
+        "avif": [
+          "public/images/screens/a05-studio-640w.avif",
+          "public/images/screens/a05-studio-960w.avif",
+          "public/images/screens/a05-studio-desktop-1440w.avif"
+        ],
+        "png": [],
+        "svg": []
+      },
+      "maxMobileBytes": 163840,
+      "actualMobileBytes": 1954
+    },
+    {
+      "id": "A06",
+      "role": "form-preview",
+      "altKey": "images.a06.alt",
+      "captionKey": "images.a06.caption",
+      "provenance": {
+        "modelOrTool": "sharp+svg-mockup",
+        "generationDate": "2026-11-08",
+        "promptSummary": "Batch 3 sanitized composite per site-rebuild-brief §7",
+        "sourceScreenshotCommit": "visual-qa-2026-11-08",
+        "sourceScreenshotPath": null
+      },
+      "classification": "synthetic_illustration",
+      "privacyReviewStatus": "sanitized_demo_only",
+      "aspectRatio": "4:5",
+      "dimensions": [
+        {
+          "width": 480,
+          "height": 600,
+          "suffix": "480w"
+        },
+        {
+          "width": 768,
+          "height": 960,
+          "suffix": "768w"
+        },
+        {
+          "width": 1200,
+          "height": 1500,
+          "suffix": "1200w"
+        },
+        {
+          "width": 480,
+          "height": 600,
+          "suffix": "480w"
+        },
+        {
+          "width": 768,
+          "height": 960,
+          "suffix": "768w"
+        },
+        {
+          "width": 1200,
+          "height": 1500,
+          "suffix": "1200w"
+        }
+      ],
+      "publicPaths": {
+        "webp": [
+          "public/images/screens/a06-form-preview-480w.webp",
+          "public/images/screens/a06-form-preview-768w.webp",
+          "public/images/screens/a06-form-preview-1200w.webp"
+        ],
+        "avif": [
+          "public/images/screens/a06-form-preview-480w.avif",
+          "public/images/screens/a06-form-preview-768w.avif",
+          "public/images/screens/a06-form-preview-1200w.avif"
+        ],
+        "png": [],
+        "svg": []
+      },
+      "maxMobileBytes": 133120,
+      "actualMobileBytes": 3292
+    },
+    {
+      "id": "A07",
+      "role": "movement-guide",
+      "altKey": "images.a07.alt",
+      "captionKey": "images.a07.caption",
+      "provenance": {
+        "modelOrTool": "sharp+svg",
+        "generationDate": "2026-11-08",
+        "promptSummary": "Batch 3 sanitized composite per site-rebuild-brief §7",
+        "sourceScreenshotCommit": "visual-qa-2026-11-08",
+        "sourceScreenshotPath": null
+      },
+      "classification": "synthetic_illustration",
+      "privacyReviewStatus": "sanitized_demo_only",
+      "aspectRatio": "4:3",
+      "dimensions": [
+        {
+          "width": 400,
+          "height": 300,
+          "suffix": "400w"
+        },
+        {
+          "width": 640,
+          "height": 480,
+          "suffix": "640w"
+        },
+        {
+          "width": 960,
+          "height": 720,
+          "suffix": "960w"
+        },
+        {
+          "width": 400,
+          "height": 300,
+          "suffix": "400w"
+        },
+        {
+          "width": 640,
+          "height": 480,
+          "suffix": "640w"
+        },
+        {
+          "width": 960,
+          "height": 720,
+          "suffix": "960w"
+        }
+      ],
+      "publicPaths": {
+        "webp": [
+          "public/images/screens/a07-movement-guide-400w.webp",
+          "public/images/screens/a07-movement-guide-640w.webp",
+          "public/images/screens/a07-movement-guide-960w.webp"
+        ],
+        "avif": [
+          "public/images/screens/a07-movement-guide-400w.avif",
+          "public/images/screens/a07-movement-guide-640w.avif",
+          "public/images/screens/a07-movement-guide-960w.avif"
+        ],
+        "png": [],
+        "svg": []
+      },
+      "maxMobileBytes": 92160,
+      "actualMobileBytes": 1732
+    },
+    {
+      "id": "A08",
+      "role": "trainer-conversation",
+      "altKey": "images.a08.alt",
+      "captionKey": "images.a08.caption",
+      "provenance": {
+        "modelOrTool": "sharp+svg-lifestyle",
+        "generationDate": "2026-11-08",
+        "promptSummary": "Batch 3 sanitized composite per site-rebuild-brief §7",
+        "sourceScreenshotCommit": "visual-qa-2026-11-08",
+        "sourceScreenshotPath": null
+      },
+      "classification": "synthetic_illustration",
+      "privacyReviewStatus": "sanitized_demo_only",
+      "aspectRatio": "4:5",
+      "dimensions": [
+        {
+          "width": 480,
+          "height": 600,
+          "suffix": "480w"
+        },
+        {
+          "width": 800,
+          "height": 1000,
+          "suffix": "800w"
+        },
+        {
+          "width": 1280,
+          "height": 853,
+          "suffix": "desktop-1280w"
+        },
+        {
+          "width": 480,
+          "height": 600,
+          "suffix": "480w"
+        },
+        {
+          "width": 800,
+          "height": 1000,
+          "suffix": "800w"
+        },
+        {
+          "width": 1280,
+          "height": 853,
+          "suffix": "desktop-1280w"
+        }
+      ],
+      "publicPaths": {
+        "webp": [
+          "public/images/lifestyle/a08-trainer-conversation-480w.webp",
+          "public/images/lifestyle/a08-trainer-conversation-800w.webp",
+          "public/images/lifestyle/a08-trainer-conversation-desktop-1280w.webp"
+        ],
+        "avif": [
+          "public/images/lifestyle/a08-trainer-conversation-480w.avif",
+          "public/images/lifestyle/a08-trainer-conversation-800w.avif",
+          "public/images/lifestyle/a08-trainer-conversation-desktop-1280w.avif"
+        ],
+        "png": [],
+        "svg": []
+      },
+      "maxMobileBytes": 133120,
+      "actualMobileBytes": 2066
+    },
+    {
+      "id": "A09",
+      "role": "trainer-dashboard",
+      "altKey": "images.a09.alt",
+      "captionKey": "images.a09.caption",
+      "provenance": {
+        "modelOrTool": "sharp+svg-mockup",
+        "generationDate": "2026-11-08",
+        "promptSummary": "Batch 3 sanitized composite per site-rebuild-brief §7",
+        "sourceScreenshotCommit": "visual-qa-2026-11-08",
+        "sourceScreenshotPath": null
+      },
+      "classification": "synthetic_illustration",
+      "privacyReviewStatus": "sanitized_demo_only",
+      "aspectRatio": "4:5",
+      "dimensions": [
+        {
+          "width": 480,
+          "height": 600,
+          "suffix": "480w"
+        },
+        {
+          "width": 800,
+          "height": 1000,
+          "suffix": "800w"
+        },
+        {
+          "width": 480,
+          "height": 600,
+          "suffix": "480w"
+        },
+        {
+          "width": 800,
+          "height": 1000,
+          "suffix": "800w"
+        }
+      ],
+      "publicPaths": {
+        "webp": [
+          "public/images/screens/a09-trainer-dashboard-480w.webp",
+          "public/images/screens/a09-trainer-dashboard-800w.webp",
+          "public/images/screens/a09-trainer-dashboard-desktop-1280w.webp"
+        ],
+        "avif": [
+          "public/images/screens/a09-trainer-dashboard-480w.avif",
+          "public/images/screens/a09-trainer-dashboard-800w.avif",
+          "public/images/screens/a09-trainer-dashboard-desktop-1280w.avif"
+        ],
+        "png": [],
+        "svg": []
+      },
+      "maxMobileBytes": 143360,
+      "actualMobileBytes": 2820
+    },
+    {
+      "id": "A10",
+      "role": "pilot-gym",
+      "altKey": "images.a10.alt",
+      "captionKey": "images.a10.caption",
+      "provenance": {
+        "modelOrTool": "sharp+svg-lifestyle",
+        "generationDate": "2026-11-08",
+        "promptSummary": "Batch 3 sanitized composite per site-rebuild-brief §7",
+        "sourceScreenshotCommit": "visual-qa-2026-11-08",
+        "sourceScreenshotPath": null
+      },
+      "classification": "synthetic_illustration",
+      "privacyReviewStatus": "sanitized_demo_only",
+      "aspectRatio": "4:5",
+      "dimensions": [
+        {
+          "width": 480,
+          "height": 600,
+          "suffix": "480w"
+        },
+        {
+          "width": 800,
+          "height": 1000,
+          "suffix": "800w"
+        },
+        {
+          "width": 480,
+          "height": 600,
+          "suffix": "480w"
+        },
+        {
+          "width": 800,
+          "height": 1000,
+          "suffix": "800w"
+        }
+      ],
+      "publicPaths": {
+        "webp": [
+          "public/images/lifestyle/a10-pilot-gym-480w.webp",
+          "public/images/lifestyle/a10-pilot-gym-800w.webp",
+          "public/images/lifestyle/a10-pilot-gym-desktop-1280w.webp"
+        ],
+        "avif": [
+          "public/images/lifestyle/a10-pilot-gym-480w.avif",
+          "public/images/lifestyle/a10-pilot-gym-800w.avif",
+          "public/images/lifestyle/a10-pilot-gym-desktop-1280w.avif"
+        ],
+        "png": [],
+        "svg": []
+      },
+      "maxMobileBytes": 122880,
+      "actualMobileBytes": 1640
+    },
+    {
+      "id": "A11",
+      "role": "og-social",
+      "aspectRatio": "1200:630",
+      "dimensions": [
+        {
+          "width": 1200,
+          "height": 630,
+          "suffix": "og"
+        },
+        {
+          "width": 1200,
+          "height": 630,
+          "suffix": "og"
+        }
+      ],
+      "publicPaths": {
+        "webp": [],
+        "avif": [],
+        "png": [
+          "public/og-nl.png",
+          "public/og-en.png"
+        ],
+        "svg": []
+      },
+      "maxMobileBytes": null,
+      "actualMobileBytes": null,
+      "altKey": "meta.og.imageAlt",
+      "captionKey": null,
+      "provenance": {
+        "modelOrTool": "sharp-composite",
+        "generationDate": "2026-11-08",
+        "promptSummary": "Deterministic OG cards brief §7 A11",
+        "sourceScreenshotCommit": null,
+        "sourceScreenshotPath": null
+      },
+      "classification": "brand_mark",
+      "privacyReviewStatus": "sanitized_demo_only",
+      "ogBytes": {
+        "nl": 30268,
+        "en": 30151
+      }
+    },
+    {
+      "id": "A12",
+      "role": "logo-favicon",
+      "aspectRatio": "1:1",
+      "dimensions": [
+        {
+          "width": 32,
+          "height": 32,
+          "suffix": "favicon-32"
+        },
+        {
+          "width": 180,
+          "height": 180,
+          "suffix": "apple-touch"
+        },
+        {
+          "width": 192,
+          "height": 192,
+          "suffix": "icon-192"
+        },
+        {
+          "width": 512,
+          "height": 512,
+          "suffix": "icon-512"
+        },
+        {
+          "width": 32,
+          "height": 32,
+          "suffix": "favicon-32"
+        },
+        {
+          "width": 180,
+          "height": 180,
+          "suffix": "apple-touch"
+        },
+        {
+          "width": 192,
+          "height": 192,
+          "suffix": "icon-192"
+        },
+        {
+          "width": 512,
+          "height": 512,
+          "suffix": "icon-512"
+        }
+      ],
+      "publicPaths": {
+        "webp": [],
+        "avif": [],
+        "png": [
+          "public/favicon-32.png",
+          "public/apple-touch-icon.png",
+          "public/icon-192.png",
+          "public/icon-512.png"
+        ],
+        "svg": [
+          "public/favicon.svg"
+        ]
+      },
+      "maxMobileBytes": null,
+      "actualMobileBytes": null,
+      "altKey": "brand.logoAlt",
+      "captionKey": null,
+      "provenance": {
+        "modelOrTool": "existing-brand",
+        "generationDate": "2026-11-08",
+        "promptSummary": "Reused approved favicon family",
+        "sourceScreenshotCommit": null,
+        "sourceScreenshotPath": null
+      },
+      "classification": "brand_mark",
+      "privacyReviewStatus": "ownerPublishApproved"
+    }
+  ]
+}
