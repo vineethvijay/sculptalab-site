@@ -18,8 +18,13 @@
     "pilot": "Pilot",
     "skipToContent": "Ga naar hoofdinhoud",
     "menuLabel": "Sitemenu",
+    "menuOpen": "Menu",
     "primaryCta": "Vraag een trainersdemo aan",
     "homeHref": "/nl/"
+  },
+  "featuresUi": {
+    "homeAnchor": "Op de homepage",
+    "syntheticLabel": "Fictieve cliëntgegevens in illustratieve previews"
   },
   "status": {
     "inPilot": "In de pilot",
@@ -125,7 +130,9 @@
       "row2": "Houd sets, herhalingen en gewichten op één plek bij.",
       "row3": "Rond je training af en bekijk wat je hebt gedaan.",
       "supporting": "Krachttraining, cardiologs en een overzichtelijke trainingskalender.",
-      "cta": "Bekijk de trainingsfuncties"
+      "cta": "Bekijk de trainingsfuncties",
+      "planAlt": "Weekplanning op een telefoon",
+      "workoutAlt": "Trainingspeler met sets en rusttimer"
     },
     "muscles": {
       "h2": "Zie welke spieren je traint.",
@@ -142,6 +149,7 @@
       "legendArms": "Armen",
       "viewFront": "Voorzijde",
       "viewBack": "Achterzijde",
+      "viewLabel": "Anatomieweergaven",
       "figureAlt": "Illustratieve trainingskaart per spiergroep, geen lichaamsscan"
     },
     "progressStudio": {
@@ -150,6 +158,9 @@
       "col1Title": "Kracht en records",
       "col2Title": "Volume en regelmaat",
       "col3Title": "Rapporten en inzichten",
+      "col1Body": "Geschatte kracht, e1RM en persoonlijke records uit je gelogde werk.",
+      "col2Body": "Volumetrends, belasting, RIR en regelmaat ten opzichte van je eigen historie.",
+      "col3Body": "Weekoverzichten, adherentie en berekende inzichten uit echte trainingen.",
       "cta": "Bekijk alle Studio-functies",
       "figureAlt": "Studio-dashboardoverzicht met scores en trainingen"
     },
@@ -206,34 +217,92 @@
     "trainers": {
       "h1": "Coach de persoon, met inzicht in de training.",
       "intro": "Trainerstools voor review op basis van toestemming tijdens de sportchoolpilot.",
-      "placeholder": "Trainerssecties volgen in Batch 4."
+      "pageCta": "Vraag een trainersdemo aan",
+      "figureAlt": "Trainerweergave van cliëntdata binnen toestemming",
+      "syntheticNote": "Mock-namen in screenshots zijn fictief en gelabeld.",
+      "s1": {
+        "h2": "Begin met een begeleide sportchoolpilot",
+        "body": "De pilot is bedoeld voor trainergeleide introducties op de gymvloer, niet voor openbare self-service."
+      },
+      "s2": {
+        "h2": "Trainer-aanmelding en onboarding",
+        "body": "Trainer Web dekt aanmelding, onboarding en home voor het bekijken van verleende cliënttoegang."
+      },
+      "s3": {
+        "h2": "Delen met toestemming voorop",
+        "body": "Cliënten kiezen reikwijdte, einddatum en intrekking. Trainers zien alleen data binnen een actieve grant."
+      },
+      "s4": {
+        "h2": "Bekijk trainingen en voortgang",
+        "body": "Open gedeelde workouts, voortgangssamenvattingen en Studio-weergaven voor het volgende gesprek."
+      },
+      "s5": {
+        "h2": "Formulierwachtrij-preview",
+        "body": "Preview hoe ingediende formchecks in de trainerwachtrij verschijnen wanneer analyse is ingeschakeld."
+      },
+      "s6": {
+        "h2": "Groepswerkruimte-preview",
+        "body": "Groepssessieroutes bestaan als preview; lesorkestratie wordt niet als live beschouwd."
+      },
+      "s7": {
+        "h2": "Nog niet openbaar",
+        "item1": "Traineruitnodigingen zonder cliëntgrant",
+        "item2": "Openbare store-downloads en universele AI-formrelease",
+        "item3": "Gepubliceerde prijzen of checkout op deze marketingsite"
+      },
+      "s8": {
+        "h2": "Demochecklist",
+        "check1": "Bevestig Android-pilotbuild en Studio-toegang op het demotoestel",
+        "check2": "Loop toestemmingscopes en intrekking door met de cliënt",
+        "check3": "Bekijk samen één echte of demotraining op de gymvloer"
+      }
     },
     "features": {
       "h1": "Alle SculptaLab-functies",
       "intro": "Eerlijke status voor elk geïmplementeerd onderdeel in de pilotcodebase.",
-      "placeholder": "Functiecatalogus uit het manifest volgt in Batch 4."
+      "note": "Statussen beschrijven implementatiebewijs in de pilot, geen wereldwijde beschikbaarheid.",
+      "indexLabel": "Functiecategorieën",
+      "legend": "Platformlabels volgen het manifest; caveats staan bij elke rij."
     },
     "pilot": {
       "h1": "Vraag een SculptaLab-pilotdemo aan",
       "intro": "Trainergeleide demo → begeleide Android-installatie → toestemmingsgesprek → eerste training → feedback.",
+      "walkHeading": "Typische begeleide pilot",
+      "step1": "Trainergesprek over doelen en hoe delen werkt",
+      "step2": "Begeleide Android-installatie of sideload van de pilotbuild",
+      "step3": "Toestemmingsscopes, einddatum en wat de trainer ziet",
+      "step4": "Eerste gelogde training met plan, sets en optioneel Studio-vervolg",
+      "step5": "Feedbackgesprek — wat werkte en wat uit blijft tot de volgende mijlpaal",
       "availabilityHeading": "Wat is ingeschakeld in de pilot",
       "availabilityBody": "Standaard pilotvlaggen houden live camera, vormscores en premium uit, tenzij ingeschakeld voor jouw begeleide demo.",
-      "placeholder": "Pilotwalkthrough wordt uitgewerkt in Batch 4."
+      "limitsHeading": "Praktische limieten nog onder launchreview",
+      "limit1": "Openbare HTTPS-apporigin en backup/restore moeten voor jouw deployment worden bevestigd",
+      "limit2": "Privacy, voorwaarden en gezondheidstoestemming moeten door de eigenaar worden goedgekeurd vóór echte gezondheidsdata",
+      "limit3": "Traineruitnodigingsflow en foutmonitoring blijven pilotvereisten",
+      "limit4": "Nederlandse appcopy wordt verbeterd; native review is niet af",
+      "limit5": "Storelistings en iOS-beschikbaarheid zijn voor deze pilot niet vastgesteld",
+      "noFormNote": "Deze statische site verzamelt geen gezondheidsdata en stuurt geen demoregistraties in.",
+      "contactCta": "Naar contact",
+      "figureAlt": "Trainer bereidt een telefoon voor op een demo op de gymvloer"
     },
     "privacy": {
       "h1": "Privacybeleid",
       "banner": "Concept / In afwachting van review door eigenaar en juridisch adviseur vóór echte pilotgezondheidsdata.",
-      "body": "Juridische tekst volgt na review. Behandel deze pagina niet als compliance-documentatie."
+      "bodyHtml": "<p>Juridische tekst volgt na review. Behandel deze pagina niet als compliance-documentatie.</p><p>Er is nog geen door de eigenaar goedgekeurd privacybeleid op deze site.</p>",
+      "footerNote": "Dien geen echte gezondheidsdata in via deze marketingsite."
     },
     "terms": {
       "h1": "Gebruiksvoorwaarden",
       "banner": "Concept / In afwachting van review door eigenaar en juridisch adviseur vóór echte pilotgezondheidsdata.",
-      "body": "Juridische tekst volgt na review."
+      "bodyHtml": "<p>Conceptvoorwaarden volgen na review.</p><p>Gebruik van de pilotapps valt onder aparte afspraken zodra juridische tekst is goedgekeurd.</p>",
+      "footerNote": "Deze conceptvoorwaarden zijn niet definitief."
     },
     "contact": {
       "h1": "Contact",
       "body": "Voor een begeleide pilotdemo: gebruik het contactkanaal zodra het gepubliceerd is.",
-      "pending": "Contactgegevens voor een demo volgen hier."
+      "pending": "Contactgegevens voor een demo volgen hier.",
+      "noFormNote": "Er is geen werkend formulier op deze statische site tot een echt contactkanaal is goedgekeurd.",
+      "pilotLink": "Lees de pilotwalkthrough"
     }
   },
   "features": {

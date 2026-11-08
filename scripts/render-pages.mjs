@@ -11,14 +11,23 @@ const TEMPLATE_DIR = path.join(ROOT, "src", "templates");
 const BASE = normalizeBase(process.env.BASE || "/");
 
 const ROUTES = [
-  { id: "home", segment: "", template: "locale" },
-  { id: "trainers", segment: "trainers", template: "locale" },
-  { id: "features", segment: "features", template: "locale" },
-  { id: "pilot", segment: "pilot", template: "locale" },
-  { id: "privacy", segment: "privacy", template: "locale" },
-  { id: "terms", segment: "terms", template: "locale" },
-  { id: "contact", segment: "contact", template: "locale" },
+  { id: "home", segment: "", template: "home" },
+  { id: "trainers", segment: "trainers", template: "trainers" },
+  { id: "features", segment: "features", template: "features" },
+  { id: "pilot", segment: "pilot", template: "pilot" },
+  { id: "privacy", segment: "privacy", template: "legal" },
+  { id: "terms", segment: "terms", template: "legal" },
+  { id: "contact", segment: "contact", template: "contact" },
 ];
+
+const TEMPLATE_FILES = {
+  home: "home.html",
+  trainers: "trainers.html",
+  features: "features.html",
+  pilot: "pilot.html",
+  legal: "legal.html",
+  contact: "contact.html",
+};
 
 function normalizeBase(base) {
   if (!base.startsWith("/")) base = `/${base}`;
@@ -27,6 +36,11 @@ function normalizeBase(base) {
 
 function readJson(relPath) {
   return JSON.parse(fs.readFileSync(path.join(ROOT, relPath), "utf8"));
+}
+
+function readTemplate(name) {
+  const file = TEMPLATE_FILES[name] ?? `${name}.html`;
+  return fs.readFileSync(path.join(TEMPLATE_DIR, file), "utf8");
 }
 
 function flattenKeys(obj, prefix = "", out = new Set()) {
@@ -54,10 +68,6 @@ function validateLocaleParity(en, nl) {
     for (const k of missingInEn) console.error(`  missing in en.json: ${k}`);
     process.exit(1);
   }
-}
-
-function getByPath(obj, dotted) {
-  return dotted.split(".").reduce((acc, part) => acc?.[part], obj);
 }
 
 function validateManifest(manifest, en, nl) {
@@ -107,6 +117,416 @@ function swapLangHref(currentLang, segment) {
   return localeHref(other, segment);
 }
 
+function assetUrl(relFromPublic) {
+  return `${BASE}${relFromPublic.replace(/^\//, "")}`;
+}
+
+function srcset(folder, stem, widths, format) {
+  return widths.map((w) => `${assetUrl(`images/${folder}/${stem}-${w}w.${format}`)} ${w}w`).join(", ");
+}
+
+function responsivePicture({
+  folder,
+  stem,
+  widths,
+  alt,
+  sizes,
+  width,
+  height,
+  loading = "lazy",
+  fetchpriority,
+  desktopStem,
+  desktopWidths = [1280],
+}) {
+  const avif = srcset(folder, stem, widths, "avif");
+  const webp = srcset(folder, stem, widths, "webp");
+  const priority = fetchpriority ? ` fetchpriority="${fetchpriority}"` : "";
+  const load = ` loading="${loading}" decoding="async"${priority}`;
+  let picture = `<picture>`;
+  if (desktopStem) {
+    const dAvif = desktopWidths
+      .map((w) => `${assetUrl(`images/${folder}/${desktopStem}-${w}w.avif`)} ${w}w`)
+      .join(", ");
+    const dWebp = desktopWidths
+      .map((w) => `${assetUrl(`images/${folder}/${desktopStem}-${w}w.webp`)} ${w}w`)
+      .join(", ");
+    picture += `<source media="(min-width: 768px)" type="image/avif" srcset="${dAvif}" sizes="${sizes}" />`;
+    picture += `<source media="(min-width: 768px)" type="image/webp" srcset="${dWebp}" sizes="${sizes}" />`;
+  }
+  picture += `<source type="image/avif" srcset="${avif}" sizes="${sizes}" />`;
+  picture += `<source type="image/webp" srcset="${webp}" sizes="${sizes}" />`;
+  const fallback = assetUrl(`images/${folder}/${stem}-${widths[0]}w.webp`);
+  picture += `<img src="${fallback}" alt="${alt}" width="${width}" height="${height}"${load} />`;
+  picture += `</picture>`;
+  return picture;
+}
+
+function statusKey(row) {
+  return row.status === "in_pilot" ? "inPilot" : row.status === "preview" ? "preview" : "planned";
+}
+
+function platformLabels(content, platforms) {
+  return platforms.map((p) => content.platforms[p] ?? p).join(" · ");
+}
+
+function buildFeatureCatalogue(content, manifest) {
+  const byCategory = new Map();
+  for (const row of manifest) {
+    const list = byCategory.get(row.category) ?? [];
+    list.push(row);
+    byCategory.set(row.category, list);
+  }
+  const order = [
+    "training",
+    "progress",
+    "muscles",
+    "studio",
+    "trainers",
+    "learning",
+    "connections",
+    "planned",
+  ];
+  return order
+    .filter((cat) => byCategory.has(cat))
+    .map((cat) => {
+      const heading = content.categories[cat];
+      const cards = byCategory
+        .get(cat)
+        .map((row) => {
+          const f = content.features[row.id];
+          const sk = statusKey(row);
+          const anchor = row.homeSectionAnchor
+            ? ` <a href="${localeHref(content.lang, "")}${row.homeSectionAnchor}">${content.featuresUi.homeAnchor}</a>`
+            : "";
+          return `<article class="feature-card" id="${row.id}">
+  <h3>${f.title}</h3>
+  <p>${f.description}</p>
+  <p class="platforms">${platformLabels(content, row.platforms)}</p>
+  <p class="badge">${content.status[sk]}</p>
+  <p class="caveat">${f.caveat}</p>${anchor ? `<p class="microcopy">${anchor}</p>` : ""}
+</article>`;
+        })
+        .join("\n");
+      return `<section class="page-section" id="cat-${cat}"><h2>${heading}</h2>\n${cards}</section>`;
+    })
+    .join("\n");
+}
+
+function commonVars(content) {
+  const lang = content.lang;
+  return {
+    configPlay: content.config.play ?? "",
+    configIos: content.config.ios ?? "",
+    storePlay: content.config.play ? content.config.play : content.store.playPending,
+    storeIos: content.config.ios ? content.config.ios : content.store.iosPending,
+    demoContact: content.config.demoEmail ?? content.store.demoContactPending,
+    pilotHref: localeHref(lang, "pilot"),
+    trainersHref: localeHref(lang, "trainers"),
+    featuresHref: localeHref(lang, "features"),
+    homeHref: localeHref(lang, ""),
+    contactHref: localeHref(lang, "contact"),
+    statusPreview: content.status.preview,
+    statusInPilot: content.status.inPilot,
+    statusAndroidOnly: content.status.androidOnly,
+  };
+}
+
+function buildHomeVars(content) {
+  const h = content.home;
+  return {
+    ...commonVars(content),
+    heroEyebrow: h.hero.eyebrow,
+    heroH1: h.hero.h1,
+    heroBody: h.hero.body,
+    heroPrimaryCta: h.hero.primaryCta,
+    heroSecondaryCta: h.hero.secondaryCta,
+    heroMicrocopy: h.hero.microcopy,
+    heroTranslationNote: h.hero.translationNote,
+    heroFigureCaption: h.hero.figureCaption,
+    trainersH2: h.trainers.h2,
+    trainersBody: h.trainers.body,
+    trainersStep1: h.trainers.step1,
+    trainersStep2: h.trainers.step2,
+    trainersStep3: h.trainers.step3,
+    trainersCta: h.trainers.cta,
+    trainersCaption: h.trainers.caption,
+    planTrainH2: h.planTrain.h2,
+    planTrainRow1: h.planTrain.row1,
+    planTrainRow2: h.planTrain.row2,
+    planTrainRow3: h.planTrain.row3,
+    planTrainSupporting: h.planTrain.supporting,
+    planTrainCta: h.planTrain.cta,
+    musclesH2: h.muscles.h2,
+    musclesBody: h.muscles.body,
+    musclesDisclaimer: h.muscles.disclaimer,
+    musclesViewLabel: h.muscles.viewLabel,
+    musclesViewFront: h.muscles.viewFront,
+    musclesViewBack: h.muscles.viewBack,
+    musclesLegendGlutes: h.muscles.legendGlutes,
+    musclesLegendQuads: h.muscles.legendQuads,
+    musclesLegendHamstrings: h.muscles.legendHamstrings,
+    musclesLegendCalves: h.muscles.legendCalves,
+    musclesLegendCore: h.muscles.legendCore,
+    musclesLegendBack: h.muscles.legendBack,
+    musclesLegendShoulders: h.muscles.legendShoulders,
+    musclesLegendArms: h.muscles.legendArms,
+    musclesCta: h.muscles.cta,
+    muscleFrontHref: assetUrl("images/anatomy/a04-muscle-front-480w.webp"),
+    muscleBackHref: assetUrl("images/anatomy/a04-muscle-back-480w.webp"),
+    progressH2: h.progressStudio.h2,
+    progressBody: h.progressStudio.body,
+    progressCol1: h.progressStudio.col1Title,
+    progressCol2: h.progressStudio.col2Title,
+    progressCol3: h.progressStudio.col3Title,
+    progressCol1Body: h.progressStudio.col1Body,
+    progressCol2Body: h.progressStudio.col2Body,
+    progressCol3Body: h.progressStudio.col3Body,
+    progressCta: h.progressStudio.cta,
+    formH2: h.form.h2,
+    formBody: h.form.body,
+    formFootnote: h.form.footnote,
+    formCta: h.form.cta,
+    learnH2: h.learnDaily.h2,
+    learnBody: h.learnDaily.body,
+    learnItem1: h.learnDaily.item1,
+    learnItem2: h.learnDaily.item2,
+    learnItem3: h.learnDaily.item3,
+    learnItem4: h.learnDaily.item4,
+    learnItem5: h.learnDaily.item5,
+    learnItem6: h.learnDaily.item6,
+    learnCta: h.learnDaily.cta,
+    roadmapH2: h.roadmap.h2,
+    roadmapPilotHeading: h.roadmap.pilotHeading,
+    roadmapPlannedHeading: h.roadmap.plannedHeading,
+    roadmapPilotList: h.roadmap.pilotList,
+    roadmapPlannedList: h.roadmap.plannedList,
+    roadmapCatalogueLink: h.roadmap.catalogueLink,
+    faqH2: h.faq.h2,
+    faqQ1: h.faq.q1,
+    faqA1: h.faq.a1,
+    faqQ2: h.faq.q2,
+    faqA2: h.faq.a2,
+    faqQ3: h.faq.q3,
+    faqA3: h.faq.a3,
+    faqQ4: h.faq.q4,
+    faqA4: h.faq.a4,
+    faqQ5: h.faq.q5,
+    faqA5: h.faq.a5,
+    faqQ6: h.faq.q6,
+    faqA6: h.faq.a6,
+    pilotFooterH2: h.pilotFooter.h2,
+    pilotFooterBody: h.pilotFooter.body,
+    pilotFooterPrimaryCta: h.pilotFooter.primaryCta,
+    pilotFooterDemoExplanation: h.pilotFooter.demoExplanation,
+    heroPicture: responsivePicture({
+      folder: "hero",
+      stem: "a01-hero-app",
+      widths: [480, 768],
+      desktopStem: "a01-hero-app-desktop",
+      desktopWidths: [1200],
+      alt: h.hero.figureAlt,
+      sizes: "(min-width: 768px) 42vw, 100vw",
+      width: 480,
+      height: 600,
+      loading: "eager",
+      fetchpriority: "high",
+    }),
+    trainersPicture: responsivePicture({
+      folder: "lifestyle",
+      stem: "a08-trainer-conversation",
+      widths: [480, 800],
+      desktopStem: "a08-trainer-conversation-desktop",
+      alt: h.trainers.figureAlt,
+      sizes: "(min-width: 768px) 40vw, 100vw",
+      width: 480,
+      height: 640,
+    }),
+    planPicture: responsivePicture({
+      folder: "screens",
+      stem: "a02-plan",
+      widths: [400, 640],
+      alt: h.planTrain.planAlt,
+      sizes: "min(100vw - 2.5rem, 20rem)",
+      width: 400,
+      height: 533,
+    }),
+    workoutPicture: responsivePicture({
+      folder: "screens",
+      stem: "a03-workout",
+      widths: [400, 640],
+      alt: h.planTrain.workoutAlt,
+      sizes: "min(100vw - 2.5rem, 20rem)",
+      width: 400,
+      height: 533,
+    }),
+    musclePicture: responsivePicture({
+      folder: "anatomy",
+      stem: "a04-muscle-front",
+      widths: [480, 800],
+      alt: h.muscles.figureAlt,
+      sizes: "(min-width: 768px) 38vw, 100vw",
+      width: 480,
+      height: 600,
+    }),
+    studioPicture: responsivePicture({
+      folder: "screens",
+      stem: "a05-studio",
+      widths: [640, 960],
+      desktopStem: "a05-studio-desktop",
+      desktopWidths: [1440],
+      alt: h.progressStudio.figureAlt,
+      sizes: "(min-width: 768px) 70vw, 100vw",
+      width: 640,
+      height: 400,
+    }),
+    formPicture: responsivePicture({
+      folder: "screens",
+      stem: "a06-form-preview",
+      widths: [480, 768],
+      alt: h.form.figureAlt,
+      sizes: "(min-width: 768px) 40vw, 100vw",
+      width: 480,
+      height: 600,
+    }),
+    learnPicture: responsivePicture({
+      folder: "screens",
+      stem: "a07-movement-guide",
+      widths: [400, 640],
+      alt: h.learnDaily.figureAlt,
+      sizes: "(min-width: 768px) 50vw, 100vw",
+      width: 400,
+      height: 300,
+    }),
+  };
+}
+
+function buildRouteVars(content, route, manifest) {
+  const r = content.routes[route.id];
+  const base = { ...commonVars(content), routeH1: r?.h1 ?? "", routeIntro: r?.intro ?? "" };
+
+  if (route.id === "trainers") {
+    const t = r;
+    return {
+      ...base,
+      trainersPageCta: t.pageCta,
+      trainersS1H2: t.s1.h2,
+      trainersS1Body: t.s1.body,
+      trainersS2H2: t.s2.h2,
+      trainersS2Body: t.s2.body,
+      trainersS3H2: t.s3.h2,
+      trainersS3Body: t.s3.body,
+      trainersS4H2: t.s4.h2,
+      trainersS4Body: t.s4.body,
+      trainersS5H2: t.s5.h2,
+      trainersS5Body: t.s5.body,
+      trainersS6H2: t.s6.h2,
+      trainersS6Body: t.s6.body,
+      trainersS7H2: t.s7.h2,
+      trainersS7Item1: t.s7.item1,
+      trainersS7Item2: t.s7.item2,
+      trainersS7Item3: t.s7.item3,
+      trainersS8H2: t.s8.h2,
+      trainersCheck1: t.s8.check1,
+      trainersCheck2: t.s8.check2,
+      trainersCheck3: t.s8.check3,
+      trainersSyntheticNote: t.syntheticNote,
+      syntheticLabel: content.featuresUi.syntheticLabel,
+      trainersHeroPicture: responsivePicture({
+        folder: "screens",
+        stem: "a09-trainer-dashboard",
+        widths: [480, 800],
+        desktopStem: "a09-trainer-dashboard-desktop",
+        alt: t.figureAlt,
+        sizes: "(min-width: 768px) 60vw, 100vw",
+        width: 480,
+        height: 600,
+        loading: "eager",
+        fetchpriority: "high",
+      }),
+    };
+  }
+
+  if (route.id === "features") {
+    return {
+      ...base,
+      featuresNote: r.note,
+      featuresIndexLabel: r.indexLabel,
+      featuresLegend: r.legend,
+      featureCatalogue: buildFeatureCatalogue(content, manifest),
+      catTraining: content.categories.training,
+      catProgress: content.categories.progress,
+      catMuscles: content.categories.muscles,
+      catStudio: content.categories.studio,
+      catTrainers: content.categories.trainers,
+      catLearning: content.categories.learning,
+      catConnections: content.categories.connections,
+      catPlanned: content.categories.planned,
+    };
+  }
+
+  if (route.id === "pilot") {
+    return {
+      ...base,
+      pilotWalkHeading: r.walkHeading,
+      pilotStep1: r.step1,
+      pilotStep2: r.step2,
+      pilotStep3: r.step3,
+      pilotStep4: r.step4,
+      pilotStep5: r.step5,
+      pilotAvailabilityHeading: r.availabilityHeading,
+      pilotAvailabilityBody: r.availabilityBody,
+      pilotLimitsHeading: r.limitsHeading,
+      pilotLimit1: r.limit1,
+      pilotLimit2: r.limit2,
+      pilotLimit3: r.limit3,
+      pilotLimit4: r.limit4,
+      pilotLimit5: r.limit5,
+      pilotNoFormNote: r.noFormNote,
+      pilotContactCta: r.contactCta,
+      pilotHeroPicture: responsivePicture({
+        folder: "lifestyle",
+        stem: "a10-pilot-gym",
+        widths: [480, 800],
+        desktopStem: "a10-pilot-gym-desktop",
+        alt: r.figureAlt,
+        sizes: "(min-width: 768px) 70vw, 100vw",
+        width: 480,
+        height: 600,
+      }),
+    };
+  }
+
+  if (route.id === "privacy" || route.id === "terms") {
+    return {
+      ...base,
+      legalBanner: r.banner,
+      legalBody: r.bodyHtml,
+      legalFooterNote: r.footerNote,
+    };
+  }
+
+  if (route.id === "contact") {
+    return {
+      ...base,
+      contactBody: r.body,
+      contactNoFormNote: r.noFormNote,
+      contactPilotLink: r.pilotLink,
+    };
+  }
+
+  return base;
+}
+
+function buildMainContent(content, route, manifest) {
+  const templateName = route.template;
+  const template = readTemplate(templateName);
+  const vars =
+    route.id === "home"
+      ? buildHomeVars(content)
+      : buildRouteVars(content, route, manifest);
+  return substitute(template, vars);
+}
+
 function emptyDir(dir) {
   fs.rmSync(dir, { recursive: true, force: true });
   fs.mkdirSync(dir, { recursive: true });
@@ -116,82 +536,6 @@ function writePage(relFile, html) {
   const out = path.join(PAGES_DIR, relFile);
   fs.mkdirSync(path.dirname(out), { recursive: true });
   fs.writeFileSync(out, html, "utf8");
-}
-
-function buildMainContent(content, route, manifest) {
-  const pageTemplate = fs.readFileSync(path.join(TEMPLATE_DIR, "sections.html"), "utf8");
-  const lang = content.lang;
-  const isHome = route.id === "home";
-  const routeCopy = isHome ? null : content.routes[route.id];
-
-  const featureList =
-    route.id === "features"
-      ? manifest
-          .map((row) => {
-            const f = content.features[row.id];
-            const statusKey =
-              row.status === "in_pilot"
-                ? "inPilot"
-                : row.status === "preview"
-                  ? "preview"
-                  : "planned";
-            return `<article class="feature-card" id="${row.id}">
-  <h3>${f.title}</h3>
-  <p>${f.description}</p>
-  <p class="badge">${content.status[statusKey]}</p>
-  <p class="caveat">${f.caveat}</p>
-</article>`;
-          })
-          .join("\n")
-      : "";
-
-  const homeSections = isHome
-    ? `
-<section id="trainers"><h2>${content.home.trainers.h2}</h2><p>${content.home.trainers.body}</p></section>
-<section id="plan"><h2>${content.home.planTrain.h2}</h2><p>${content.home.planTrain.row1}</p></section>
-<section id="train"><p>${content.home.planTrain.row2}</p></section>
-<section id="muscles"><h2>${content.home.muscles.h2}</h2><p>${content.home.muscles.disclaimer}</p></section>
-<section id="progress"><h2>${content.home.progressStudio.h2}</h2></section>
-<section id="studio"><p>${content.home.progressStudio.body}</p></section>
-<section id="form"><h2>${content.home.form.h2}</h2></section>
-<section id="learn"><h2>${content.home.learnDaily.h2}</h2></section>
-<section id="daily"><p>${content.home.learnDaily.body}</p></section>
-<section id="roadmap"><h2>${content.home.roadmap.h2}</h2></section>
-<section id="faq"><h2>${content.home.faq.h2}</h2></section>
-<section id="pilot"><h2>${content.home.pilotFooter.h2}</h2><p>${content.home.pilotFooter.demoExplanation}</p></section>`
-    : "";
-
-  const routeExtra = isHome
-    ? homeSections
-    : route.id === "features"
-      ? `<div class="feature-catalogue">${featureList}</div><p>${routeCopy.placeholder}</p>`
-      : route.id === "privacy" || route.id === "terms"
-        ? `<p class="legal-banner">${routeCopy.banner}</p><p>${routeCopy.body}</p>`
-        : route.id === "contact"
-          ? `<p>${routeCopy.body}</p><p>${content.config.demoEmail ?? routeCopy.pending}</p>`
-          : `<p>${routeCopy.placeholder}</p>`;
-
-  const sectionVars = {
-    heroEyebrow: content.home.hero.eyebrow,
-    heroH1: isHome ? content.home.hero.h1 : routeCopy?.h1 ?? content.home.hero.h1,
-    heroBody: content.home.hero.body,
-    heroPrimaryCta: content.home.hero.primaryCta,
-    heroSecondaryCta: content.home.hero.secondaryCta,
-    heroMicrocopy: content.home.hero.microcopy,
-    heroTranslationNote: content.home.hero.translationNote,
-    homeHref: localeHref(lang, ""),
-    pilotHref: localeHref(lang, "pilot"),
-    routeH1: isHome ? "" : (routeCopy?.h1 ?? ""),
-    routeIntro: isHome ? "" : (routeCopy?.intro ?? ""),
-    routeExtra,
-    configPlay: content.config.play ?? "",
-    configIos: content.config.ios ?? "",
-    storePlay: content.config.play ? content.config.play : content.store.playPending,
-    storeIos: content.config.ios ? content.config.ios : content.store.iosPending,
-    demoContact: content.config.demoEmail ?? content.store.demoContactPending,
-  };
-
-  return substitute(pageTemplate, sectionVars);
 }
 
 function renderLocalePage(content, route, manifest, pageShell) {
@@ -219,6 +563,7 @@ function renderLocalePage(content, route, manifest, pageShell) {
     navAllFeatures: content.nav.allFeatures,
     navPilot: content.nav.pilot,
     menuLabel: content.nav.menuLabel,
+    menuOpen: content.nav.menuOpen,
     navPrimaryCta: content.nav.primaryCta,
     langSwitchHref: swapLangHref(lang, segment),
     langSwitchCode: content.langSwitch.otherCode,
@@ -265,6 +610,7 @@ function renderRootChooser(en, nl, pageShell) {
     navAllFeatures: nl.nav.allFeatures,
     navPilot: nl.nav.pilot,
     menuLabel: nl.nav.menuLabel,
+    menuOpen: nl.nav.menuOpen,
     navPrimaryCta: nl.nav.primaryCta,
     langSwitchHref: url("en"),
     langSwitchCode: "en",
@@ -284,7 +630,7 @@ function renderRootChooser(en, nl, pageShell) {
 }
 
 function render404(en, nl, pageShell) {
-  const body = `<section>
+  const body = `<section class="lang-chooser">
   <h1>${en.notFound.heading} / ${nl.notFound.heading}</h1>
   <p>${en.notFound.body}</p>
   <p>${nl.notFound.body}</p>
@@ -310,6 +656,7 @@ function render404(en, nl, pageShell) {
     navAllFeatures: en.nav.allFeatures,
     navPilot: en.nav.pilot,
     menuLabel: en.nav.menuLabel,
+    menuOpen: en.nav.menuOpen,
     navPrimaryCta: en.nav.primaryCta,
     langSwitchHref: url("nl"),
     langSwitchCode: "nl",
@@ -344,9 +691,8 @@ function main() {
   writePage("404.html", render404(en, nl, pageShell));
 
   for (const content of [en, nl]) {
-    const lang = content.lang;
     for (const route of ROUTES) {
-      const rel = path.join(lang, route.segment, "index.html");
+      const rel = path.join(content.lang, route.segment, "index.html");
       writePage(rel, renderLocalePage(content, route, manifest, pageShell));
     }
   }

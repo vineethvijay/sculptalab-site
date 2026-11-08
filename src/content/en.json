@@ -18,8 +18,13 @@
     "pilot": "Pilot",
     "skipToContent": "Skip to main content",
     "menuLabel": "Site menu",
+    "menuOpen": "Menu",
     "primaryCta": "Request a trainer demo",
     "homeHref": "/en/"
+  },
+  "featuresUi": {
+    "homeAnchor": "On home",
+    "syntheticLabel": "Fictional client data in illustrative previews"
   },
   "status": {
     "inPilot": "In the pilot",
@@ -125,7 +130,9 @@
       "row2": "Keep sets, reps and weights in one place.",
       "row3": "Finish your session and see what you did.",
       "supporting": "Strength sessions, cardio logs and a calendar that keeps the week clear.",
-      "cta": "Explore training features"
+      "cta": "Explore training features",
+      "planAlt": "Weekly training plan on a phone",
+      "workoutAlt": "Workout player with sets and rest timer"
     },
     "muscles": {
       "h2": "See where your training goes.",
@@ -142,6 +149,7 @@
       "legendArms": "Arms",
       "viewFront": "Front",
       "viewBack": "Back",
+      "viewLabel": "Anatomy views",
       "figureAlt": "Illustrative training muscle map, not a body scan"
     },
     "progressStudio": {
@@ -150,6 +158,9 @@
       "col1Title": "Strength & records",
       "col2Title": "Volume & consistency",
       "col3Title": "Reports & insights",
+      "col1Body": "Estimated strength, e1RM and personal records from your logged work.",
+      "col2Body": "Volume trends, load, RIR and consistency against your own history.",
+      "col3Body": "Weekly summaries, adherence and computed insights from real sessions.",
       "cta": "See all Studio tools",
       "figureAlt": "Studio dashboard overview with scores and sessions"
     },
@@ -206,34 +217,92 @@
     "trainers": {
       "h1": "Coach the person, with their training in view.",
       "intro": "Trainer tools for consent-based review during the gym pilot.",
-      "placeholder": "Trainer route sections will render in Batch 4."
+      "pageCta": "Request a trainer demo",
+      "figureAlt": "Trainer view of consent-scoped client training data",
+      "syntheticNote": "Mock client names in screenshots are invented and labelled.",
+      "s1": {
+        "h2": "Start with a guided gym pilot",
+        "body": "The pilot is designed for trainer-led introductions on the gym floor, not self-serve public rollout."
+      },
+      "s2": {
+        "h2": "Trainer sign-in and onboarding",
+        "body": "Trainer Web routes cover sign-in, onboarding and home views for reviewing granted client access."
+      },
+      "s3": {
+        "h2": "Consent-first sharing",
+        "body": "Clients choose scopes, expiry and revocation. Trainers only see data within an active grant."
+      },
+      "s4": {
+        "h2": "Review sessions and progress",
+        "body": "Open shared workouts, progress summaries and Studio views to prepare the next conversation."
+      },
+      "s5": {
+        "h2": "Form queue preview",
+        "body": "Preview how submitted form checks appear in the trainer queue when analysis features are enabled."
+      },
+      "s6": {
+        "h2": "Group workspace preview",
+        "body": "Group session routes exist for trainer and member previews; class orchestration is not assumed shipped."
+      },
+      "s7": {
+        "h2": "Not yet public",
+        "item1": "Trainer-originated client invites without a client grant",
+        "item2": "Public store downloads and universal AI form release",
+        "item3": "Published pricing or checkout on this marketing site"
+      },
+      "s8": {
+        "h2": "Demo checklist",
+        "check1": "Confirm Android pilot build and Studio access for the demo device",
+        "check2": "Walk through consent scopes and revocation with the client",
+        "check3": "Review one real or demo session together on the gym floor"
+      }
     },
     "features": {
       "h1": "All SculptaLab features",
       "intro": "Honest status for every implemented area in the pilot codebase.",
-      "placeholder": "Feature catalogue renders from the manifest in Batch 4."
+      "note": "Statuses describe implementation evidence in the pilot, not global production availability.",
+      "indexLabel": "Feature categories",
+      "legend": "Platform badges follow the manifest; caveats stay beside every row."
     },
     "pilot": {
       "h1": "Request a SculptaLab pilot demo",
       "intro": "Trainer-led demo → supervised Android setup → consent discussion → first session → feedback.",
+      "walkHeading": "Typical guided pilot",
+      "step1": "Trainer conversation about goals and how sharing will work",
+      "step2": "Supervised Android install or sideload for the pilot build",
+      "step3": "Consent scopes, expiry and what the trainer can see",
+      "step4": "First logged session with plan, sets and optional Studio follow-up",
+      "step5": "Feedback call — what worked, what stays off until the next milestone",
       "availabilityHeading": "What is enabled in the pilot",
       "availabilityBody": "Default pilot flags keep live camera, form scoring and premium features off unless enabled for your supervised demo.",
-      "placeholder": "Pilot walkthrough expands in Batch 4."
+      "limitsHeading": "Practical limits still under launch review",
+      "limit1": "Public HTTPS app origin and backup/restore need verification for your deployment",
+      "limit2": "Privacy, terms and health consent copy must be owner-approved before real health data",
+      "limit3": "Trainer invite flow and error monitoring remain pilot prerequisites",
+      "limit4": "Dutch app copy is improving; native review is not finished",
+      "limit5": "Store listings and iOS availability are not established for this pilot",
+      "noFormNote": "This static site does not collect health data or submit demo registrations.",
+      "contactCta": "Go to contact",
+      "figureAlt": "Trainer preparing a phone for a gym-floor demo"
     },
     "privacy": {
       "h1": "Privacy policy",
       "banner": "Draft / Pending Owner & Legal Review before accepting real pilot health data.",
-      "body": "Placeholder legal copy will be supplied after review. Do not treat this page as compliance documentation."
+      "bodyHtml": "<p>Placeholder legal copy will be supplied after review. Do not treat this page as compliance documentation.</p><p>No owner-approved privacy policy is published on this site yet.</p>",
+      "footerNote": "Do not submit real health data through this marketing site."
     },
     "terms": {
       "h1": "Terms of use",
       "banner": "Draft / Pending Owner & Legal Review before accepting real pilot health data.",
-      "body": "Placeholder legal copy will be supplied after review."
+      "bodyHtml": "<p>Placeholder terms will be supplied after review.</p><p>Using the pilot apps is subject to separate agreements once legal copy is approved.</p>",
+      "footerNote": "These draft terms are not final."
     },
     "contact": {
       "h1": "Contact",
       "body": "For a guided pilot demo, use the contact channel once published.",
-      "pending": "Demo contact details will be added here."
+      "pending": "Demo contact details will be added here.",
+      "noFormNote": "There is no working form on this static site until a real contact channel is approved.",
+      "pilotLink": "Read the pilot walkthrough"
     }
   },
   "features": {

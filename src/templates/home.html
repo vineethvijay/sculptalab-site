@@ -1,0 +1,196 @@
+<div class="container">
+  <section id="top" class="page-section page-section--hero">
+    <div class="grid-hero">
+      <div class="grid-hero__copy">
+        <p class="eyebrow">{{heroEyebrow}}</p>
+        <h1>{{heroH1}}</h1>
+        <p>{{heroBody}}</p>
+        <div class="hero-actions">
+          <a class="btn-primary" href="{{pilotHref}}">{{heroPrimaryCta}}</a>
+          <a class="btn-secondary" href="#train">{{heroSecondaryCta}}</a>
+        </div>
+        <p class="microcopy">{{heroMicrocopy}}</p>
+        <p class="microcopy">{{heroTranslationNote}}</p>
+      </div>
+      <div class="grid-hero__visual">
+        {{heroPicture}}
+        <p class="figure-caption">{{heroFigureCaption}}</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="trainers" class="page-section page-section--warm">
+    <div class="split">
+      <div>
+        <h2>{{trainersH2}}</h2>
+        <p>{{trainersBody}}</p>
+        <ol class="steps">
+          <li>{{trainersStep1}}</li>
+          <li>{{trainersStep2}}</li>
+          <li>{{trainersStep3}}</li>
+        </ol>
+        <p><a class="btn-secondary" href="{{trainersHref}}">{{trainersCta}}</a></p>
+        <p class="microcopy">{{trainersCaption}}</p>
+      </div>
+      <div class="split__media">
+        {{trainersPicture}}
+      </div>
+    </div>
+  </section>
+
+  <section id="plan" class="page-section">
+    <h2>{{planTrainH2}}</h2>
+    <ol class="plan-rows">
+      <li>
+        <strong>1</strong>
+        <p>{{planTrainRow1}}</p>
+        {{planPicture}}
+      </li>
+      <li>
+        <strong>2</strong>
+        <p>{{planTrainRow2}}</p>
+      </li>
+      <li id="train">
+        <strong>3</strong>
+        <p>{{planTrainRow3}}</p>
+        {{workoutPicture}}
+      </li>
+    </ol>
+    <p>{{planTrainSupporting}}</p>
+    <p><a class="btn-secondary" href="{{featuresHref}}#cat-training">{{planTrainCta}}</a></p>
+  </section>
+
+  <section id="muscles" class="page-section page-section--stage">
+    <div class="split split--reverse">
+      <div>
+        <h2>{{musclesH2}}</h2>
+        <p>{{musclesBody}}</p>
+        <p class="microcopy">{{musclesDisclaimer}}</p>
+        <nav class="muscle-views" aria-label="{{musclesViewLabel}}">
+          <a href="{{muscleFrontHref}}#muscles">{{musclesViewFront}}</a>
+          <a href="{{muscleBackHref}}#muscles">{{musclesViewBack}}</a>
+        </nav>
+        <ul class="muscle-legend">
+          <li style="--swatch: var(--muscle-glutes)">{{musclesLegendGlutes}}</li>
+          <li style="--swatch: var(--muscle-quads)">{{musclesLegendQuads}}</li>
+          <li style="--swatch: var(--muscle-hamstrings)">{{musclesLegendHamstrings}}</li>
+          <li style="--swatch: var(--muscle-calves)">{{musclesLegendCalves}}</li>
+          <li style="--swatch: var(--muscle-core)">{{musclesLegendCore}}</li>
+          <li style="--swatch: var(--muscle-back)">{{musclesLegendBack}}</li>
+          <li style="--swatch: var(--muscle-shoulders)">{{musclesLegendShoulders}}</li>
+          <li style="--swatch: var(--muscle-arms)">{{musclesLegendArms}}</li>
+        </ul>
+        <p><a class="btn-secondary" href="{{featuresHref}}#cat-muscles">{{musclesCta}}</a></p>
+      </div>
+      <div class="split__media">
+        {{musclePicture}}
+      </div>
+    </div>
+  </section>
+
+  <section id="progress" class="page-section">
+    <h2>{{progressH2}}</h2>
+    <p>{{progressBody}}</p>
+    {{studioPicture}}
+    <div class="cols-3">
+      <div class="editorial-col">
+        <h3>{{progressCol1}}</h3>
+        <p>{{progressCol1Body}}</p>
+      </div>
+      <div class="editorial-col" id="studio">
+        <h3>{{progressCol2}}</h3>
+        <p>{{progressCol2Body}}</p>
+      </div>
+      <div class="editorial-col">
+        <h3>{{progressCol3}}</h3>
+        <p>{{progressCol3Body}}</p>
+      </div>
+    </div>
+    <p><a class="btn-secondary" href="{{featuresHref}}#cat-studio">{{progressCta}}</a></p>
+  </section>
+
+  <section id="form" class="page-section page-section--muted">
+    <div class="split">
+      <div>
+        <span class="badge badge--preview">{{statusPreview}}</span>
+        <h2>{{formH2}}</h2>
+        <p>{{formBody}}</p>
+        <p class="microcopy">{{formFootnote}}</p>
+        <p><a class="btn-secondary" href="{{pilotHref}}#availability">{{formCta}}</a></p>
+      </div>
+      <div class="split__media">
+        {{formPicture}}
+      </div>
+    </div>
+  </section>
+
+  <section id="learn" class="page-section">
+    <h2>{{learnH2}}</h2>
+    <p>{{learnBody}}</p>
+    <ul class="daily-grid" id="daily">
+      <li>{{learnItem1}}</li>
+      <li>{{learnItem2}}</li>
+      <li>{{learnItem3}}</li>
+      <li>{{learnItem4}}</li>
+      <li>{{learnItem5}} <span class="badge">{{statusAndroidOnly}}</span></li>
+      <li>{{learnItem6}}</li>
+    </ul>
+    {{learnPicture}}
+    <p><a class="btn-secondary" href="{{featuresHref}}">{{learnCta}}</a></p>
+  </section>
+
+  <section id="roadmap" class="page-section page-section--warm">
+    <h2>{{roadmapH2}}</h2>
+    <div class="roadmap-lists">
+      <div>
+        <h3>{{roadmapPilotHeading}}</h3>
+        <p>{{roadmapPilotList}}</p>
+      </div>
+      <div>
+        <h3>{{roadmapPlannedHeading}}</h3>
+        <p>{{roadmapPlannedList}}</p>
+      </div>
+    </div>
+    <p><a href="{{featuresHref}}">{{roadmapCatalogueLink}}</a></p>
+  </section>
+
+  <section id="faq" class="page-section faq">
+    <h2>{{faqH2}}</h2>
+    <details>
+      <summary>{{faqQ1}}</summary>
+      <p>{{faqA1}}</p>
+    </details>
+    <details>
+      <summary>{{faqQ2}}</summary>
+      <p>{{faqA2}}</p>
+    </details>
+    <details>
+      <summary>{{faqQ3}}</summary>
+      <p>{{faqA3}}</p>
+    </details>
+    <details>
+      <summary>{{faqQ4}}</summary>
+      <p>{{faqA4}}</p>
+    </details>
+    <details>
+      <summary>{{faqQ5}}</summary>
+      <p>{{faqA5}}</p>
+    </details>
+    <details>
+      <summary>{{faqQ6}}</summary>
+      <p>{{faqA6}}</p>
+    </details>
+  </section>
+
+  <section id="pilot" class="page-section page-section--muted">
+    <h2>{{pilotFooterH2}}</h2>
+    <p>{{pilotFooterBody}}</p>
+    <p class="hero-actions">
+      <a class="btn-primary" href="{{pilotHref}}">{{pilotFooterPrimaryCta}}</a>
+    </p>
+    <p class="microcopy">{{pilotFooterDemoExplanation}}</p>
+    <p class="store-status" data-play="{{configPlay}}">{{storePlay}}</p>
+    <p class="store-status" data-ios="{{configIos}}">{{storeIos}}</p>
+    <p class="contact-pending">{{demoContact}}</p>
+  </section>
+</div>

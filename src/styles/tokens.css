@@ -1,0 +1,53 @@
+:root {
+  --color-brand: #ff7a3d;
+  --color-brand-coral: #ff5e6c;
+  --color-surface: #1c1512;
+  --color-surface-raised: #261e1a;
+  --color-canvas: #120d0b;
+  --color-text: #f5ece6;
+  --color-text-muted: #c4b3a8;
+  --color-border: #3d322c;
+  --color-on-brand: #1a0f0a;
+
+  --color-anatomy-stage: #07080b;
+  --color-muscle-inactive: #2a1418;
+  --muscle-glutes: #b44dff;
+  --muscle-quads: #ff3b5c;
+  --muscle-hamstrings: #ffb020;
+  --muscle-calves: #3dff8a;
+  --muscle-core: #6c63ff;
+  --muscle-back: #22d3ee;
+  --muscle-shoulders: #ff7a59;
+  --muscle-arms: #f472b6;
+
+  --font-sans: "InterVariable", "Inter", system-ui, sans-serif;
+  --font-serif: "Instrument Serif", Georgia, serif;
+
+  --space-gutter: 1.25rem;
+  --space-gutter-narrow: 1rem;
+  --space-section: clamp(3.5rem, 8vw, 5rem);
+  --header-height: 4rem;
+  --container-max: 75rem;
+  --radius-sm: 0.375rem;
+  --radius-md: 0.75rem;
+  --shadow-focus: 0 0 0 2px var(--color-canvas), 0 0 0 4px var(--color-brand);
+
+  --text-body: clamp(1rem, 0.95rem + 0.2vw, 1.125rem);
+  --text-h1: clamp(2.5rem, 1.9rem + 2.6vw, 4.75rem);
+  --text-h2: clamp(1.625rem, 1.35rem + 1.1vw, 2.25rem);
+  --text-eyebrow: 0.8125rem;
+
+  --motion-fast: 180ms;
+}
+
+@media (max-width: 359px) {
+  :root {
+    --space-gutter: var(--space-gutter-narrow);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --motion-fast: 0ms;
+  }
+}
