@@ -38,22 +38,23 @@
     </div>
   </section>
 
-  <section id="plan" class="page-section">
+  <section id="plan" class="page-section page-section--plan">
     <h2>{{planTrainH2}}</h2>
-    <ol class="plan-rows">
-      <li>
-        <strong>1</strong>
+    <ol class="plan-steps">
+      <li class="plan-step">
+        <strong aria-hidden="true">1</strong>
         <p>{{planTrainRow1}}</p>
-        {{planPicture}}
+        <div class="plan-step__media">{{planPicture}}</div>
       </li>
-      <li>
-        <strong>2</strong>
+      <li class="plan-step">
+        <strong aria-hidden="true">2</strong>
         <p>{{planTrainRow2}}</p>
       </li>
-      <li id="train">
-        <strong>3</strong>
+      <li class="plan-step" id="train">
+        <strong aria-hidden="true">3</strong>
         <p>{{planTrainRow3}}</p>
-        {{workoutPicture}}
+        <div class="plan-step__media">{{workoutPicture}}</div>
+        <p class="microcopy">{{planTrainWorkoutNote}}</p>
       </li>
     </ol>
     <p>{{planTrainSupporting}}</p>
@@ -191,6 +192,6 @@
     <p class="microcopy">{{pilotFooterDemoExplanation}}</p>
     <p class="store-status" data-play="{{configPlay}}">{{storePlay}}</p>
     <p class="store-status" data-ios="{{configIos}}">{{storeIos}}</p>
-    <p class="contact-pending">{{demoContact}}</p>
+    {{demoContact}}
   </section>
 </div>

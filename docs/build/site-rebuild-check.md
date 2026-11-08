@@ -13,7 +13,7 @@
 
 ## Remaining pilot blockers (Brief §12)
 
-1. Public demo contact (`config.demoEmail` remains `null`)
+1. ~~Public demo contact~~ — `config.demoEmail` set to `vantlo@mail.grokbot.com` (owner may change before public launch)
 2. Production domain / indexing decision
 3. Legal identity and finalized privacy/terms
 4. Store listings and public Studio origin (`config.play`, `ios`, `publicStudio`)

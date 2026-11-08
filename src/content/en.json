@@ -3,7 +3,7 @@
     "play": null,
     "ios": null,
     "publicStudio": null,
-    "demoEmail": null
+    "demoEmail": "vantlo@mail.grokbot.com"
   },
   "lang": "en",
   "langSwitch": {
@@ -19,7 +19,7 @@
     "skipToContent": "Skip to main content",
     "menuLabel": "Site menu",
     "menuOpen": "Menu",
-    "primaryCta": "Request a trainer demo",
+    "primaryCta": "Book a trainer demo",
     "homeHref": "/en/"
   },
   "featuresUi": {
@@ -43,7 +43,10 @@
   "store": {
     "playPending": "Google Play — not yet public",
     "iosPending": "App Store — planned",
-    "demoContactPending": "Demo contact details will be added here"
+    "demoContactPending": "Demo contact details will be added here",
+    "demoBookCta": "Book a trainer demo",
+    "demoMailSubject": "SculptaLab trainer demo",
+    "demoMailLabel": "vantlo@mail.grokbot.com"
   },
   "meta": {
     "home": {
@@ -130,6 +133,7 @@
       "row2": "Keep sets, reps and weights in one place.",
       "row3": "Finish your session and see what you did.",
       "supporting": "Strength sessions, cardio logs and a calendar that keeps the week clear.",
+      "workoutNote": "Set logging and rest timers only — live camera scoring is off in the default pilot.",
       "cta": "Explore training features",
       "planAlt": "Weekly training plan on a phone",
       "workoutAlt": "Workout player with sets and rest timer"
@@ -299,9 +303,9 @@
     },
     "contact": {
       "h1": "Contact",
-      "body": "For a guided pilot demo, use the contact channel once published.",
+      "body": "Email us to schedule a guided pilot demo. We will reply with Android setup steps and what to expect on the gym floor.",
       "pending": "Demo contact details will be added here.",
-      "noFormNote": "There is no working form on this static site until a real contact channel is approved.",
+      "noFormNote": "This static site does not submit forms — email is the demo channel.",
       "pilotLink": "Read the pilot walkthrough"
     }
   },
@@ -314,7 +318,7 @@
     "workout-player": {
       "title": "Train: sessions & workout player",
       "description": "See upcoming sessions, log sets with load and rest, swap exercises and finish workouts.",
-      "caveat": "Pilot core workflow on Android and Studio today views."
+      "caveat": "Pilot core workflow; no live camera scoring in the default pilot."
     },
     "activity-logging": {
       "title": "Activity: strength, cardio & calendar",
@@ -338,7 +342,7 @@
     },
     "form-analysis-preview": {
       "title": "Form analysis preview",
-      "description": "Live and recorded movement feedback for supported exercises when analysis features are enabled.",
+      "description": "Recorded movement feedback for supported exercises when analysis features are enabled.",
       "caveat": "Preview / pilot-gated; limited movements; no universal AI claim."
     },
     "daily-timers-bubble": {

@@ -3,7 +3,7 @@
     "play": null,
     "ios": null,
     "publicStudio": null,
-    "demoEmail": null
+    "demoEmail": "vantlo@mail.grokbot.com"
   },
   "lang": "nl",
   "langSwitch": {
@@ -19,7 +19,7 @@
     "skipToContent": "Ga naar hoofdinhoud",
     "menuLabel": "Sitemenu",
     "menuOpen": "Menu",
-    "primaryCta": "Vraag een trainersdemo aan",
+    "primaryCta": "Plan een trainersdemo",
     "homeHref": "/nl/"
   },
   "featuresUi": {
@@ -43,7 +43,10 @@
   "store": {
     "playPending": "Google Play — nog niet openbaar",
     "iosPending": "App Store — gepland",
-    "demoContactPending": "Contactgegevens voor een demo volgen hier"
+    "demoContactPending": "Contactgegevens voor een demo volgen hier",
+    "demoBookCta": "Plan een trainersdemo",
+    "demoMailSubject": "SculptaLab trainersdemo",
+    "demoMailLabel": "vantlo@mail.grokbot.com"
   },
   "meta": {
     "home": {
@@ -130,6 +133,7 @@
       "row2": "Houd sets, herhalingen en gewichten op één plek bij.",
       "row3": "Rond je training af en bekijk wat je hebt gedaan.",
       "supporting": "Krachttraining, cardiologs en een overzichtelijke trainingskalender.",
+      "workoutNote": "Alleen setlogging en rusttimers — live camerascoring staat standaard uit in de pilot.",
       "cta": "Bekijk de trainingsfuncties",
       "planAlt": "Weekplanning op een telefoon",
       "workoutAlt": "Trainingspeler met sets en rusttimer"
@@ -299,9 +303,9 @@
     },
     "contact": {
       "h1": "Contact",
-      "body": "Voor een begeleide pilotdemo: gebruik het contactkanaal zodra het gepubliceerd is.",
+      "body": "Mail ons om een begeleide pilotdemo in te plannen. We sturen Android-stappen en wat je op de gymvloer kunt verwachten.",
       "pending": "Contactgegevens voor een demo volgen hier.",
-      "noFormNote": "Er is geen werkend formulier op deze statische site tot een echt contactkanaal is goedgekeurd.",
+      "noFormNote": "Deze statische site heeft geen formulier — e-mail is het demokanaal.",
       "pilotLink": "Lees de pilotwalkthrough"
     }
   },
@@ -314,7 +318,7 @@
     "workout-player": {
       "title": "Trainen: sessies en workoutspeler",
       "description": "Bekijk komende sessies, log sets met gewicht en rust, wissel oefeningen en rond trainingen af.",
-      "caveat": "Kernworkflow in de pilot op Android en Studio Today."
+      "caveat": "Kernworkflow in de pilot; geen live camerascoring in de standaardpilot."
     },
     "activity-logging": {
       "title": "Activiteit: kracht, cardio en kalender",
@@ -338,7 +342,7 @@
     },
     "form-analysis-preview": {
       "title": "Voorproefje vormanalyse",
-      "description": "Live en opgenomen bewegingsfeedback voor ondersteunde oefeningen wanneer analyse is ingeschakeld.",
+      "description": "Opgenomen bewegingsfeedback voor ondersteunde oefeningen wanneer analyse is ingeschakeld.",
       "caveat": "Voorproefje / pilot; beperkte bewegingen; geen universele AI-belofte."
     },
     "daily-timers-bubble": {

@@ -249,6 +249,27 @@ function platformLabels(content, platforms) {
   return platforms.map((p) => content.platforms[p] ?? p).join(" · ");
 }
 
+function demoMailtoUri(email, content) {
+  const subject = encodeURIComponent(content.store.demoMailSubject ?? "SculptaLab trainer demo");
+  return `mailto:${email}?subject=${subject}`;
+}
+
+function buildDemoContact(content) {
+  const email = content.config.demoEmail;
+  if (!email) {
+    return `<p class="contact-pending">${content.store.demoContactPending}</p>`;
+  }
+  const mailto = demoMailtoUri(email, content);
+  const label = content.store.demoBookCta;
+  const mailText = content.store.demoMailLabel ?? email;
+  return `<div class="contact-cta">
+  <p><a href="${mailto}">${mailText}</a></p>
+  <p class="hero-actions">
+    <a class="btn-primary" href="${mailto}">${label}</a>
+  </p>
+</div>`;
+}
+
 function buildFeatureCatalogue(content, manifest) {
   const byCategory = new Map();
   for (const row of manifest) {
@@ -275,15 +296,14 @@ function buildFeatureCatalogue(content, manifest) {
         .map((row) => {
           const f = content.features[row.id];
           const sk = statusKey(row);
-          const anchor = row.homeSectionAnchor
-            ? ` <a href="${localeHref(content.lang, "")}${row.homeSectionAnchor}">${content.featuresUi.homeAnchor}</a>`
-            : "";
           return `<article class="feature-card" id="${row.id}">
-  <h3>${f.title}</h3>
-  <p>${f.description}</p>
+  <header class="feature-card__head">
+    <h3>${f.title}</h3>
+    <span class="badge">${content.status[sk]}</span>
+  </header>
+  <p class="feature-card__desc">${f.description}</p>
   <p class="platforms">${platformLabels(content, row.platforms)}</p>
-  <p class="badge">${content.status[sk]}</p>
-  <p class="caveat">${f.caveat}</p>${anchor ? `<p class="microcopy">${anchor}</p>` : ""}
+  <p class="caveat">${f.caveat}</p>
 </article>`;
         })
         .join("\n");
@@ -299,7 +319,8 @@ function commonVars(content) {
     configIos: content.config.ios ?? "",
     storePlay: content.config.play ? content.config.play : content.store.playPending,
     storeIos: content.config.ios ? content.config.ios : content.store.iosPending,
-    demoContact: content.config.demoEmail ?? content.store.demoContactPending,
+    demoContact: buildDemoContact(content),
+    demoMailtoHref: content.config.demoEmail ? demoMailtoUri(content.config.demoEmail, content) : "",
     pilotHref: localeHref(lang, "pilot"),
     trainersHref: localeHref(lang, "trainers"),
     featuresHref: localeHref(lang, "features"),
@@ -335,6 +356,7 @@ function buildHomeVars(content) {
     planTrainRow2: h.planTrain.row2,
     planTrainRow3: h.planTrain.row3,
     planTrainSupporting: h.planTrain.supporting,
+    planTrainWorkoutNote: h.planTrain.workoutNote,
     planTrainCta: h.planTrain.cta,
     musclesH2: h.muscles.h2,
     musclesBody: h.muscles.body,
@@ -426,7 +448,7 @@ function buildHomeVars(content) {
       stem: "a02-plan",
       widths: [400, 640],
       alt: h.planTrain.planAlt,
-      sizes: "min(100vw - 2.5rem, 20rem)",
+      sizes: "(min-width: 768px) 12rem, min(100vw - 2.5rem, 14rem)",
       width: 400,
       height: 533,
     }),
@@ -435,7 +457,7 @@ function buildHomeVars(content) {
       stem: "a03-workout",
       widths: [400, 640],
       alt: h.planTrain.workoutAlt,
-      sizes: "min(100vw - 2.5rem, 20rem)",
+      sizes: "(min-width: 768px) 12rem, min(100vw - 2.5rem, 14rem)",
       width: 400,
       height: 533,
     }),
@@ -646,6 +668,9 @@ function renderLocalePage(content, route, manifest, pageShell) {
     menuLabel: content.nav.menuLabel,
     menuOpen: content.nav.menuOpen,
     navPrimaryCta: content.nav.primaryCta,
+    navPrimaryHref: content.config.demoEmail
+      ? demoMailtoUri(content.config.demoEmail, content)
+      : localeHref(lang, "pilot"),
     langSwitchHref: swapLangHref(lang, segment),
     langSwitchCode: content.langSwitch.otherCode,
     langSwitchLabel: content.langSwitch.other,
@@ -694,6 +719,9 @@ function renderRootChooser(en, nl, pageShell) {
     menuLabel: nl.nav.menuLabel,
     menuOpen: nl.nav.menuOpen,
     navPrimaryCta: nl.nav.primaryCta,
+    navPrimaryHref: nl.config.demoEmail
+      ? demoMailtoUri(nl.config.demoEmail, nl)
+      : url("nl", "pilot"),
     langSwitchHref: url("en"),
     langSwitchCode: "en",
     langSwitchLabel: en.langSwitch.self,
@@ -741,6 +769,9 @@ function render404(en, nl, pageShell) {
     menuLabel: en.nav.menuLabel,
     menuOpen: en.nav.menuOpen,
     navPrimaryCta: en.nav.primaryCta,
+    navPrimaryHref: en.config.demoEmail
+      ? demoMailtoUri(en.config.demoEmail, en)
+      : url("en", "pilot"),
     langSwitchHref: url("nl"),
     langSwitchCode: "nl",
     langSwitchLabel: nl.langSwitch.self,

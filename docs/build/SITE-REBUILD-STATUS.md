@@ -24,6 +24,14 @@
 | `site-rebuild-wt-b3` | Batch 3 (`f12e514`) |
 | `site-rebuild-wt-b2` | Batch 2+4 (`222383b`) |
 
+## QA polish (2026-11-08)
+
+- Home **plan** steps: three-column layout on tablet/desktop; tighter screenshot sizes.
+- **Features** catalogue: compact cards, smaller caveats, no per-row “On home” links.
+- **Demo contact:** `vantlo@mail.grokbot.com` mailto + “Book a trainer demo” CTA (`config.demoEmail`).
+- **Copy:** no live-camera workout claim on home plan note and workout-player caveat; form analysis no longer advertises live camera.
+- **Indexing:** `noindex, nofollow` on all pages until `ALLOW_INDEXING=true` (default in `render-pages.mjs`); `robots.txt` from `metadata.mjs` stays aligned.
+
 ## Build
 
 ```bash
