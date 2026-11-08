@@ -5,13 +5,9 @@ import { defineConfig } from "vite";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PAGES_DIR = path.join(__dirname, ".pages");
-const LEGACY_INDEX = path.join(__dirname, "index.html");
 
 function collectPageInputs() {
   const input = {};
-  if (fs.existsSync(LEGACY_INDEX)) {
-    input.legacy = LEGACY_INDEX;
-  }
   const manifestPath = path.join(PAGES_DIR, "manifest.json");
   if (fs.existsSync(manifestPath)) {
     const { pages } = JSON.parse(fs.readFileSync(manifestPath, "utf8"));

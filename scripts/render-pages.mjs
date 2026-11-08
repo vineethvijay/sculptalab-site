@@ -9,6 +9,86 @@ const PAGES_DIR = path.join(ROOT, ".pages");
 const TEMPLATE_DIR = path.join(ROOT, "src", "templates");
 
 const BASE = normalizeBase(process.env.BASE || "/");
+const SITE_URL = normalizeSiteUrl(process.env.SITE_URL || "https://vineethvijay.github.io/sculptalab-site/");
+const ALLOW_INDEXING = process.env.ALLOW_INDEXING === "true";
+const ROBOTS_META = ALLOW_INDEXING ? "index, follow" : "noindex, nofollow";
+
+function normalizeSiteUrl(url) {
+  if (!url.endsWith("/")) url = `${url}/`;
+  return url;
+}
+
+function sitePath(...parts) {
+  const joined = parts.filter(Boolean).join("/");
+  if (!joined) return "";
+  return joined.endsWith("/") ? joined : `${joined}/`;
+}
+
+function absoluteUrl(...pathParts) {
+  const rel = sitePath(...pathParts);
+  return `${SITE_URL}${rel}`;
+}
+
+function ogImageForLang(lang) {
+  return `${SITE_URL}og-${lang === "nl" ? "nl" : "en"}.png`;
+}
+
+function buildSeoVars(lang, routeId, segment, content) {
+  const pathParts = lang ? [lang, segment].filter(Boolean) : [];
+  const canonicalUrl =
+    routeId === "root"
+      ? SITE_URL
+      : routeId === "404"
+        ? absoluteUrl("404.html")
+        : absoluteUrl(...pathParts);
+
+  const hreflangDefault = SITE_URL;
+  const hreflangNl = segment ? absoluteUrl("nl", segment) : absoluteUrl("nl");
+  const hreflangEn = segment ? absoluteUrl("en", segment) : absoluteUrl("en");
+
+  const ogLocale = lang === "nl" ? "nl_NL" : "en_US";
+  const ogLocaleAlternate = lang === "nl" ? "en_US" : "nl_NL";
+  const ogImage = ogImageForLang(lang || "en");
+  const ogImageAlt =
+    lang === "nl"
+      ? "SculptaLab — illustratieve trainingsapp-weergave"
+      : "SculptaLab — illustrative training app preview";
+
+  let jsonLdBlock = "";
+  if (routeId === "home" || (lang && routeId.endsWith("/home"))) {
+    const jsonLd = {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          name: "SculptaLab",
+          url: SITE_URL,
+          inLanguage: [lang === "nl" ? "nl-NL" : "en-US"],
+        },
+        {
+          "@type": "SoftwareApplication",
+          name: "SculptaLab",
+          applicationCategory: "HealthApplication",
+          operatingSystem: "Android pilot; Web Studio; trainer web preview",
+        },
+      ],
+    };
+    jsonLdBlock = `<script type="application/ld+json">${JSON.stringify(jsonLd)}</script>`;
+  }
+
+  return {
+    robotsMeta: ROBOTS_META,
+    canonicalUrl,
+    hreflangNl,
+    hreflangEn,
+    hreflangDefault,
+    ogImage,
+    ogImageAlt,
+    ogLocale,
+    ogLocaleAlternate,
+    jsonLdBlock,
+  };
+}
 
 const ROUTES = [
   { id: "home", segment: "", template: "home" },
@@ -545,6 +625,7 @@ function renderLocalePage(content, route, manifest, pageShell) {
   const mainContent = buildMainContent(content, route, manifest);
 
   const vars = {
+    ...buildSeoVars(lang, segment || "home", segment, content),
     htmlLang: lang,
     pageTitle: meta.title,
     pageDescription: meta.description,
@@ -592,6 +673,7 @@ function renderRootChooser(en, nl, pageShell) {
 </section>`;
 
   const vars = {
+    ...buildSeoVars("nl", "root", "", nl),
     htmlLang: "nl",
     pageTitle: nl.root.title,
     pageDescription: en.meta.home.description,
@@ -638,6 +720,7 @@ function render404(en, nl, pageShell) {
 </section>`;
 
   const vars = {
+    ...buildSeoVars("en", "404", "", en),
     htmlLang: "en",
     pageTitle: en.meta.notFound.title,
     pageDescription: en.meta.notFound.description,

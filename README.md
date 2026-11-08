@@ -1,52 +1,56 @@
 # SculptaLab — marketing site
 
-The landing page for **SculptaLab**: *sculpt your foundation*. Personalised strength training for women, with per-muscle scores, live form tracking and a Sculpt score (Android, iOS, English and Dutch). Trainer sharing, an AI form checker, a web version and watch apps are coming soon.
+Bilingual static marketing site for the **SculptaLab** gym pilot: mobile-first HTML/CSS, build-time page generation, honest feature status labels, and GitHub Pages deployment under `/sculptalab-site/`.
 
-**Stack:** Vite (static build), vanilla JS, GSAP + ScrollTrigger, Lenis smooth scroll, a WebGL gradient shader for the background (falls back to CSS), and self-hosted Inter Variable and Instrument Serif fonts. There is no framework runtime, and the JS is about 54 KB gzipped.
+## Stack
 
-## Content scaffolding (site rebuild)
+- **Vite 5** multi-page build (no React/Next runtime)
+- **Vanilla JS** progressive enhancement (`src/main.js`, ≤15 KB gzip)
+- **Mobile-first CSS** (`src/styles/*.css`)
+- **Locale dictionaries** `src/content/{en,nl}.json` (no runtime i18n JSON)
+- **Self-hosted** Inter Variable + Instrument Serif accent
 
-Rebuild work adds build-time bilingual pages without a client i18n runtime:
+Legacy GSAP/Lenis/WebGL scroll film removed on the `site-rebuild` branch.
 
-- `docs/content/feature-manifest.json` — 21 feature rows from the rebuild brief (§4), with evidence paths, status, platforms and `truthCaveatKey` links into the locale dictionaries.
-- `src/content/en.json` and `src/content/nl.json` — parallel translation trees (nav, home copy, route stubs, per-feature titles/descriptions/caveats). `config.play`, `config.ios`, `config.publicStudio` and `config.demoEmail` stay `null` until owner-approved values exist.
-- `scripts/render-pages.mjs` — validates EN/NL key parity and manifest coverage, then writes static HTML under `.pages/` (git-ignored) for `/`, `404.html`, and `/nl/*` / `/en/*` routes.
-- `src/templates/page.html` and `src/templates/sections.html` — shared shell (skip link, header, footer) and section partials; Batch 2+ flesh out layout and home sections.
+## Build
 
 ```bash
-npm run render:pages          # generate .pages/
-BASE=/sculptalab-site/ npm run render:pages   # GitHub Pages base path
+npm ci
+BASE=/sculptalab-site/ SITE_URL=https://vineethvijay.github.io/sculptalab-site/ npm run build
 ```
 
-`vite.config.js` picks up `.pages/manifest.json` plus the legacy root `index.html` until Batch 5 removes it. Full pipeline wiring (`render:pages` before `vite build`, metadata, check-static) lands in Batch 5.
+Pipeline: `render-pages` → `vite build` → `metadata` (sitemap, robots, manifest) → `check-static`.
 
-**Sections (v2):** loader, a hero with an original generated brand figure (`public/hero-figure.webp`, made from the SculptaLab icon artwork; variants in `design/hero-variants/`) plus muscle pins, a manifesto, a pinned How it works story (Today, Plan, Live pose, Muscle balance), Scores (muscle map, Sculpt score, per-rep scores), Form, a bento grid, a Trainer web dashboard concept (coming soon), Coming soon, and Download. Every mockup is animated (counters, timers, drawing charts, rotating lists) and stays static under reduced motion.
+| Variable | Purpose |
+|----------|---------|
+| `BASE` | Asset prefix (`/sculptalab-site/` on project Pages) |
+| `SITE_URL` | Absolute canonical/OG origin (trailing slash) |
+| `ALLOW_INDEXING` | Set `true` only after owner approves contact, legal, and indexing |
 
-**v1 sections:** an animated S-mark loader, the hero (word reveal, contour art, 3D-tilt phone), an exercise marquee, a manifesto with a scroll-scrubbed word reveal, a pinned "How it works" story where the phone screen changes per step (Today, Live pose, Plan, Progress), Form AI cards, a bento grid (bubble, notification timer, reminders, sync, Dutch), Coming soon (trainer sharing, watch, web), and a download CTA.
+## Content & routes
 
-Brand tokens come from `packages/ui-tokens` in the app repo. All screens are illustrative mockups. The site uses no real user data, metrics or testimonials.
+- `docs/content/feature-manifest.json` — 21 app-evidence feature rows
+- `scripts/render-pages.mjs` — writes `.pages/` (git-ignored): root language chooser, `404`, `/nl/*`, `/en/*`
+- Templates: `src/templates/{page,home,trainers,features,pilot,legal,contact}.html`
+- Images: `public/images/` (see `docs/assets/site-image-manifest.json`)
 
-## Develop
+## CI
+
+`.github/workflows/deploy.yml` runs `npm run build` on pull requests (validate only). Pages deploy runs on `main` push / manual dispatch.
+
+## Develop (local)
+
 ```bash
-npm i
-npm run dev        # http://localhost:5173
-npm run build      # outputs dist/
-npm run preview    # serve dist on :4173
-npm run shots      # desktop and mobile screenshots into shots/ (needs preview running and Chrome at /usr/bin/google-chrome)
+npm run render:pages
+npm run dev        # Vite dev — use only on a machine where dev servers are allowed
 ```
 
-## Store links
-Set `STORE.play` / `STORE.ios` in `src/main.js` once the listings are public. Until then, the download buttons show an "early access" toast. The watch app is marked "Coming soon".
+## Assets tooling
 
-## Accessibility and performance
-- `prefers-reduced-motion` skips the loader and turns off the shader animation, scroll smoothing and scrubs.
-- Includes a skip link, focus rings and semantic sections. Decorative art is `aria-hidden`.
-- The shader renders at half resolution.
+```bash
+npm run images:build   # regenerate marketing rasters (requires sharp)
+npm run images:check   # budget validation
+CHROME_PATH=... npm run assets   # favicon PNG export via puppeteer
+```
 
-## Deploy (sculptalab.com planned)
-`dist/` is plain static files, so any static host works:
-- **Cloudflare Pages:** connect this repo, build command `npm run build`, output `dist`, then add the custom domain `sculptalab.com` (easiest if the domain is registered or uses DNS at Cloudflare).
-- **Netlify / Vercel:** same build settings.
-- **Homelab:** `npm run build` and serve `dist/` with nginx behind the ingress.
-
-Before launch, add an `og.png` (1200×630) to `public/` for link previews.
+See `docs/build/SITE-REBUILD-STATUS.md` and `DESIGN.md` for rebuild batch status and tokens.
