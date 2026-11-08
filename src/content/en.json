@@ -1,0 +1,356 @@
+{
+  "config": {
+    "play": null,
+    "ios": null,
+    "publicStudio": null,
+    "demoEmail": null
+  },
+  "lang": "en",
+  "langSwitch": {
+    "self": "English",
+    "other": "Nederlands",
+    "otherCode": "nl"
+  },
+  "nav": {
+    "product": "Product",
+    "forTrainers": "For trainers",
+    "allFeatures": "All features",
+    "pilot": "Pilot",
+    "skipToContent": "Skip to main content",
+    "menuLabel": "Site menu",
+    "primaryCta": "Request a trainer demo",
+    "homeHref": "/en/"
+  },
+  "status": {
+    "inPilot": "In the pilot",
+    "preview": "Preview",
+    "planned": "Planned",
+    "androidOnly": "Android only",
+    "illustrativePreview": "Illustrative app preview"
+  },
+  "platforms": {
+    "android_pilot": "Android pilot",
+    "web_studio": "Web Studio",
+    "trainer_web": "Trainer Web",
+    "planned_ios": "iOS planned",
+    "planned_watch": "Watch planned"
+  },
+  "store": {
+    "playPending": "Google Play — not yet public",
+    "iosPending": "App Store — planned",
+    "demoContactPending": "Demo contact details will be added here"
+  },
+  "meta": {
+    "home": {
+      "title": "SculptaLab — Training insights for you and your trainer",
+      "description": "Plan workouts, log sets and explore your progress in SculptaLab. Discover the trainer-led gym pilot and consent-based sharing."
+    },
+    "trainers": {
+      "title": "SculptaLab for trainers — Gym pilot",
+      "description": "Review client training with consent-based sharing. SculptaLab trainer workflow for gym-floor demos."
+    },
+    "features": {
+      "title": "SculptaLab features — Training, Studio and progress",
+      "description": "Complete feature catalogue for the SculptaLab Android pilot, Web Studio and trainer tools."
+    },
+    "pilot": {
+      "title": "Request a SculptaLab pilot demo",
+      "description": "How the guided gym pilot works, what is available today and what remains before public rollout."
+    },
+    "privacy": {
+      "title": "SculptaLab — Privacy (draft)",
+      "description": "Draft privacy policy pending owner and legal review."
+    },
+    "terms": {
+      "title": "SculptaLab — Terms of use (draft)",
+      "description": "Draft terms pending owner and legal review."
+    },
+    "contact": {
+      "title": "SculptaLab — Contact",
+      "description": "Pilot demo contact information."
+    },
+    "notFound": {
+      "title": "Page not found — SculptaLab",
+      "description": "This SculptaLab page could not be found."
+    }
+  },
+  "root": {
+    "title": "SculptaLab",
+    "heading": "Choose your language",
+    "nlLink": "Nederlands",
+    "enLink": "English",
+    "nlHint": "Dutch site — primary for the gym pilot",
+    "enHint": "English site"
+  },
+  "notFound": {
+    "heading": "Page not found",
+    "body": "This page does not exist on the SculptaLab marketing site.",
+    "nlHome": "Go to Dutch home",
+    "enHome": "Go to English home"
+  },
+  "footer": {
+    "brandLine": "SculptaLab — training insights for you and your trainer.",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "contact": "Contact",
+    "featureNote": "Feature availability varies by platform and pilot settings.",
+    "illustrationsNote": "Illustrations use demo data.",
+    "legalPending": "Legal pages are pending owner review."
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "A gym pilot, built around trainers",
+      "h1": "Make every workout easier to understand.",
+      "body": "Plan your training, log your sets and see your progress. Review the bigger picture with a trainer you choose.",
+      "primaryCta": "Request a trainer demo",
+      "secondaryCta": "Explore the app",
+      "microcopy": "Android pilot · Web Studio · English & Dutch",
+      "translationNote": "App translations are still being refined.",
+      "figureCaption": "Illustrative app preview",
+      "figureAlt": "Illustrative SculptaLab training overview on a phone"
+    },
+    "trainers": {
+      "h2": "A better conversation at the gym.",
+      "body": "Your client brings the training history. You bring the coaching. Review shared workouts and progress together, with access controlled by the client.",
+      "step1": "Client chooses what to share",
+      "step2": "Trainer reviews",
+      "step3": "Discuss the next session",
+      "cta": "See the trainer workflow",
+      "caption": "Pilot workflow; public onboarding is being prepared.",
+      "figureAlt": "Illustrative trainer and client discussing training on a tablet"
+    },
+    "planTrain": {
+      "h2": "A plan you can actually follow.",
+      "row1": "Start with a plan that fits your routine.",
+      "row2": "Keep sets, reps and weights in one place.",
+      "row3": "Finish your session and see what you did.",
+      "supporting": "Strength sessions, cardio logs and a calendar that keeps the week clear.",
+      "cta": "Explore training features"
+    },
+    "muscles": {
+      "h2": "See where your training goes.",
+      "body": "Explore training volume and progression by muscle group. Switch between anatomy views and compare periods in Studio.",
+      "disclaimer": "Training-based estimates, not a body scan or medical assessment.",
+      "cta": "Discover Muscle Intelligence",
+      "legendGlutes": "Glutes",
+      "legendQuads": "Quads",
+      "legendHamstrings": "Hamstrings",
+      "legendCalves": "Calves",
+      "legendCore": "Core",
+      "legendBack": "Back",
+      "legendShoulders": "Shoulders",
+      "legendArms": "Arms",
+      "viewFront": "Front",
+      "viewBack": "Back",
+      "figureAlt": "Illustrative training muscle map, not a body scan"
+    },
+    "progressStudio": {
+      "h2": "Your training history, with context.",
+      "body": "Follow estimated strength, personal records and training patterns. Move from a summary into the sessions behind it.",
+      "col1Title": "Strength & records",
+      "col2Title": "Volume & consistency",
+      "col3Title": "Reports & insights",
+      "cta": "See all Studio tools",
+      "figureAlt": "Studio dashboard overview with scores and sessions"
+    },
+    "form": {
+      "h2": "Look back at how you moved.",
+      "body": "Explore form feedback for supported movements in the pilot. Availability depends on the enabled analysis features.",
+      "footnote": "Not a substitute for a trainer or medical advice.",
+      "cta": "What is available in the pilot?",
+      "figureAlt": "Illustrative supported-movement analysis preview"
+    },
+    "learnDaily": {
+      "h2": "Support between the big milestones.",
+      "body": "Learn the movement, remember the session and keep your training together.",
+      "item1": "Exercise demonstrations and cues",
+      "item2": "Science notes and movement guides",
+      "item3": "Protein and nutrition education",
+      "item4": "Cardio logging",
+      "item5": "Reminders and rest timers",
+      "item6": "Sync, language and preferences",
+      "cta": "Browse all features",
+      "figureAlt": "Exercise movement guide illustration"
+    },
+    "roadmap": {
+      "h2": "In the pilot. Next on the roadmap.",
+      "pilotHeading": "In the pilot",
+      "plannedHeading": "Planned",
+      "pilotList": "Plans, logging, Studio dashboards, consent-based trainer sharing, Muscle Intelligence and core Android workflow.",
+      "plannedList": "Public store rollout, trainer invites, expanded form tools, trainer-authored plans, watch and gym integrations.",
+      "catalogueLink": "See the full feature catalogue"
+    },
+    "faq": {
+      "h2": "Questions",
+      "q1": "Can I download it today?",
+      "a1": "Android access is arranged for pilot participants. Public store links are not live yet.",
+      "q2": "Is there an iPhone app?",
+      "a2": "An iOS release is not confirmed for this pilot.",
+      "q3": "Who sees my training data?",
+      "a3": "Trainer access follows the sharing permissions you grant. Review scope and expiry in the app.",
+      "q4": "Does the body show actual muscle growth?",
+      "a4": "No. It visualises training-derived metrics and estimates.",
+      "q5": "Can I use it in Dutch?",
+      "a5": "The site is bilingual. Dutch app translations are still being refined.",
+      "q6": "What does the pilot cost?",
+      "a6": "Pilot arrangements are confirmed during the demo; there is no public pricing checkout here."
+    },
+    "pilotFooter": {
+      "h2": "Bring it to your next trainer conversation.",
+      "body": "Start with a guided demo before inviting clients.",
+      "primaryCta": "Request a demo",
+      "demoExplanation": "A guided demo walks through Android setup, consent scopes and a first training session on the gym floor."
+    }
+  },
+  "routes": {
+    "trainers": {
+      "h1": "Coach the person, with their training in view.",
+      "intro": "Trainer tools for consent-based review during the gym pilot.",
+      "placeholder": "Trainer route sections will render in Batch 4."
+    },
+    "features": {
+      "h1": "All SculptaLab features",
+      "intro": "Honest status for every implemented area in the pilot codebase.",
+      "placeholder": "Feature catalogue renders from the manifest in Batch 4."
+    },
+    "pilot": {
+      "h1": "Request a SculptaLab pilot demo",
+      "intro": "Trainer-led demo → supervised Android setup → consent discussion → first session → feedback.",
+      "availabilityHeading": "What is enabled in the pilot",
+      "availabilityBody": "Default pilot flags keep live camera, form scoring and premium features off unless enabled for your supervised demo.",
+      "placeholder": "Pilot walkthrough expands in Batch 4."
+    },
+    "privacy": {
+      "h1": "Privacy policy",
+      "banner": "Draft / Pending Owner & Legal Review before accepting real pilot health data.",
+      "body": "Placeholder legal copy will be supplied after review. Do not treat this page as compliance documentation."
+    },
+    "terms": {
+      "h1": "Terms of use",
+      "banner": "Draft / Pending Owner & Legal Review before accepting real pilot health data.",
+      "body": "Placeholder legal copy will be supplied after review."
+    },
+    "contact": {
+      "h1": "Contact",
+      "body": "For a guided pilot demo, use the contact channel once published.",
+      "pending": "Demo contact details will be added here."
+    }
+  },
+  "features": {
+    "onboarding-plan": {
+      "title": "Getting started: account & plan",
+      "description": "Sign in, set preferences and build a training plan that fits your routine.",
+      "caveat": "Pilot flow; no fixed question-count promise."
+    },
+    "workout-player": {
+      "title": "Train: sessions & workout player",
+      "description": "See upcoming sessions, log sets with load and rest, swap exercises and finish workouts.",
+      "caveat": "Pilot core workflow on Android and Studio today views."
+    },
+    "activity-logging": {
+      "title": "Activity: strength, cardio & calendar",
+      "description": "Log strength sets and cardio, schedule sessions and browse history with source provenance.",
+      "caveat": "Only connected sources that exist in your account are shown."
+    },
+    "progress-scores": {
+      "title": "Progress: scores, records & consistency",
+      "description": "Estimated strength, personal records, volume, load, RIR and consistency compared with your own history.",
+      "caveat": "No population fitness tiers; incomplete metrics are labelled."
+    },
+    "muscle-intelligence": {
+      "title": "Muscle Intelligence",
+      "description": "Training volume and progression by muscle group with front/back anatomy views in Studio.",
+      "caveat": "Training-derived estimates, not a body scan."
+    },
+    "exercise-learn": {
+      "title": "Exercise library & learning",
+      "description": "Search exercises, cues, movement demonstrations and science notes.",
+      "caveat": "Catalogue size follows the app, not a marketing count."
+    },
+    "form-analysis-preview": {
+      "title": "Form analysis preview",
+      "description": "Live and recorded movement feedback for supported exercises when analysis features are enabled.",
+      "caveat": "Preview / pilot-gated; limited movements; no universal AI claim."
+    },
+    "daily-timers-bubble": {
+      "title": "Reminders & floating workout bubble",
+      "description": "Rest timers, reminders and resume helpers; floating bubble on supported Android builds.",
+      "caveat": "Android-specific; permissions optional."
+    },
+    "health-connections": {
+      "title": "Health & activity connections",
+      "description": "Import and sync from connected accounts with duplicate handling and source labels.",
+      "caveat": "Health Connect, HealthKit and Strava must be confirmed individually; not every watch."
+    },
+    "studio-dashboard": {
+      "title": "Studio dashboard",
+      "description": "Personal overview and configurable views in Web Studio.",
+      "caveat": "Customization only if enabled in your pilot."
+    },
+    "studio-blocks-insights": {
+      "title": "Blocks, reports & insights",
+      "description": "Compare blocks, adherence summaries and computed session insights.",
+      "caveat": "No causal AI assertions or guaranteed forecasts."
+    },
+    "studio-body": {
+      "title": "Body check-ins",
+      "description": "Bodyweight trends when you log check-ins.",
+      "caveat": "Neutral language; no invented body composition."
+    },
+    "nutrition-education": {
+      "title": "Nutrition education",
+      "description": "Protein and nutrition tips in the app; Studio diet views where enabled.",
+      "caveat": "Not a shipped trainer-authored meal prescription."
+    },
+    "trainer-consent-sharing": {
+      "title": "Consent-based trainer sharing",
+      "description": "Clients choose scopes; trainers review grants with expiry and instant revocation.",
+      "caveat": "No trainer invite-code promise yet."
+    },
+    "trainer-queue": {
+      "title": "Trainer form queue",
+      "description": "Preview workflow for reviewing client form submissions.",
+      "caveat": "AI checker not generally released."
+    },
+    "group-sessions-preview": {
+      "title": "Group sessions preview",
+      "description": "Trainer and member group workspace routes in preview.",
+      "caveat": "Watch following, alerts and class orchestration not assumed shipped."
+    },
+    "account-billing-settings": {
+      "title": "Account, billing & settings",
+      "description": "Units, theme, profile and account controls; billing gated in pilot.",
+      "caveat": "No public pricing or checkout on this site."
+    },
+    "additional-legacy-views": {
+      "title": "Additional views",
+      "description": "Shareable presentation modes and legacy or experimental screens.",
+      "caveat": "Audit before screenshots; not core product promises."
+    },
+    "studio-lab-research": {
+      "title": "Studio lab research previews",
+      "description": "Hidden experimental panels: forecasts, PR prediction, clustering and related research tools.",
+      "caveat": "Research previews, not available user capabilities."
+    },
+    "planned-roadmap": {
+      "title": "Roadmap: stores, watch & integrations",
+      "description": "Wear OS, Apple Watch, Live Activities, gym QR, trainer plan editing and public store rollout.",
+      "caveat": "Planned; no dates or availability claims."
+    },
+    "bilingual-nl-en": {
+      "title": "Dutch & English",
+      "description": "Localized app and marketing site; native Dutch review ongoing.",
+      "caveat": "Site is bilingual; app NL copy still being refined."
+    }
+  },
+  "categories": {
+    "training": "Training",
+    "progress": "Progress",
+    "muscles": "Muscles",
+    "studio": "Studio",
+    "trainers": "Trainers",
+    "learning": "Learning",
+    "connections": "Connections",
+    "planned": "Planned"
+  }
+}

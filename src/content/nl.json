@@ -1,0 +1,356 @@
+{
+  "config": {
+    "play": null,
+    "ios": null,
+    "publicStudio": null,
+    "demoEmail": null
+  },
+  "lang": "nl",
+  "langSwitch": {
+    "self": "Nederlands",
+    "other": "English",
+    "otherCode": "en"
+  },
+  "nav": {
+    "product": "Product",
+    "forTrainers": "Voor trainers",
+    "allFeatures": "Alle functies",
+    "pilot": "Pilot",
+    "skipToContent": "Ga naar hoofdinhoud",
+    "menuLabel": "Sitemenu",
+    "primaryCta": "Vraag een trainersdemo aan",
+    "homeHref": "/nl/"
+  },
+  "status": {
+    "inPilot": "In de pilot",
+    "preview": "Voorproefje",
+    "planned": "Gepland",
+    "androidOnly": "Alleen Android",
+    "illustrativePreview": "Illustratieve appweergave"
+  },
+  "platforms": {
+    "android_pilot": "Android-pilot",
+    "web_studio": "Web Studio",
+    "trainer_web": "Trainer Web",
+    "planned_ios": "iOS gepland",
+    "planned_watch": "Horloge gepland"
+  },
+  "store": {
+    "playPending": "Google Play — nog niet openbaar",
+    "iosPending": "App Store — gepland",
+    "demoContactPending": "Contactgegevens voor een demo volgen hier"
+  },
+  "meta": {
+    "home": {
+      "title": "SculptaLab — Trainingsinzicht voor jou en je trainer",
+      "description": "Plan trainingen, houd sets bij en bekijk je voortgang met SculptaLab. Ontdek de trainerspilot en delen met toestemming."
+    },
+    "trainers": {
+      "title": "SculptaLab voor trainers — Sportschoolpilot",
+      "description": "Bekijk training van cliënten met delen op basis van toestemming. SculptaLab trainersworkflow voor demos op de vloer."
+    },
+    "features": {
+      "title": "SculptaLab-functies — Training, Studio en voortgang",
+      "description": "Volledige functiecatalogus voor de SculptaLab Android-pilot, Web Studio en trainerstools."
+    },
+    "pilot": {
+      "title": "Vraag een SculptaLab-pilotdemo aan",
+      "description": "Hoe de begeleide sportchoolpilot werkt, wat er vandaag beschikbaar is en wat nog openstaat vóór publieke uitrol."
+    },
+    "privacy": {
+      "title": "SculptaLab — Privacy (concept)",
+      "description": "Concept privacybeleid in afwachting van review door eigenaar en juridisch adviseur."
+    },
+    "terms": {
+      "title": "SculptaLab — Gebruiksvoorwaarden (concept)",
+      "description": "Conceptvoorwaarden in afwachting van review door eigenaar en juridisch adviseur."
+    },
+    "contact": {
+      "title": "SculptaLab — Contact",
+      "description": "Contactgegevens voor een pilotdemo."
+    },
+    "notFound": {
+      "title": "Pagina niet gevonden — SculptaLab",
+      "description": "Deze SculptaLab-pagina is niet gevonden."
+    }
+  },
+  "root": {
+    "title": "SculptaLab",
+    "heading": "Kies je taal",
+    "nlLink": "Nederlands",
+    "enLink": "English",
+    "nlHint": "Nederlandse site — primair voor de sportchoolpilot",
+    "enHint": "Engelse site"
+  },
+  "notFound": {
+    "heading": "Pagina niet gevonden",
+    "body": "Deze pagina bestaat niet op de SculptaLab-marketingsite.",
+    "nlHome": "Naar Nederlandse startpagina",
+    "enHome": "Naar Engelse startpagina"
+  },
+  "footer": {
+    "brandLine": "SculptaLab — trainingsinzicht voor jou en je trainer.",
+    "privacy": "Privacy",
+    "terms": "Voorwaarden",
+    "contact": "Contact",
+    "featureNote": "Beschikbaarheid van functies verschilt per platform en pilotinstellingen.",
+    "illustrationsNote": "Illustraties gebruiken demogegevens.",
+    "legalPending": "Juridische pagina's wachten op review door de eigenaar."
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Een pilot in de sportschool, samen met trainers",
+      "h1": "Krijg meer inzicht in elke training.",
+      "body": "Plan je trainingen, houd je sets bij en bekijk je voortgang. Bespreek het totaalbeeld met een trainer die jij kiest.",
+      "primaryCta": "Vraag een trainersdemo aan",
+      "secondaryCta": "Bekijk de app",
+      "microcopy": "Android-pilot · Web Studio · Engels en Nederlands",
+      "translationNote": "De vertalingen in de app worden nog verbeterd.",
+      "figureCaption": "Illustratieve appweergave",
+      "figureAlt": "Illustratief SculptaLab-trainingsoverzicht op een telefoon"
+    },
+    "trainers": {
+      "h2": "Een beter gesprek in de sportschool.",
+      "body": "Je cliënt brengt de trainingshistorie mee. Jij brengt de coaching. Bekijk gedeelde trainingen en voortgang samen; je cliënt bepaalt de toegang.",
+      "step1": "Cliënt kiest wat wordt gedeeld",
+      "step2": "Trainer bekijkt de gegevens",
+      "step3": "Bespreek de volgende training",
+      "cta": "Bekijk de trainersworkflow",
+      "caption": "Pilotworkflow; openbare toegang wordt voorbereid.",
+      "figureAlt": "Illustratief gesprek tussen trainer en cliënt over training op een tablet"
+    },
+    "planTrain": {
+      "h2": "Een plan dat je kunt volgen.",
+      "row1": "Begin met een plan dat bij je ritme past.",
+      "row2": "Houd sets, herhalingen en gewichten op één plek bij.",
+      "row3": "Rond je training af en bekijk wat je hebt gedaan.",
+      "supporting": "Krachttraining, cardiologs en een overzichtelijke trainingskalender.",
+      "cta": "Bekijk de trainingsfuncties"
+    },
+    "muscles": {
+      "h2": "Zie welke spieren je traint.",
+      "body": "Bekijk trainingsvolume en voortgang per spiergroep. Wissel in Studio tussen anatomieweergaven en vergelijk periodes.",
+      "disclaimer": "Schattingen op basis van je training, geen lichaamsscan of medische beoordeling.",
+      "cta": "Ontdek Muscle Intelligence",
+      "legendGlutes": "Bilspieren",
+      "legendQuads": "Quadriceps",
+      "legendHamstrings": "Hamstrings",
+      "legendCalves": "Kuiten",
+      "legendCore": "Core",
+      "legendBack": "Rug",
+      "legendShoulders": "Schouders",
+      "legendArms": "Armen",
+      "viewFront": "Voorzijde",
+      "viewBack": "Achterzijde",
+      "figureAlt": "Illustratieve trainingskaart per spiergroep, geen lichaamsscan"
+    },
+    "progressStudio": {
+      "h2": "Je trainingshistorie in perspectief.",
+      "body": "Volg geschatte kracht, persoonlijke records en trainingspatronen. Bekijk vanuit het overzicht de bijbehorende trainingen.",
+      "col1Title": "Kracht en records",
+      "col2Title": "Volume en regelmaat",
+      "col3Title": "Rapporten en inzichten",
+      "cta": "Bekijk alle Studio-functies",
+      "figureAlt": "Studio-dashboardoverzicht met scores en trainingen"
+    },
+    "form": {
+      "h2": "Kijk terug op je beweging.",
+      "body": "Ontdek feedback op je uitvoering voor ondersteunde oefeningen in de pilot. De beschikbaarheid hangt af van de ingeschakelde analysefuncties.",
+      "footnote": "Geen vervanging voor een trainer of medisch advies.",
+      "cta": "Wat is beschikbaar in de pilot?",
+      "figureAlt": "Illustratieve voorproefje van ondersteunde bewegingsanalyse"
+    },
+    "learnDaily": {
+      "h2": "Ondersteuning tussen de mijlpalen.",
+      "body": "Leer de beweging, onthoud je training en houd alles bij elkaar.",
+      "item1": "Oefendemo's en aanwijzingen",
+      "item2": "Achtergrondnotities en bewegingsgidsen",
+      "item3": "Eiwit- en voedingseducatie",
+      "item4": "Cardiologgen",
+      "item5": "Herinneringen en rusttimers",
+      "item6": "Sync, taal en voorkeuren",
+      "cta": "Bekijk alle functies",
+      "figureAlt": "Illustratie van een bewegingsgids"
+    },
+    "roadmap": {
+      "h2": "Nu in de pilot. Straks op de roadmap.",
+      "pilotHeading": "In de pilot",
+      "plannedHeading": "Gepland",
+      "pilotList": "Plannen, loggen, Studio-dashboards, delen met trainers op basis van toestemming, Muscle Intelligence en de kernworkflow op Android.",
+      "plannedList": "Publieke store-uitrol, traineruitnodigingen, uitgebreidere vormanalyse, trainerplannen, horloge- en sportschoolintegraties.",
+      "catalogueLink": "Bekijk de volledige functiecatalogus"
+    },
+    "faq": {
+      "h2": "Vragen",
+      "q1": "Kan ik de app nu downloaden?",
+      "a1": "Android-toegang wordt geregeld voor pilotdeelnemers. Openbare storelinks zijn nog niet beschikbaar.",
+      "q2": "Is er een iPhone-app?",
+      "a2": "Een iOS-release voor deze pilot is nog niet bevestigd.",
+      "q3": "Wie ziet mijn trainingsgegevens?",
+      "a3": "Trainertoegang volgt de toestemming die je geeft. Bekijk de reikwijdte en einddatum in de app.",
+      "q4": "Toont het lichaam echte spiergroei?",
+      "a4": "Nee. Het visualiseert trainingsgegevens en schattingen.",
+      "q5": "Kan ik Nederlands gebruiken?",
+      "a5": "De website is tweetalig. De Nederlandse appvertalingen worden nog verbeterd.",
+      "q6": "Wat kost de pilot?",
+      "a6": "De pilotafspraken worden tijdens de demo bevestigd; deze site heeft geen openbare betaalpagina."
+    },
+    "pilotFooter": {
+      "h2": "Neem het mee naar je volgende gesprek met je trainer.",
+      "body": "Begin met een begeleide demo voordat je cliënten uitnodigt.",
+      "primaryCta": "Vraag een demo aan",
+      "demoExplanation": "Een begeleide demo loopt door Android-installatie, toestemmingsbereik en een eerste training op de vloer."
+    }
+  },
+  "routes": {
+    "trainers": {
+      "h1": "Coach de persoon, met inzicht in de training.",
+      "intro": "Trainerstools voor review op basis van toestemming tijdens de sportchoolpilot.",
+      "placeholder": "Trainerssecties volgen in Batch 4."
+    },
+    "features": {
+      "h1": "Alle SculptaLab-functies",
+      "intro": "Eerlijke status voor elk geïmplementeerd onderdeel in de pilotcodebase.",
+      "placeholder": "Functiecatalogus uit het manifest volgt in Batch 4."
+    },
+    "pilot": {
+      "h1": "Vraag een SculptaLab-pilotdemo aan",
+      "intro": "Trainergeleide demo → begeleide Android-installatie → toestemmingsgesprek → eerste training → feedback.",
+      "availabilityHeading": "Wat is ingeschakeld in de pilot",
+      "availabilityBody": "Standaard pilotvlaggen houden live camera, vormscores en premium uit, tenzij ingeschakeld voor jouw begeleide demo.",
+      "placeholder": "Pilotwalkthrough wordt uitgewerkt in Batch 4."
+    },
+    "privacy": {
+      "h1": "Privacybeleid",
+      "banner": "Concept / In afwachting van review door eigenaar en juridisch adviseur vóór echte pilotgezondheidsdata.",
+      "body": "Juridische tekst volgt na review. Behandel deze pagina niet als compliance-documentatie."
+    },
+    "terms": {
+      "h1": "Gebruiksvoorwaarden",
+      "banner": "Concept / In afwachting van review door eigenaar en juridisch adviseur vóór echte pilotgezondheidsdata.",
+      "body": "Juridische tekst volgt na review."
+    },
+    "contact": {
+      "h1": "Contact",
+      "body": "Voor een begeleide pilotdemo: gebruik het contactkanaal zodra het gepubliceerd is.",
+      "pending": "Contactgegevens voor een demo volgen hier."
+    }
+  },
+  "features": {
+    "onboarding-plan": {
+      "title": "Aan de slag: account en plan",
+      "description": "Meld je aan, stel voorkeuren in en bouw een trainingsplan dat bij je past.",
+      "caveat": "Pilotflow; geen belofte over een vast aantal vragen."
+    },
+    "workout-player": {
+      "title": "Trainen: sessies en workoutspeler",
+      "description": "Bekijk komende sessies, log sets met gewicht en rust, wissel oefeningen en rond trainingen af.",
+      "caveat": "Kernworkflow in de pilot op Android en Studio Today."
+    },
+    "activity-logging": {
+      "title": "Activiteit: kracht, cardio en kalender",
+      "description": "Log krachtsets en cardio, plan sessies en doorloop historie met bronvermelding.",
+      "caveat": "Alleen gekoppelde bronnen in je account worden getoond."
+    },
+    "progress-scores": {
+      "title": "Voortgang: scores, records en regelmaat",
+      "description": "Geschatte kracht, persoonlijke records, volume, belasting, RIR en regelmaat vergeleken met je eigen historie.",
+      "caveat": "Geen populatieniveaus; onvolledige metingen worden gelabeld."
+    },
+    "muscle-intelligence": {
+      "title": "Muscle Intelligence",
+      "description": "Trainingsvolume en voortgang per spiergroep met voor-/achteraanzicht in Studio.",
+      "caveat": "Schattingen op basis van training, geen lichaamsscan."
+    },
+    "exercise-learn": {
+      "title": "Oefenbibliotheek en leren",
+      "description": "Zoek oefeningen, aanwijzingen, bewegingsdemo's en achtergrondnotities.",
+      "caveat": "Catalogusgrootte volgt de app, geen marketingaantal."
+    },
+    "form-analysis-preview": {
+      "title": "Voorproefje vormanalyse",
+      "description": "Live en opgenomen bewegingsfeedback voor ondersteunde oefeningen wanneer analyse is ingeschakeld.",
+      "caveat": "Voorproefje / pilot; beperkte bewegingen; geen universele AI-belofte."
+    },
+    "daily-timers-bubble": {
+      "title": "Herinneringen en zwevende workoutbubble",
+      "description": "Rusttimers, herinneringen en hervat-helpers; zwevende bubble op ondersteunde Android-builds.",
+      "caveat": "Android-specifiek; machtigingen optioneel."
+    },
+    "health-connections": {
+      "title": "Gezondheids- en activiteitskoppelingen",
+      "description": "Import en sync van gekoppelde accounts met deduplicatie en bronlabels.",
+      "caveat": "Health Connect, HealthKit en Strava elk apart bevestigen; niet elk horloge."
+    },
+    "studio-dashboard": {
+      "title": "Studio-dashboard",
+      "description": "Persoonlijk overzicht en configureerbare weergaven in Web Studio.",
+      "caveat": "Aanpassing alleen als ingeschakeld in jouw pilot."
+    },
+    "studio-blocks-insights": {
+      "title": "Blokken, rapporten en inzichten",
+      "description": "Vergelijk blokken, adherentiesamenvattingen en berekende sessie-inzichten.",
+      "caveat": "Geen causale AI-stellingen of gegarandeerde voorspellingen."
+    },
+    "studio-body": {
+      "title": "Lichaams-check-ins",
+      "description": "Lichaamsgewichttrends wanneer je check-ins logt.",
+      "caveat": "Neutraal taalgebruik; geen verzonnen lichaamssamenstelling."
+    },
+    "nutrition-education": {
+      "title": "Voedingseducatie",
+      "description": "Eiwit- en voedingstips in de app; Studio-dietweergaven waar ingeschakeld.",
+      "caveat": "Geen uitgerolde maaltijdvoorschriften van trainers."
+    },
+    "trainer-consent-sharing": {
+      "title": "Delen met trainers op basis van toestemming",
+      "description": "Cliënten kiezen bereik; trainers bekijken grants met vervaldatum en direct intrekken.",
+      "caveat": "Nog geen trainer-uitnodigingscodes."
+    },
+    "trainer-queue": {
+      "title": "Trainerformulierwachtrij",
+      "description": "Voorproefje-workflow voor het beoordelen van clientformulieren.",
+      "caveat": "AI-checker niet algemeen vrijgegeven."
+    },
+    "group-sessions-preview": {
+      "title": "Voorproefje groepssessies",
+      "description": "Trainer- en lidgroepswerkruimte-routes in voorproefje.",
+      "caveat": "Horloge-tracking, alerts en lesorkestratie niet als uitgerold verondersteld."
+    },
+    "account-billing-settings": {
+      "title": "Account, facturatie en instellingen",
+      "description": "Eenheden, thema, profiel en accountinstellingen; facturatie in pilot beperkt.",
+      "caveat": "Geen publieke prijzen of checkout op deze site."
+    },
+    "additional-legacy-views": {
+      "title": "Aanvullende weergaven",
+      "description": "Deelbare presentatiemodi en legacy of experimentele schermen.",
+      "caveat": "Audit vóór screenshots; geen kernproductbeloftes."
+    },
+    "studio-lab-research": {
+      "title": "Studio lab-onderzoeksvoorproefjes",
+      "description": "Verborgen experimentele panelen: voorspellingen, PR-voorspelling, clustering en gerelateerd onderzoek.",
+      "caveat": "Onderzoeksvoorproefjes, geen beschikbare gebruikersfuncties."
+    },
+    "planned-roadmap": {
+      "title": "Roadmap: stores, horloge en integraties",
+      "description": "Wear OS, Apple Watch, Live Activities, sportschool-QR, trainerplanbewerking en publieke store-uitrol.",
+      "caveat": "Gepland; geen data of beschikbaarheidsclaims."
+    },
+    "bilingual-nl-en": {
+      "title": "Nederlands en Engels",
+      "description": "Gelokaliseerde app en marketingsite; native Nederlandse review loopt.",
+      "caveat": "Site is tweetalig; NL-appcopy wordt nog verfijnd."
+    }
+  },
+  "categories": {
+    "training": "Training",
+    "progress": "Voortgang",
+    "muscles": "Spieren",
+    "studio": "Studio",
+    "trainers": "Trainers",
+    "learning": "Leren",
+    "connections": "Koppelingen",
+    "planned": "Gepland"
+  }
+}

@@ -4,6 +4,22 @@ The landing page for **SculptaLab**: *sculpt your foundation*. Personalised stre
 
 **Stack:** Vite (static build), vanilla JS, GSAP + ScrollTrigger, Lenis smooth scroll, a WebGL gradient shader for the background (falls back to CSS), and self-hosted Inter Variable and Instrument Serif fonts. There is no framework runtime, and the JS is about 54 KB gzipped.
 
+## Content scaffolding (site rebuild)
+
+Rebuild work adds build-time bilingual pages without a client i18n runtime:
+
+- `docs/content/feature-manifest.json` — 21 feature rows from the rebuild brief (§4), with evidence paths, status, platforms and `truthCaveatKey` links into the locale dictionaries.
+- `src/content/en.json` and `src/content/nl.json` — parallel translation trees (nav, home copy, route stubs, per-feature titles/descriptions/caveats). `config.play`, `config.ios`, `config.publicStudio` and `config.demoEmail` stay `null` until owner-approved values exist.
+- `scripts/render-pages.mjs` — validates EN/NL key parity and manifest coverage, then writes static HTML under `.pages/` (git-ignored) for `/`, `404.html`, and `/nl/*` / `/en/*` routes.
+- `src/templates/page.html` and `src/templates/sections.html` — shared shell (skip link, header, footer) and section partials; Batch 2+ flesh out layout and home sections.
+
+```bash
+npm run render:pages          # generate .pages/
+BASE=/sculptalab-site/ npm run render:pages   # GitHub Pages base path
+```
+
+`vite.config.js` picks up `.pages/manifest.json` plus the legacy root `index.html` until Batch 5 removes it. Full pipeline wiring (`render:pages` before `vite build`, metadata, check-static) lands in Batch 5.
+
 **Sections (v2):** loader, a hero with an original generated brand figure (`public/hero-figure.webp`, made from the SculptaLab icon artwork; variants in `design/hero-variants/`) plus muscle pins, a manifesto, a pinned How it works story (Today, Plan, Live pose, Muscle balance), Scores (muscle map, Sculpt score, per-rep scores), Form, a bento grid, a Trainer web dashboard concept (coming soon), Coming soon, and Download. Every mockup is animated (counters, timers, drawing charts, rotating lists) and stays static under reduced motion.
 
 **v1 sections:** an animated S-mark loader, the hero (word reveal, contour art, 3D-tilt phone), an exercise marquee, a manifesto with a scroll-scrubbed word reveal, a pinned "How it works" story where the phone screen changes per step (Today, Live pose, Plan, Progress), Form AI cards, a bento grid (bubble, notification timer, reminders, sync, Dutch), Coming soon (trainer sharing, watch, web), and a download CTA.
