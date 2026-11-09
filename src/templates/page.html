@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="{{htmlLang}}">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#120D0B" />
+    <title>{{pageTitle}}</title>
+    <meta name="description" content="{{pageDescription}}" />
+    <meta name="robots" content="{{robotsMeta}}" />
+    <link rel="canonical" href="{{canonicalUrl}}" />
+    <link rel="alternate" hreflang="nl" href="{{hreflangNl}}" />
+    <link rel="alternate" hreflang="en" href="{{hreflangEn}}" />
+    <link rel="alternate" hreflang="x-default" href="{{hreflangDefault}}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="{{pageTitle}}" />
+    <meta property="og:description" content="{{pageDescription}}" />
+    <meta property="og:url" content="{{canonicalUrl}}" />
+    <meta property="og:image" content="{{ogImage}}" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="{{ogImageAlt}}" />
+    <meta property="og:locale" content="{{ogLocale}}" />
+    <meta property="og:locale:alternate" content="{{ogLocaleAlternate}}" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="{{pageTitle}}" />
+    <meta name="twitter:description" content="{{pageDescription}}" />
+    <meta name="twitter:image" content="{{ogImage}}" />
+    <meta name="twitter:image:alt" content="{{ogImageAlt}}" />
+    {{jsonLdBlock}}
+    <link rel="icon" href="{{base}}favicon.svg" type="image/svg+xml" />
+    <link
+      rel="preload"
+      href="{{base}}fonts/inter-latin-wght-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+  </head>
+  <body class="site-body" data-route="{{routeId}}">
+    <a class="skip-link" href="#main">{{skipToContent}}</a>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="site-brand" href="{{homeHref}}">SculptaLab</a>
+        <nav class="site-nav site-nav--desktop" aria-label="{{menuLabel}}">
+          <a href="{{homeHref}}#top">{{navProduct}}</a>
+          <a href="{{trainersHref}}">{{navForTrainers}}</a>
+          <a href="{{featuresHref}}">{{navAllFeatures}}</a>
+          <a href="{{pilotHref}}">{{navPilot}}</a>
+        </nav>
+        <details class="nav-details" id="site-menu">
+          <summary aria-controls="site-menu-panel">{{menuOpen}}</summary>
+          <div class="nav-details__panel" id="site-menu-panel">
+            <a href="{{homeHref}}#top">{{navProduct}}</a>
+            <a href="{{trainersHref}}">{{navForTrainers}}</a>
+            <a href="{{featuresHref}}">{{navAllFeatures}}</a>
+            <a href="{{pilotHref}}">{{navPilot}}</a>
+          </div>
+        </details>
+        <div class="site-header__actions">
+          <a
+            class="lang-switch"
+            href="{{langSwitchHref}}"
+            hreflang="{{langSwitchCode}}"
+            rel="alternate"
+            >{{langSwitchLabel}}</a
+          >
+          <a class="btn-primary" href="{{navPrimaryHref}}">{{navPrimaryCta}}</a>
+        </div>
+      </div>
+    </header>
+    <main id="main" class="site-main">
+      {{mainContent}}
+    </main>
+    <footer class="site-footer">
+      <div class="container">
+        <p>{{footerBrandLine}}</p>
+        <nav aria-label="Legal">
+          <a href="{{privacyHref}}">{{footerPrivacy}}</a>
+          <a href="{{footerTermsHref}}">{{footerTerms}}</a>
+          <a href="{{contactHref}}">{{footerContact}}</a>
+        </nav>
+        <p class="site-footer__note">{{footerFeatureNote}}</p>
+        <p class="site-footer__note">{{footerIllustrationsNote}}</p>
+        <p class="site-footer__note">{{footerLegalPending}}</p>
+        <p class="site-footer__copy">© {{copyrightYear}} SculptaLab</p>
+      </div>
+    </footer>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

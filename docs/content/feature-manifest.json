@@ -1,0 +1,248 @@
+[
+  {
+    "id": "onboarding-plan",
+    "category": "training",
+    "homeSectionAnchor": "#plan",
+    "status": "in_pilot",
+    "platforms": ["android_pilot", "web_studio"],
+    "evidencePaths": [
+      "apps/mobile/app/(auth)",
+      "apps/mobile/app/onboarding",
+      "apps/web/src/app/studio/sign-in"
+    ],
+    "truthCaveatKey": "features.onboarding-plan.caveat"
+  },
+  {
+    "id": "workout-player",
+    "category": "training",
+    "homeSectionAnchor": "#train",
+    "status": "in_pilot",
+    "platforms": ["android_pilot", "web_studio"],
+    "evidencePaths": [
+      "apps/mobile/app/workout-day",
+      "apps/mobile/app/exercise/player",
+      "apps/web/src/app/studio/(hub)/today"
+    ],
+    "truthCaveatKey": "features.workout-player.caveat"
+  },
+  {
+    "id": "activity-logging",
+    "category": "training",
+    "homeSectionAnchor": "#train",
+    "status": "in_pilot",
+    "platforms": ["android_pilot", "web_studio"],
+    "evidencePaths": [
+      "apps/mobile/app/log-set",
+      "apps/mobile/app/log-cardio",
+      "apps/web/src/app/studio/(hub)/calendar"
+    ],
+    "truthCaveatKey": "features.activity-logging.caveat"
+  },
+  {
+    "id": "progress-scores",
+    "category": "progress",
+    "homeSectionAnchor": "#progress",
+    "status": "in_pilot",
+    "platforms": ["android_pilot", "web_studio"],
+    "evidencePaths": [
+      "apps/mobile/app/progress",
+      "apps/web/src/app/studio/(hub)/progress"
+    ],
+    "truthCaveatKey": "features.progress-scores.caveat"
+  },
+  {
+    "id": "muscle-intelligence",
+    "category": "muscles",
+    "homeSectionAnchor": "#muscles",
+    "status": "in_pilot",
+    "platforms": ["android_pilot", "web_studio"],
+    "evidencePaths": [
+      "apps/mobile/src/features/muscle-intelligence",
+      "apps/web/src/app/studio/(hub)/progress/volume"
+    ],
+    "truthCaveatKey": "features.muscle-intelligence.caveat"
+  },
+  {
+    "id": "exercise-learn",
+    "category": "learning",
+    "homeSectionAnchor": "#learn",
+    "status": "in_pilot",
+    "platforms": ["android_pilot", "web_studio"],
+    "evidencePaths": [
+      "apps/mobile/app/exercise-catalogue",
+      "apps/mobile/app/learn",
+      "apps/web/src/app/studio/(hub)/exercises"
+    ],
+    "truthCaveatKey": "features.exercise-learn.caveat"
+  },
+  {
+    "id": "form-analysis-preview",
+    "category": "training",
+    "homeSectionAnchor": "#form",
+    "status": "preview",
+    "platforms": ["android_pilot", "web_studio", "trainer_web"],
+    "evidencePaths": [
+      "apps/mobile/app/live",
+      "apps/web/src/app/studio/(hub)/form",
+      "apps/web/src/app/trainer/queue"
+    ],
+    "truthCaveatKey": "features.form-analysis-preview.caveat"
+  },
+  {
+    "id": "daily-timers-bubble",
+    "category": "training",
+    "homeSectionAnchor": "#daily",
+    "status": "in_pilot",
+    "platforms": ["android_pilot"],
+    "evidencePaths": [
+      "apps/mobile/app/notification-timer",
+      "apps/mobile/src/features/floating-workout-bubble"
+    ],
+    "truthCaveatKey": "features.daily-timers-bubble.caveat"
+  },
+  {
+    "id": "health-connections",
+    "category": "connections",
+    "homeSectionAnchor": null,
+    "status": "in_pilot",
+    "platforms": ["android_pilot", "web_studio"],
+    "evidencePaths": [
+      "apps/mobile/app/connect-health",
+      "apps/web/src/app/studio/(hub)/settings"
+    ],
+    "truthCaveatKey": "features.health-connections.caveat"
+  },
+  {
+    "id": "studio-dashboard",
+    "category": "studio",
+    "homeSectionAnchor": "#studio",
+    "status": "in_pilot",
+    "platforms": ["web_studio"],
+    "evidencePaths": ["apps/web/src/app/studio/(hub)/home"],
+    "truthCaveatKey": "features.studio-dashboard.caveat"
+  },
+  {
+    "id": "studio-blocks-insights",
+    "category": "studio",
+    "homeSectionAnchor": "#studio",
+    "status": "in_pilot",
+    "platforms": ["web_studio"],
+    "evidencePaths": [
+      "apps/web/src/app/studio/(hub)/blocks",
+      "apps/web/src/app/studio/(hub)/reports",
+      "apps/web/src/app/studio/(hub)/insights"
+    ],
+    "truthCaveatKey": "features.studio-blocks-insights.caveat"
+  },
+  {
+    "id": "studio-body",
+    "category": "studio",
+    "homeSectionAnchor": null,
+    "status": "in_pilot",
+    "platforms": ["web_studio"],
+    "evidencePaths": ["apps/web/src/app/studio/(hub)/body"],
+    "truthCaveatKey": "features.studio-body.caveat"
+  },
+  {
+    "id": "nutrition-education",
+    "category": "learning",
+    "homeSectionAnchor": "#learn",
+    "status": "in_pilot",
+    "platforms": ["android_pilot", "web_studio"],
+    "evidencePaths": [
+      "apps/mobile/app/nutrition-tips",
+      "apps/web/src/app/studio/(hub)/diet"
+    ],
+    "truthCaveatKey": "features.nutrition-education.caveat"
+  },
+  {
+    "id": "trainer-consent-sharing",
+    "category": "trainers",
+    "homeSectionAnchor": "#trainers",
+    "status": "in_pilot",
+    "platforms": ["android_pilot", "web_studio", "trainer_web"],
+    "evidencePaths": [
+      "apps/web/src/app/studio/share",
+      "apps/web/src/app/s/[token]",
+      "apps/web/src/app/trainer/c/[grantId]"
+    ],
+    "truthCaveatKey": "features.trainer-consent-sharing.caveat"
+  },
+  {
+    "id": "trainer-queue",
+    "category": "trainers",
+    "homeSectionAnchor": null,
+    "status": "preview",
+    "platforms": ["trainer_web"],
+    "evidencePaths": ["apps/web/src/app/trainer/queue"],
+    "truthCaveatKey": "features.trainer-queue.caveat"
+  },
+  {
+    "id": "group-sessions-preview",
+    "category": "trainers",
+    "homeSectionAnchor": null,
+    "status": "preview",
+    "platforms": ["web_studio", "trainer_web"],
+    "evidencePaths": [
+      "apps/web/src/app/trainer/group-sessions",
+      "apps/web/src/app/studio/group"
+    ],
+    "truthCaveatKey": "features.group-sessions-preview.caveat"
+  },
+  {
+    "id": "account-billing-settings",
+    "category": "studio",
+    "homeSectionAnchor": null,
+    "status": "in_pilot",
+    "platforms": ["android_pilot", "web_studio"],
+    "evidencePaths": [
+      "apps/mobile/app/profile/settings",
+      "apps/web/src/app/studio/(hub)/settings",
+      "apps/web/src/app/studio/(hub)/billing"
+    ],
+    "truthCaveatKey": "features.account-billing-settings.caveat"
+  },
+  {
+    "id": "additional-legacy-views",
+    "category": "studio",
+    "homeSectionAnchor": null,
+    "status": "in_pilot",
+    "platforms": ["android_pilot", "web_studio"],
+    "evidencePaths": [
+      "apps/mobile/app/share-persona",
+      "apps/web/src/app/studio/(hub)/leaderboard"
+    ],
+    "truthCaveatKey": "features.additional-legacy-views.caveat"
+  },
+  {
+    "id": "studio-lab-research",
+    "category": "studio",
+    "homeSectionAnchor": null,
+    "status": "preview",
+    "platforms": ["web_studio"],
+    "evidencePaths": ["apps/web/src/app/studio/(hub)/lab"],
+    "truthCaveatKey": "features.studio-lab-research.caveat"
+  },
+  {
+    "id": "planned-roadmap",
+    "category": "planned",
+    "homeSectionAnchor": "#roadmap",
+    "status": "planned",
+    "platforms": ["planned_ios", "planned_watch"],
+    "evidencePaths": ["apps/mobile/src/config/features.ts"],
+    "truthCaveatKey": "features.planned-roadmap.caveat"
+  },
+  {
+    "id": "bilingual-nl-en",
+    "category": "learning",
+    "homeSectionAnchor": "#daily",
+    "status": "in_pilot",
+    "platforms": ["android_pilot", "web_studio"],
+    "evidencePaths": [
+      "apps/mobile/src/i18n",
+      "src/content/nl.json",
+      "src/content/en.json"
+    ],
+    "truthCaveatKey": "features.bilingual-nl-en.caveat"
+  }
+]
