@@ -322,3 +322,53 @@ if (!reduced) {
   const hx = [...document.querySelectorAll(".hx li")]; let xi = 0;
   setInterval(() => { hx.forEach((l) => (l.style.background = "")); hx[xi++ % hx.length].style.background = "rgba(255,138,61,.14)"; }, 1600);
 }
+
+/* ---------- 2D muscle map player: tap a muscle, it lights up on the body ---------- */
+(function musclePlayer() {
+  const fig = document.querySelector(".body2d");
+  const items = [...document.querySelectorAll(".mmap .mlist li[data-m]")];
+  if (!fig || !items.length) return;
+  const hls = [...fig.querySelectorAll(".b2-hl")];
+  const chip = fig.querySelector(".b2-chip span");
+  let idx = 0, timer = 0, hold = 0, visible = false;
+  const set = (i) => {
+    idx = i; const li = items[i]; const key = li.dataset.m;
+    items.forEach((x) => x.classList.toggle("on", x === li));
+    hls.forEach((h) => h.classList.toggle("on", h.dataset.for === key));
+    fig.style.setProperty("--cur", li.style.getPropertyValue("--mc"));
+    chip.textContent = li.querySelector("span").textContent;
+  };
+  const tick = () => { if (visible && Date.now() > hold) set((idx + 1) % items.length); };
+  items.forEach((li, i) => {
+    const go = () => { hold = Date.now() + 7000; set(i); };
+    li.addEventListener("click", go); li.addEventListener("mouseenter", go);
+    li.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); go(); } });
+  });
+  new IntersectionObserver((es) => { visible = es[0].isIntersecting; }, { threshold: 0.3 }).observe(fig);
+  set(0);
+  if (!reduced) timer = setInterval(tick, 2600);
+})();
+
+/* ---------- EN / NL toggle (English default; NL stored locally) ---------- */
+import { NL } from "./i18n-nl.js";
+(function langToggle() {
+  const norm = (t) => t.replace(/\s+/g, " ").trim();
+  const sel = "header nav a, .nav-r .btn, h1 .w, main h2, main h3, main p, .eyebrow, .mm-sub";
+  const orig = new Map();
+  const apply = (lang) => {
+    document.documentElement.lang = lang;
+    document.querySelectorAll(sel).forEach((el) => {
+      if (el.closest(".phone, .app, .browser, .dash")) return;
+      if (!orig.has(el)) orig.set(el, el.innerHTML);
+      if (lang === "nl") { const nl = NL[norm(el.textContent)]; if (nl) el.innerHTML = nl; }
+      else el.innerHTML = orig.get(el);
+    });
+    document.querySelectorAll(".lang-tg button").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.lang === lang)));
+    try { localStorage.setItem("sl-lang", lang); } catch {}
+  };
+  document.querySelectorAll(".lang-tg button").forEach((b) => b.addEventListener("click", () => apply(b.dataset.lang)));
+  const q = new URLSearchParams(location.search).get("lang");
+  let saved = null; try { saved = localStorage.getItem("sl-lang"); } catch {}
+  const start = q === "nl" || (q !== "en" && saved === "nl") ? "nl" : "en";
+  if (start === "nl") apply("nl");
+})();

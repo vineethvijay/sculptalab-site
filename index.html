@@ -48,7 +48,10 @@
     <a href="#trainer">Trainers</a>
     <a href="#soon">Coming soon</a>
   </nav>
-  <a href="#download" class="btn btn-sm">Get the app</a>
+  <div class="nav-r">
+    <div class="lang-tg" role="group" aria-label="Language"><button type="button" data-lang="en" aria-pressed="true">EN</button><button type="button" data-lang="nl" aria-pressed="false">NL</button></div>
+    <a href="#download" class="btn btn-sm">Get the app</a>
+  </div>
 </header>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -222,6 +225,7 @@
             <div class="row"><span class="kick muted">WEEKLY SCULPTA SCORE</span><span class="chip o">Shaping</span></div>
             <div class="row end"><b class="bigscore" data-count="82">82</b><svg class="spark" viewBox="0 0 120 40"><path pathLength="1" d="M0 34 L17 30 L34 31 L51 24 L68 20 L85 16 L102 10 L120 6" fill="none" stroke="url(#sg2)" stroke-width="3" stroke-linecap="round"/></svg></div>
           </div>
+          <div class="acard mini-body"><img src="/anatomy/back-glutes.webp" width="357" height="948" alt="" loading="lazy" decoding="async" /><div><span class="kick muted">2D MUSCLE MAP</span><b><i></i>Glutes</b><small>30.5 sets/wk · Strong</small></div></div>
           <div class="acard">
             <span class="kick muted">MUSCLE BALANCE · SETS VS TARGET</span>
             <div class="mbars">
@@ -252,16 +256,24 @@
   <div class="scores-grid">
     <article class="sbox sbox-map">
       <h3>Your muscle map</h3>
+      <p class="mm-sub">Tap a muscle and watch it light up on the 2D body.</p>
+      <div class="mmap">
+      <figure class="body2d" aria-label="SculptaLab 2D muscle map, female back view, glutes highlighted">
+        <img class="b2-base" src="/anatomy/back.webp" width="357" height="948" alt="" loading="lazy" decoding="async" />
+        <img class="b2-hl on" data-for="back-glutes" src="/anatomy/back-glutes.webp" width="357" height="948" alt="" loading="lazy" decoding="async" /><img class="b2-hl" data-for="back-hamstrings" src="/anatomy/back-hamstrings.webp" width="357" height="948" alt="" loading="lazy" decoding="async" /><img class="b2-hl" data-for="front-quads" src="/anatomy/front-quads.webp" width="357" height="948" alt="" loading="lazy" decoding="async" /><img class="b2-hl" data-for="back-calves" src="/anatomy/back-calves.webp" width="357" height="948" alt="" loading="lazy" decoding="async" /><img class="b2-hl" data-for="back-back" src="/anatomy/back-back.webp" width="357" height="948" alt="" loading="lazy" decoding="async" /><img class="b2-hl" data-for="back-shoulders" src="/anatomy/back-shoulders.webp" width="357" height="948" alt="" loading="lazy" decoding="async" /><img class="b2-hl" data-for="back-arms" src="/anatomy/back-arms.webp" width="357" height="948" alt="" loading="lazy" decoding="async" /><img class="b2-hl" data-for="front-core" src="/anatomy/front-core.webp" width="357" height="948" alt="" loading="lazy" decoding="async" />
+        <figcaption class="b2-chip"><i></i><span>Glutes</span></figcaption>
+      </figure>
       <ul class="mlist">
-        <li><span>Glutes</span><b class="bar"><i style="--v:.98"></i><s style="--a:.55;--b:.85"></s></b></li>
-        <li><span>Hamstrings</span><b class="bar"><i style="--v:.72"></i><s style="--a:.45;--b:.8"></s></b></li>
-        <li><span>Quads</span><b class="bar"><i style="--v:.64"></i><s style="--a:.5;--b:.85"></s></b></li>
-        <li><span>Calves</span><b class="bar"><i style="--v:.48"></i><s style="--a:.4;--b:.75"></s></b></li>
-        <li><span>Back</span><b class="bar"><i style="--v:.56"></i><s style="--a:.4;--b:.75"></s></b></li>
-        <li class="lag"><span>Shoulders</span><b class="bar"><i style="--v:.3"></i><s style="--a:.4;--b:.75"></s></b></li>
-        <li><span>Arms</span><b class="bar"><i style="--v:.5"></i><s style="--a:.4;--b:.75"></s></b></li>
-        <li><span>Core</span><b class="bar"><i style="--v:.6"></i><s style="--a:.4;--b:.75"></s></b></li>
+        <li data-m="back-glutes" style="--mc:#B44DFF" tabindex="0"><span>Glutes</span><b class="bar"><i style="--v:.98"></i><s style="--a:.55;--b:.85"></s></b></li>
+        <li data-m="back-hamstrings" style="--mc:#FDE047" tabindex="0"><span>Hamstrings</span><b class="bar"><i style="--v:.72"></i><s style="--a:.45;--b:.8"></s></b></li>
+        <li data-m="front-quads" style="--mc:#FF3B5C" tabindex="0"><span>Quads</span><b class="bar"><i style="--v:.64"></i><s style="--a:.5;--b:.85"></s></b></li>
+        <li data-m="back-calves" style="--mc:#3DFF8A" tabindex="0"><span>Calves</span><b class="bar"><i style="--v:.48"></i><s style="--a:.4;--b:.75"></s></b></li>
+        <li data-m="back-back" style="--mc:#22D3EE" tabindex="0"><span>Back</span><b class="bar"><i style="--v:.56"></i><s style="--a:.4;--b:.75"></s></b></li>
+        <li class="lag" data-m="back-shoulders" style="--mc:#FF5FA2" tabindex="0"><span>Shoulders</span><b class="bar"><i style="--v:.3"></i><s style="--a:.4;--b:.75"></s></b></li>
+        <li data-m="back-arms" style="--mc:#84CC16" tabindex="0"><span>Arms</span><b class="bar"><i style="--v:.5"></i><s style="--a:.4;--b:.75"></s></b></li>
+        <li data-m="front-core" style="--mc:#6C63FF" tabindex="0"><span>Core</span><b class="bar"><i style="--v:.6"></i><s style="--a:.4;--b:.75"></s></b></li>
       </ul>
+      </div>
       <p class="legend"><span class="sw"></span>weekly target range · lagging muscles get a gentle nudge</p>
     </article>
     <article class="sbox sbox-score">
