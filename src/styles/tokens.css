@@ -11,14 +11,14 @@
 
   --color-anatomy-stage: #07080b;
   --color-muscle-inactive: #2a1418;
-  --muscle-glutes: #b44dff;
-  --muscle-quads: #ff3b5c;
-  --muscle-hamstrings: #ffb020;
-  --muscle-calves: #3dff8a;
-  --muscle-core: #6c63ff;
-  --muscle-back: #22d3ee;
-  --muscle-shoulders: #ff7a59;
-  --muscle-arms: #c8ff3d;
+  --muscle-glutes: #B44DFF;
+  --muscle-hamstrings: #FDE047;
+  --muscle-quads: #FF3B5C;
+  --muscle-back: #22D3EE;
+  --muscle-shoulders: #FF5FA2;
+  --muscle-core: #6C63FF;
+  --muscle-arms: #84CC16;
+  --muscle-calves: #3DFF8A;
 
   --font-sans: "InterVariable", "Inter", system-ui, sans-serif;
   --font-serif: "Instrument Serif", Georgia, serif;

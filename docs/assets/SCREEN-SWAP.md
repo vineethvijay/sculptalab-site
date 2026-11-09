@@ -1,30 +1,45 @@
 # Screen swap list (interim → polish)
 
-Interim screens were built on **2026-11-09** from:
-- Live app shots: `/workspace/v4/mi-2d-96abc02/` and `/workspace/v4/settings-6a7d220/`
-- Artwork sheet crops: `/workspace/v4/artwork/` (kept as optional source; live female crops preferred for A04)
+## Tap-to-highlight demo (required)
 
-When the in-app **2D polish round** lands, replace these files **in place** (same names + widths) and re-run `node scripts/build-2d-screens.mjs` then `npm run build`.
+Demo frames are **pre-composited** from app plates + alpha masks so the selected muscle is bright and the rest is dim — no CSS glow.
 
-## Exact files to swap
+Source (app `mi-2d-default`):
+- `apps/web/public/mi-anatomy-v4/plates/female-{front,back}.webp`
+- `apps/web/public/mi-anatomy-v4/masks/female-{front,back}/*.webp`
 
-| Slot | Replace these files | Replace with |
-| --- | --- | --- |
-| `a04-muscle-front` | `public/images/anatomy/a04-muscle-front-{480,800,1200}w.{webp,avif}` | Polished female **front** 2D body (no chrome if possible) |
-| `a04-muscle-back` | `public/images/anatomy/a04-muscle-back-{480,800,1200}w.{webp,avif}` | Polished female **back** 2D body |
-| `a04-highlight-glutes` | `public/images/anatomy/a04-highlight-glutes-{480,800}w.{webp,avif}` | List-tap Glutes highlight still |
-| `a04-highlight-arms` | `public/images/anatomy/a04-highlight-arms-{480,800}w.{webp,avif}` | List-tap Arms highlight still |
-| `a05-studio` / desktop | `public/images/screens/a05-studio-{640,960}w.*` · `a05-studio-desktop-1440w.*` | Fresh Studio laptop after polish |
-| `a05-studio-highlight` | `public/images/screens/a05-studio-highlight-{640,960}w.*` · `a05-studio-highlight-desktop-1440w.*` | Laptop with Glutes row selected |
-| `a05-studio-mobile` | `public/images/screens/a05-studio-mobile-{390,640}w.*` | Mobile MI after polish |
-| `a09-trainer-dashboard` | `public/images/screens/a09-trainer-dashboard-{480,800}w.*` · `a09-trainer-dashboard-desktop-1280w.*` | Trainer roster (NL) |
-| `a09-trainer-client-2d` | `public/images/screens/a09-trainer-client-2d-{480,800}w.*` · `a09-trainer-client-2d-desktop-1280w.*` | Trainer client detail + 2D map |
+Site files to replace after polish (same names):
 
-## Rebuild
+| Slot | Path pattern |
+| --- | --- |
+| Plates | `public/images/anatomy/mi-v4/plates/female-{front,back}{,-480w,-800w}.webp` |
+| Masks | `public/images/anatomy/mi-v4/masks/female-{front,back}/<region>.webp` |
+| Highlights | `public/images/anatomy/mi-v4/highlights/female-{front,back}-<region>-{480,800}w.webp` |
+
+Rebuild highlights after swapping plates/masks:
 
 ```bash
-node scripts/build-2d-screens.mjs
+python3 scripts/build-mi-highlights.py
 BASE=/sculptalab-site/ SITE_URL=https://vineethvijay.github.io/sculptalab-site/ npm run build
 ```
 
-Do **not** advertise 3D. Keep demo client names only (Sanne etc.); never ship real emails.
+Regions:
+- front: `quads`, `core`, `calves`, `shoulders`, `arms`
+- back: `glutes`, `hamstrings`, `back`, `calves`, `shoulders`, `arms`
+
+## Progress / trainer screenshots (do not polish here)
+
+`public/images/screens/a05-*`, `a09-*` — interim `96abc02` / `settings-6a7d220`. Swap when app polish lands.
+
+## Palette (`miAnatomy` on mi-2d-default)
+
+| Region | Hex |
+| --- | --- |
+| glutes | `#B44DFF` |
+| hamstrings | `#FDE047` |
+| quads | `#FF3B5C` |
+| back | `#22D3EE` |
+| shoulders | `#FF5FA2` |
+| core | `#6C63FF` |
+| arms | `#84CC16` |
+| calves | `#3DFF8A` |

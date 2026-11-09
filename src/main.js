@@ -29,78 +29,71 @@ function closeNavOnEscape() {
   });
 }
 
-/** Lightweight 2D MI demo: list tap → body highlight; auto-cycles when idle. */
+/**
+ * 2D MI demo: list tap swaps a pre-rendered plate+mask composite so the
+ * highlight sits exactly on the selected muscle (no radial glow).
+ * Assets: public/images/anatomy/mi-v4/highlights/female-{front|back}-{region}-800w.webp
+ */
 function initMuscleDemo() {
   const root = document.querySelector("[data-mi-demo]");
   const list = document.querySelector("[data-mi-list]");
   if (!root || !list) return;
 
-  const body = root.querySelector("[data-mi-body]");
-  const spot = root.querySelector("[data-mi-spot]");
+  const plate = root.querySelector("[data-mi-plate]");
   const chip = root.querySelector("[data-mi-chip]");
   const items = [...list.querySelectorAll("[data-muscle]")];
-  if (!body || !items.length) return;
+  if (!plate || !items.length) return;
 
-  const spots = {
-    glutes: { x: "50%", y: "62%", color: "var(--muscle-glutes)", view: "back", img: "glutes" },
-    quads: { x: "42%", y: "58%", color: "var(--muscle-quads)", view: "front", img: "front" },
-    hamstrings: { x: "50%", y: "60%", color: "var(--muscle-hamstrings)", view: "back", img: "back" },
-    calves: { x: "50%", y: "82%", color: "var(--muscle-calves)", view: "front", img: "front" },
-    core: { x: "50%", y: "42%", color: "var(--muscle-core)", view: "front", img: "front" },
-    back: { x: "50%", y: "36%", color: "var(--muscle-back)", view: "back", img: "back" },
-    shoulders: { x: "62%", y: "24%", color: "var(--muscle-shoulders)", view: "front", img: "front" },
-    arms: { x: "18%", y: "40%", color: "var(--muscle-arms)", view: "front", img: "arms" },
+  const base = root.dataset.highlightBase; // .../highlights/
+  const regionView = {
+    glutes: "back",
+    hamstrings: "back",
+    back: "back",
+    quads: "front",
+    core: "front",
+    calves: "front",
+    shoulders: "front",
+    arms: "front",
   };
-
-  const srcFor = (key) => {
-    // Prefer polished artwork; use live highlight stills only for glutes/arms demos.
-    if (key === "glutes") return root.dataset.glutesSrc || root.dataset.backSrc;
-    if (key === "arms") return root.dataset.armsSrc || root.dataset.frontSrc;
-    if (key === "back") return root.dataset.backSrc;
-    return root.dataset.frontSrc;
-  };
+  const bothViews = new Set(["calves", "shoulders", "arms"]);
 
   let index = 0;
   let timer = 0;
   let paused = false;
+  let view = "front";
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+  function srcFor(muscle, v) {
+    return `${base}female-${v}-${muscle}-800w.webp`;
+  }
+
   function apply(muscle) {
-    const cfg = spots[muscle] || spots.glutes;
+    if (!bothViews.has(muscle)) view = regionView[muscle] || "front";
+    const href = srcFor(muscle, view);
+
     items.forEach((el) => {
       const on = el.dataset.muscle === muscle;
       el.classList.toggle("is-active", on);
       el.setAttribute("aria-pressed", on ? "true" : "false");
     });
     document.querySelectorAll(".muscle-view-btn").forEach((btn) => {
-      const on = btn.dataset.miView === cfg.view;
+      const on = btn.dataset.miView === view;
       btn.classList.toggle("is-active", on);
       btn.setAttribute("aria-pressed", on ? "true" : "false");
     });
-    root.style.setProperty("--spot-x", cfg.x);
-    root.style.setProperty("--spot-y", cfg.y);
-    root.style.setProperty("--spot-color", cfg.color);
+
+    if (plate.getAttribute("src") !== href) plate.setAttribute("src", href);
+    root.style.setProperty("--spot-color", `var(--muscle-${muscle})`);
     root.classList.add("is-highlighting");
-    if (spot) spot.dataset.muscle = muscle;
+    root.dataset.view = view;
+    root.dataset.muscle = muscle;
+
     if (chip) {
       const active = items.find((el) => el.dataset.muscle === muscle);
       const name = active?.querySelector(".mi-demo__name")?.textContent?.trim();
       if (name) chip.textContent = name;
     }
-    const nextSrc = srcFor(cfg.img);
-    if (nextSrc && body.getAttribute("src") !== nextSrc) {
-      body.setAttribute("src", nextSrc);
-    }
   }
-
-  // Preload demo images so view swaps stay instant
-  ["frontSrc", "backSrc", "glutesSrc", "armsSrc"].forEach((key) => {
-    const href = root.dataset[key];
-    if (!href) return;
-    const img = new Image();
-    img.decoding = "async";
-    img.src = href;
-  });
 
   function cycle() {
     if (paused || reduce) return;
@@ -110,7 +103,7 @@ function initMuscleDemo() {
 
   function arm() {
     window.clearInterval(timer);
-    if (!reduce) timer = window.setInterval(cycle, 2800);
+    if (!reduce) timer = window.setInterval(cycle, 3000);
   }
 
   items.forEach((el, i) => {
@@ -122,7 +115,7 @@ function initMuscleDemo() {
       el._resume = window.setTimeout(() => {
         paused = false;
         arm();
-      }, 7000);
+      }, 8000);
     };
     el.addEventListener("click", activate);
     el.addEventListener("keydown", (ev) => {
@@ -136,14 +129,32 @@ function initMuscleDemo() {
   document.querySelectorAll(".muscle-view-btn").forEach((btn) => {
     btn.addEventListener("click", () => {
       paused = true;
-      const view = btn.dataset.miView;
-      const pick = items.find((el) => (spots[el.dataset.muscle] || {}).view === view) || items[0];
+      view = btn.dataset.miView === "back" ? "back" : "front";
+      const order =
+        view === "back"
+          ? ["glutes", "hamstrings", "back", "calves", "shoulders", "arms"]
+          : ["quads", "core", "calves", "shoulders", "arms"];
+      const pick =
+        order.map((m) => items.find((el) => el.dataset.muscle === m)).find(Boolean) || items[0];
       index = items.indexOf(pick);
       apply(pick.dataset.muscle);
       window.setTimeout(() => {
         paused = false;
         arm();
-      }, 7000);
+      }, 8000);
+    });
+  });
+
+  // Preload all highlight frames
+  ["front", "back"].forEach((v) => {
+    const regions =
+      v === "front"
+        ? ["arms", "calves", "core", "quads", "shoulders"]
+        : ["arms", "back", "calves", "glutes", "hamstrings", "shoulders"];
+    regions.forEach((m) => {
+      const img = new Image();
+      img.decoding = "async";
+      img.src = srcFor(m, v);
     });
   });
 

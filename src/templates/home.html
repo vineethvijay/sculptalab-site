@@ -73,11 +73,11 @@
           <button type="button" class="muscle-view-btn" data-mi-view="back" aria-pressed="false">{{musclesViewBack}}</button>
         </nav>
         <ul class="mi-demo__list" data-mi-list>
-          <li style="--swatch: var(--muscle-glutes)" data-muscle="glutes" tabindex="0" role="button" aria-pressed="true" class="is-active">
+          <li style="--swatch: var(--muscle-glutes)" data-muscle="glutes" tabindex="0" role="button" aria-pressed="false">
             <span class="mi-demo__name">{{musclesLegendGlutes}}</span>
             <span class="mi-demo__full">{{musclesLegendGluteusMax}}</span>
           </li>
-          <li style="--swatch: var(--muscle-quads)" data-muscle="quads" tabindex="0" role="button" aria-pressed="false">
+          <li style="--swatch: var(--muscle-quads)" data-muscle="quads" tabindex="0" role="button" aria-pressed="true" class="is-active">
             <span class="mi-demo__name">{{musclesLegendQuads}}</span>
             <span class="mi-demo__full">{{musclesLegendRectusFem}}</span>
           </li>
@@ -109,14 +109,14 @@
         <p><a class="btn-secondary" href="{{featuresHref}}#cat-muscles">{{musclesCta}}</a></p>
       </div>
       <div class="split__media mi-demo" data-mi-demo
-           data-front-src="{{muscleFrontImg}}"
-           data-back-src="{{muscleBackImg}}"
-           data-glutes-src="{{muscleHighlightGlutesImg}}"
-           data-arms-src="{{muscleHighlightArmsImg}}">
+           data-highlight-base="{{muscleHighlightBase}}">
         <div class="mi-demo__stage">
-          <img class="mi-demo__body" data-mi-body src="{{muscleFrontImg}}" alt="{{musclesFigureAlt}}" width="480" height="600" loading="lazy" decoding="async" />
-          <div class="mi-demo__spotlight" data-mi-spot data-muscle="glutes" aria-hidden="true"></div>
-          <p class="mi-demo__chip" data-mi-chip>{{musclesLegendGlutes}}</p>
+          <img class="mi-demo__plate" data-mi-plate
+               src="{{muscleHighlightQuads}}"
+               alt="{{musclesFigureAlt}}"
+               width="480" height="1000"
+               loading="lazy" decoding="async" />
+          <p class="mi-demo__chip" data-mi-chip>{{musclesLegendQuads}}</p>
         </div>
         <noscript>{{musclePicture}}</noscript>
       </div>
