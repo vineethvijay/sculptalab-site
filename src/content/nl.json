@@ -112,16 +112,16 @@
       "body": "Plan je trainingen, houd je sets bij en bekijk je voortgang. Bespreek het totaalbeeld met een trainer die jij kiest.",
       "primaryCta": "Vraag een trainersdemo aan",
       "secondaryCta": "Bekijk de app",
-      "microcopy": "Android-pilot · Web Studio · Engels en Nederlands",
+      "microcopy": "Android-pilot · Web Studio · Nederlands & Engels · 2D Muscle Intelligence",
       "translationNote": "De vertalingen in de app worden nog verbeterd.",
       "figureCaption": "Illustratieve appweergave",
       "figureAlt": "Illustratief SculptaLab-trainingsoverzicht op een telefoon"
     },
     "trainers": {
       "h2": "Een beter gesprek in de sportschool.",
-      "body": "Je cliënt brengt de trainingshistorie mee. Jij brengt de coaching. Bekijk gedeelde trainingen en voortgang samen; je cliënt bepaalt de toegang.",
+      "body": "Deel training met toestemming. Je trainer ziet het cliëntenoverzicht, de detailpagina en dezelfde 2D-spierkaart — zodat de volgende sessie start vanuit echte volumes.",
       "step1": "Cliënt kiest wat wordt gedeeld",
-      "step2": "Trainer bekijkt de gegevens",
+      "step2": "Trainer bekijkt de 2D-spierkaart en sessienotities",
       "step3": "Bespreek de volgende training",
       "cta": "Bekijk de trainersworkflow",
       "caption": "Pilotworkflow; openbare toegang wordt voorbereid.",
@@ -139,10 +139,10 @@
       "workoutAlt": "Trainingspeler met sets en rusttimer"
     },
     "muscles": {
-      "h2": "Zie welke spieren je traint.",
-      "body": "Bekijk trainingsvolume en voortgang per spiergroep. Wissel in Studio tussen anatomieweergaven en vergelijk periodes.",
-      "disclaimer": "Schattingen op basis van je training, geen lichaamsscan of medische beoordeling.",
-      "cta": "Ontdek Muscle Intelligence",
+      "h2": "Tik op een spier. Zie hem oplichten.",
+      "body": "Muscle Intelligence opent standaard in 2D op het vrouwelijke trainingslichaam. Elke regio heeft een eigen kleur en volledige naam. Tik op een naam in de statistiekenlijst en die spier licht op terwijl de rest dimt.",
+      "disclaimer": "Schattingen op basis van training op een 2D-kaart — geen bodyscan, geen 3D, geen medisch advies.",
+      "cta": "Bekijk Muscle Intelligence",
       "legendGlutes": "Bilspieren",
       "legendQuads": "Quadriceps",
       "legendHamstrings": "Hamstrings",
@@ -153,20 +153,31 @@
       "legendArms": "Armen",
       "viewFront": "Voorzijde",
       "viewBack": "Achterzijde",
-      "viewLabel": "Anatomieweergaven",
-      "figureAlt": "Illustratieve trainingskaart per spiergroep, geen lichaamsscan"
+      "viewLabel": "2D-anatomieweergaven",
+      "figureAlt": "Illustratieve 2D vrouwelijke trainingskaart met gekleurde spierregio’s",
+      "demoHint": "Probeer de lijst — of laat hem cyclisch lopen.",
+      "demoTap": "Tik om te markeren",
+      "legendGluteusMax": "Gluteus maximus, medius & minimus",
+      "legendRectusFem": "Rectus femoris & vastusgroep",
+      "legendHamGroup": "Biceps femoris & begeleiders",
+      "legendGastroc": "Gastrocnemius & soleus",
+      "legendAbs": "Rectus abdominis & obliquus",
+      "legendLats": "Lats, traps & erectors",
+      "legendDelts": "Deltoideus",
+      "legendBisTris": "Biceps & triceps"
     },
     "progressStudio": {
       "h2": "Je trainingshistorie in perspectief.",
-      "body": "Volg geschatte kracht, persoonlijke records en trainingspatronen. Bekijk vanuit het overzicht de bijbehorende trainingen.",
+      "body": "Studio opent op de 2D-trainingskaart. Vergelijk periodes, inspecteer een regio en herken elke spier aan kleur en volledige naam.",
       "col1Title": "Kracht en records",
       "col2Title": "Volume en regelmaat",
       "col3Title": "Rapporten en inzichten",
       "col1Body": "Geschatte kracht, e1RM en persoonlijke records uit je gelogde werk.",
-      "col2Body": "Volumetrends, belasting, RIR en regelmaat ten opzichte van je eigen historie.",
+      "col2Body": "Vrouwelijke 2D-kaart standaard, met voor- en achteraanzicht. Man is beschikbaar; 3D blijft uit tenzij je later een experimentele schakelaar aanzet.",
       "col3Body": "Weekoverzichten, adherentie en berekende inzichten uit echte trainingen.",
       "cta": "Bekijk alle Studio-functies",
-      "figureAlt": "Studio-dashboardoverzicht met scores en trainingen"
+      "figureAlt": "Studio-weergave van de 2D vrouwelijke trainingskaart",
+      "highlightCaption": "Tik op Glutes in de lijst — de kaart markeert die regio en dimt de rest."
     },
     "form": {
       "h2": "Kijk terug op je beweging.",
@@ -191,7 +202,7 @@
       "h2": "Nu in de pilot. Straks op de roadmap.",
       "pilotHeading": "In de pilot",
       "plannedHeading": "Gepland",
-      "pilotList": "Plannen, loggen, Studio-dashboards, delen met trainers op basis van toestemming, Muscle Intelligence en de kernworkflow op Android.",
+      "pilotList": "Plannen, logging, Studio 2D Muscle Intelligence, toestemmingsgebaseerd delen met trainers, Nederlands & Engels, en de kern van de Android-workflow.",
       "plannedList": "Publieke store-uitrol, traineruitnodigingen, uitgebreidere vormanalyse, trainerplannen, horloge- en sportschoolintegraties.",
       "catalogueLink": "Bekijk de volledige functiecatalogus"
     },
@@ -203,10 +214,10 @@
       "a2": "Een iOS-release voor deze pilot is nog niet bevestigd.",
       "q3": "Wie ziet mijn trainingsgegevens?",
       "a3": "Trainertoegang volgt de toestemming die je geeft. Bekijk de reikwijdte en einddatum in de app.",
-      "q4": "Toont het lichaam echte spiergroei?",
-      "a4": "Nee. Het visualiseert trainingsgegevens en schattingen.",
-      "q5": "Kan ik Nederlands gebruiken?",
-      "a5": "De website is tweetalig. De Nederlandse appvertalingen worden nog verbeterd.",
+      "q4": "Laat het lichaam echte spiergroei zien?",
+      "a4": "Nee. De 2D-kaart toont trainingsvolumes en balans per regio. Het is geen scan van je lichaam.",
+      "q5": "Kan ik het in het Nederlands gebruiken?",
+      "a5": "Ja. De site en trainer-app openen voor de gym-pilot in het Nederlands, met één tik naar Engels.",
       "q6": "Wat kost de pilot?",
       "a6": "De pilotafspraken worden tijdens de demo bevestigd; deze site heeft geen openbare betaalpagina."
     },
@@ -220,10 +231,10 @@
   "routes": {
     "trainers": {
       "h1": "Coach de persoon, met inzicht in de training.",
-      "intro": "Trainerstools voor review op basis van toestemming tijdens de sportchoolpilot.",
+      "intro": "Trainertools voor review met toestemming: overzicht, cliëntdetail met de 2D-spierkaart, en Nederlands standaard voor de gym-pilot.",
       "pageCta": "Vraag een trainersdemo aan",
-      "figureAlt": "Trainerweergave van cliëntdata binnen toestemming",
-      "syntheticNote": "Mock-namen in screenshots zijn fictief en gelabeld.",
+      "figureAlt": "Traineroverzicht in het Nederlands met vijf democliënten",
+      "syntheticNote": "Schermen gebruiken democliënten (bijv. Sanne). Geen echte persoonsgegevens.",
       "s1": {
         "h2": "Begin met een begeleide sportchoolpilot",
         "body": "De pilot is bedoeld voor trainergeleide introducties op de gymvloer, niet voor openbare self-service."
@@ -237,8 +248,8 @@
         "body": "Cliënten kiezen reikwijdte, einddatum en intrekking. Trainers zien alleen data binnen een actieve grant."
       },
       "s4": {
-        "h2": "Bekijk trainingen en voortgang",
-        "body": "Open gedeelde workouts, voortgangssamenvattingen en Studio-weergaven voor het volgende gesprek."
+        "h2": "Cliëntdetail met de 2D-kaart",
+        "body": "Open een cliënt en zie dezelfde gekleurde 2D-trainingskaart, inclusief markeren via de lijst — zodat feedback specifiek blijft."
       },
       "s5": {
         "h2": "Formulierwachtrij-preview",
@@ -259,7 +270,9 @@
         "check1": "Bevestig Android-pilotbuild en Studio-toegang op het demotoestel",
         "check2": "Loop toestemmingscopes en intrekking door met de cliënt",
         "check3": "Bekijk samen één echte of demotraining op de gymvloer"
-      }
+      },
+      "clientCaption": "Democliënt-detail — dezelfde 2D vrouwelijke kaart als de sporter, met markeren via de lijst.",
+      "clientAlt": "Trainer cliëntdetail met 2D-spierkaart"
     },
     "features": {
       "h1": "Alle SculptaLab-functies",
@@ -331,9 +344,9 @@
       "caveat": "Geen populatieniveaus; onvolledige metingen worden gelabeld."
     },
     "muscle-intelligence": {
-      "title": "Muscle Intelligence",
-      "description": "Trainingsvolume en voortgang per spiergroep met voor-/achteraanzicht in Studio.",
-      "caveat": "Schattingen op basis van training, geen lichaamsscan."
+      "title": "Muscle Intelligence (2D)",
+      "description": "Vrouwelijke 2D-lichaamskaart standaard. Acht gekleurde regio’s met volledige namen; tik op een rij in de lijst om die spier te markeren.",
+      "caveat": "Schattingen op een 2D-illustratie — geen bodyscan. 3D is experimenteel en standaard uit."
     },
     "exercise-learn": {
       "title": "Oefenbibliotheek en leren",
@@ -411,9 +424,9 @@
       "caveat": "Gepland; geen data of beschikbaarheidsclaims."
     },
     "bilingual-nl-en": {
-      "title": "Nederlands en Engels",
-      "description": "Gelokaliseerde app en marketingsite; native Nederlandse review loopt.",
-      "caveat": "Site is tweetalig; NL-appcopy wordt nog verfijnd."
+      "title": "Nederlands & Engels",
+      "description": "Marketing-site en trainer-app zijn tweetalig; Nederlands is de pilotstandaard met een directe taalwisseling.",
+      "caveat": "Een paar sporter-teksten in het Nederlands worden nog aangescherpt."
     }
   },
   "categories": {

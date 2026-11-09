@@ -12,7 +12,9 @@
     "shots": "node scripts/shots.mjs",
     "images:build": "node scripts/build-marketing-images.mjs",
     "images:check": "node scripts/images.mjs",
-    "assets": "node scripts/assets.mjs"
+    "assets": "node scripts/assets.mjs",
+    "images:2d": "node scripts/build-2d-screens.mjs",
+    "shots:2d": "node scripts/shots-2d.mjs"
   },
   "keywords": [],
   "author": "",

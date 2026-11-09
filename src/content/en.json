@@ -112,16 +112,16 @@
       "body": "Plan your training, log your sets and see your progress. Review the bigger picture with a trainer you choose.",
       "primaryCta": "Request a trainer demo",
       "secondaryCta": "Explore the app",
-      "microcopy": "Android pilot · Web Studio · English & Dutch",
+      "microcopy": "Android pilot · Web Studio · English & Dutch · 2D Muscle Intelligence",
       "translationNote": "App translations are still being refined.",
       "figureCaption": "Illustrative app preview",
       "figureAlt": "Illustrative SculptaLab training overview on a phone"
     },
     "trainers": {
       "h2": "A better conversation at the gym.",
-      "body": "Your client brings the training history. You bring the coaching. Review shared workouts and progress together, with access controlled by the client.",
+      "body": "Share training with consent. Your trainer sees the roster, client detail and the same 2D muscle map you use — so the next session starts from real volume, not guesswork.",
       "step1": "Client chooses what to share",
-      "step2": "Trainer reviews",
+      "step2": "Trainer reviews the 2D body map and session notes",
       "step3": "Discuss the next session",
       "cta": "See the trainer workflow",
       "caption": "Pilot workflow; public onboarding is being prepared.",
@@ -139,10 +139,10 @@
       "workoutAlt": "Workout player with sets and rest timer"
     },
     "muscles": {
-      "h2": "See where your training goes.",
-      "body": "Explore training volume and progression by muscle group. Switch between anatomy views and compare periods in Studio.",
-      "disclaimer": "Training-based estimates, not a body scan or medical assessment.",
-      "cta": "Discover Muscle Intelligence",
+      "h2": "Tap a muscle. See it light up.",
+      "body": "Muscle Intelligence opens in 2D on the female training body by default. Each region has its own colour and full name. Tap a name in the stats list and that muscle highlights on the map while the rest softens.",
+      "disclaimer": "Training-based estimates on a 2D map — not a body scan, not 3D, not medical advice.",
+      "cta": "See Muscle Intelligence",
       "legendGlutes": "Glutes",
       "legendQuads": "Quads",
       "legendHamstrings": "Hamstrings",
@@ -153,20 +153,31 @@
       "legendArms": "Arms",
       "viewFront": "Front",
       "viewBack": "Back",
-      "viewLabel": "Anatomy views",
-      "figureAlt": "Illustrative training muscle map, not a body scan"
+      "viewLabel": "2D anatomy views",
+      "figureAlt": "Illustrative 2D female training muscle map with colour-coded regions",
+      "demoHint": "Try the list — or watch it cycle.",
+      "demoTap": "Tap to highlight",
+      "legendGluteusMax": "Gluteus maximus, medius & minimus",
+      "legendRectusFem": "Rectus femoris & vastus group",
+      "legendHamGroup": "Biceps femoris & companions",
+      "legendGastroc": "Gastrocnemius & soleus",
+      "legendAbs": "Rectus abdominis & obliques",
+      "legendLats": "Lats, traps & erectors",
+      "legendDelts": "Deltoids",
+      "legendBisTris": "Biceps & triceps"
     },
     "progressStudio": {
       "h2": "Your training history, with context.",
-      "body": "Follow estimated strength, personal records and training patterns. Move from a summary into the sessions behind it.",
+      "body": "Studio opens on the 2D training body map. Compare periods, inspect a region and keep every muscle identifiable by colour and full name.",
       "col1Title": "Strength & records",
       "col2Title": "Volume & consistency",
       "col3Title": "Reports & insights",
       "col1Body": "Estimated strength, e1RM and personal records from your logged work.",
-      "col2Body": "Volume trends, load, RIR and consistency against your own history.",
+      "col2Body": "Female 2D map by default, with front and back views. Male is available; 3D stays off unless you turn on an experimental flag later.",
       "col3Body": "Weekly summaries, adherence and computed insights from real sessions.",
       "cta": "See all Studio tools",
-      "figureAlt": "Studio dashboard overview with scores and sessions"
+      "figureAlt": "Studio view of the 2D female training body map",
+      "highlightCaption": "Tap Glutes in the list — the map lights that region and dims the rest."
     },
     "form": {
       "h2": "Look back at how you moved.",
@@ -191,7 +202,7 @@
       "h2": "In the pilot. Next on the roadmap.",
       "pilotHeading": "In the pilot",
       "plannedHeading": "Planned",
-      "pilotList": "Plans, logging, Studio dashboards, consent-based trainer sharing, Muscle Intelligence and core Android workflow.",
+      "pilotList": "Plans, logging, Studio 2D Muscle Intelligence, consent-based trainer sharing, Dutch & English, and the core Android workflow.",
       "plannedList": "Public store rollout, trainer invites, expanded form tools, trainer-authored plans, watch and gym integrations.",
       "catalogueLink": "See the full feature catalogue"
     },
@@ -204,9 +215,9 @@
       "q3": "Who sees my training data?",
       "a3": "Trainer access follows the sharing permissions you grant. Review scope and expiry in the app.",
       "q4": "Does the body show actual muscle growth?",
-      "a4": "No. It visualises training-derived metrics and estimates.",
+      "a4": "No. The 2D map visualises training-derived volume and balance by region. It is not a scan of your body.",
       "q5": "Can I use it in Dutch?",
-      "a5": "The site is bilingual. Dutch app translations are still being refined.",
+      "a5": "Yes. The site and trainer app open in Dutch for the gym pilot, with a one-tap switch to English.",
       "q6": "What does the pilot cost?",
       "a6": "Pilot arrangements are confirmed during the demo; there is no public pricing checkout here."
     },
@@ -220,10 +231,10 @@
   "routes": {
     "trainers": {
       "h1": "Coach the person, with their training in view.",
-      "intro": "Trainer tools for consent-based review during the gym pilot.",
+      "intro": "Trainer tools for consent-based review: roster, client detail with the 2D muscle map, and Dutch by default for the gym pilot.",
       "pageCta": "Request a trainer demo",
-      "figureAlt": "Trainer view of consent-scoped client training data",
-      "syntheticNote": "Mock client names in screenshots are invented and labelled.",
+      "figureAlt": "Trainer roster in Dutch with five demo clients",
+      "syntheticNote": "Screens use demo clients (e.g. Sanne). No real personal data.",
       "s1": {
         "h2": "Start with a guided gym pilot",
         "body": "The pilot is designed for trainer-led introductions on the gym floor, not self-serve public rollout."
@@ -237,8 +248,8 @@
         "body": "Clients choose scopes, expiry and revocation. Trainers only see data within an active grant."
       },
       "s4": {
-        "h2": "Review sessions and progress",
-        "body": "Open shared workouts, progress summaries and Studio views to prepare the next conversation."
+        "h2": "Client detail with the 2D map",
+        "body": "Open a client and see the same colour-coded 2D training body map, including list-tap highlight — so feedback stays specific."
       },
       "s5": {
         "h2": "Form queue preview",
@@ -259,7 +270,9 @@
         "check1": "Confirm Android pilot build and Studio access for the demo device",
         "check2": "Walk through consent scopes and revocation with the client",
         "check3": "Review one real or demo session together on the gym floor"
-      }
+      },
+      "clientCaption": "Demo client detail — same 2D female map the athlete sees, with list-tap highlight.",
+      "clientAlt": "Trainer client detail with 2D muscle map"
     },
     "features": {
       "h1": "All SculptaLab features",
@@ -331,9 +344,9 @@
       "caveat": "No population fitness tiers; incomplete metrics are labelled."
     },
     "muscle-intelligence": {
-      "title": "Muscle Intelligence",
-      "description": "Training volume and progression by muscle group with front/back anatomy views in Studio.",
-      "caveat": "Training-derived estimates, not a body scan."
+      "title": "Muscle Intelligence (2D)",
+      "description": "Female 2D body map by default. Eight colour-coded regions with full names; tap a stats-list row to highlight that muscle on the map.",
+      "caveat": "Training-derived estimates on a 2D illustration — not a body scan. 3D is experimental and off by default."
     },
     "exercise-learn": {
       "title": "Exercise library & learning",
@@ -412,8 +425,8 @@
     },
     "bilingual-nl-en": {
       "title": "Dutch & English",
-      "description": "Localized app and marketing site; native Dutch review ongoing.",
-      "caveat": "Site is bilingual; app NL copy still being refined."
+      "description": "Marketing site and trainer app ship bilingual; Dutch is the pilot default with an instant language switch.",
+      "caveat": "A few athlete-side strings are still being refined in Dutch."
     }
   },
   "categories": {

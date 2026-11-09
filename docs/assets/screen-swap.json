@@ -1,0 +1,105 @@
+{
+  "generatedAt": "2026-11-09T14:20:22.881Z",
+  "slots": [
+    {
+      "slot": "a04-muscle-front",
+      "files": [
+        "public/images/anatomy/a04-muscle-front-480w.webp",
+        "public/images/anatomy/a04-muscle-front-480w.avif",
+        "public/images/anatomy/a04-muscle-front-800w.webp",
+        "public/images/anatomy/a04-muscle-front-800w.avif",
+        "public/images/anatomy/a04-muscle-front-1200w.webp",
+        "public/images/anatomy/a04-muscle-front-1200w.avif"
+      ],
+      "replaceWith": "polished 2D female artwork after polish round lands",
+      "interimSource": "/workspace/v4/site-2d-assets/female-front-raw.png"
+    },
+    {
+      "slot": "a04-muscle-back",
+      "files": [
+        "public/images/anatomy/a04-muscle-back-480w.webp",
+        "public/images/anatomy/a04-muscle-back-480w.avif",
+        "public/images/anatomy/a04-muscle-back-800w.webp",
+        "public/images/anatomy/a04-muscle-back-800w.avif",
+        "public/images/anatomy/a04-muscle-back-1200w.webp",
+        "public/images/anatomy/a04-muscle-back-1200w.avif"
+      ],
+      "replaceWith": "polished 2D female artwork after polish round lands",
+      "interimSource": "/workspace/v4/site-2d-assets/female-back-raw.png"
+    },
+    {
+      "slot": "a04-highlight-glutes",
+      "files": [
+        "public/images/anatomy/a04-highlight-glutes-480w.webp",
+        "public/images/anatomy/a04-highlight-glutes-480w.avif",
+        "public/images/anatomy/a04-highlight-glutes-800w.webp",
+        "public/images/anatomy/a04-highlight-glutes-800w.avif"
+      ],
+      "replaceWith": "polished highlight stills from next 2D polish deploy",
+      "interimSource": "/workspace/v4/mi-2d-96abc02/b-laptop-glutes-row.png"
+    },
+    {
+      "slot": "a04-highlight-arms",
+      "files": [
+        "public/images/anatomy/a04-highlight-arms-480w.webp",
+        "public/images/anatomy/a04-highlight-arms-480w.avif",
+        "public/images/anatomy/a04-highlight-arms-800w.webp",
+        "public/images/anatomy/a04-highlight-arms-800w.avif"
+      ],
+      "replaceWith": "polished highlight stills from next 2D polish deploy",
+      "interimSource": "/workspace/v4/mi-2d-96abc02/e-mobile-arms-row.png"
+    },
+    {
+      "slot": "a05-studio",
+      "files": [
+        "public/images/screens/a05-studio-640w.webp",
+        "public/images/screens/a05-studio-640w.avif",
+        "public/images/screens/a05-studio-960w.webp",
+        "public/images/screens/a05-studio-960w.avif",
+        "public/images/screens/a05-studio-desktop-1440w.webp",
+        "public/images/screens/a05-studio-desktop-1440w.avif"
+      ],
+      "replaceWith": "fresh Studio laptop/mobile screenshots after 2D polish",
+      "interimSource": "/workspace/v4/mi-2d-96abc02/a-laptop-default-2d-female.png"
+    },
+    {
+      "slot": "a05-studio-highlight",
+      "files": [
+        "public/images/screens/a05-studio-highlight-640w.webp",
+        "public/images/screens/a05-studio-highlight-960w.webp",
+        "public/images/screens/a05-studio-highlight-desktop-1440w.webp"
+      ],
+      "replaceWith": "list-click highlight screenshot after polish",
+      "interimSource": "/workspace/v4/mi-2d-96abc02/b-laptop-glutes-row.png"
+    },
+    {
+      "slot": "a05-studio-mobile",
+      "files": [
+        "public/images/screens/a05-studio-mobile-390w.webp",
+        "public/images/screens/a05-studio-mobile-640w.webp"
+      ],
+      "replaceWith": "mobile MI screenshot after polish (arms/glutes tap)",
+      "interimSource": "/workspace/v4/mi-2d-96abc02/e-mobile-arms-row.png"
+    },
+    {
+      "slot": "a09-trainer-dashboard",
+      "files": [
+        "public/images/screens/a09-trainer-dashboard-480w.webp",
+        "public/images/screens/a09-trainer-dashboard-800w.webp",
+        "public/images/screens/a09-trainer-dashboard-desktop-1280w.webp"
+      ],
+      "replaceWith": "trainer roster (NL) after UI polish",
+      "interimSource": "/workspace/v4/settings-6a7d220/a-trainer-roster-nl-first-paint.png"
+    },
+    {
+      "slot": "a09-trainer-client-2d",
+      "files": [
+        "public/images/screens/a09-trainer-client-2d-480w.webp",
+        "public/images/screens/a09-trainer-client-2d-800w.webp",
+        "public/images/screens/a09-trainer-client-2d-desktop-1280w.webp"
+      ],
+      "replaceWith": "trainer client detail with polished 2D map",
+      "interimSource": "/workspace/v4/mi-2d-96abc02/f-trainer-sanne-detail.png"
+    }
+  ]
+}

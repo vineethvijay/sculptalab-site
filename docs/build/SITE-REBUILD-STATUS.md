@@ -39,3 +39,12 @@ BASE=/sculptalab-site/ SITE_URL=https://vineethvijay.github.io/sculptalab-site/ 
 ```
 
 Produces 16 localized routes + root chooser + 404 under `dist/`.
+
+
+## 2026-11-09 — 2D MI screens (branch `site-2d-mi-screens` → `site-rebuild`)
+
+- Female 2D map default in marketing copy + interactive list→highlight demo
+- Trainer roster + client 2D screens; Dutch default messaging
+- Interim images from live app; swap list in `docs/assets/SCREEN-SWAP.md`
+- Mobile review shots: `docs/build/shots-2d/` (390 + 1280)
+- PR #1 left open / unmerged
