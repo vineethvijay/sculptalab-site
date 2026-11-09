@@ -52,15 +52,16 @@ function initMuscleDemo() {
     quads: "front",
     core: "front",
     calves: "front",
-    shoulders: "front",
-    arms: "front",
+    shoulders: "back",
+    arms: "back",
   };
-  const bothViews = new Set(["calves", "shoulders", "arms"]);
+  // Front-view arm/shoulder masks are still coarse: always show those on the back plate.
+  const bothViews = new Set(["calves"]);
 
   let index = 0;
   let timer = 0;
   let paused = false;
-  let view = "front";
+  let view = "back";
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   function srcFor(muscle, v) {
@@ -133,7 +134,7 @@ function initMuscleDemo() {
       const order =
         view === "back"
           ? ["glutes", "hamstrings", "back", "calves", "shoulders", "arms"]
-          : ["quads", "core", "calves", "shoulders", "arms"];
+          : ["quads", "core", "calves"];
       const pick =
         order.map((m) => items.find((el) => el.dataset.muscle === m)).find(Boolean) || items[0];
       index = items.indexOf(pick);

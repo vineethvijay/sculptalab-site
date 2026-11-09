@@ -7,6 +7,8 @@ ROOT = Path(__file__).resolve().parents[1] / "public/images/anatomy/mi-v4"
 OUT = ROOT / "highlights"
 OUT.mkdir(exist_ok=True)
 DIM = 0.34
+TINT = 0.42
+PALETTE = {"glutes": "#B44DFF", "hamstrings": "#FDE047", "quads": "#FF3B5C", "back": "#22D3EE", "shoulders": "#FF5FA2", "core": "#6C63FF", "arms": "#84CC16", "calves": "#3DFF8A"}
 REGIONS = {
     "female-front": ["quads", "core", "calves", "shoulders", "arms"],
     "female-back": ["glutes", "hamstrings", "back", "calves", "shoulders", "arms"],
@@ -24,7 +26,9 @@ def compose(view: str, region: str):
         lambda p: 0 if p < 24 else (255 if p > 200 else int((p - 24) * 255 / (200 - 24)))
     )
     dim = ImageEnhance.Color(ImageEnhance.Brightness(plate).enhance(DIM)).enhance(0.75)
-    cut = plate.copy()
+    hexc = PALETTE[region].lstrip("#")
+    tint = Image.new("RGBA", plate.size, tuple(int(hexc[i:i+2], 16) for i in (0, 2, 4)) + (255,))
+    cut = Image.blend(ImageEnhance.Brightness(plate).enhance(1.12), tint, TINT)
     cut.putalpha(alpha)
     canvas = Image.new("RGBA", plate.size, (7, 8, 11, 255))
     canvas.alpha_composite(dim)

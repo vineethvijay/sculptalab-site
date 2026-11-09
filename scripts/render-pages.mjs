@@ -389,7 +389,7 @@ function buildHomeVars(content) {
     muscleFrontImg: assetUrl("images/anatomy/mi-v4/plates/female-front-800w.webp"),
     muscleBackImg: assetUrl("images/anatomy/mi-v4/plates/female-back-800w.webp"),
     muscleHighlightBase: assetUrl("images/anatomy/mi-v4/highlights/"),
-    muscleHighlightQuads: assetUrl("images/anatomy/mi-v4/highlights/female-front-quads-800w.webp"),
+    muscleHighlightQuads: assetUrl("images/anatomy/mi-v4/highlights/female-back-glutes-800w.webp"),
     progressH2: h.progressStudio.h2,
     progressBody: h.progressStudio.body,
     progressCol1: h.progressStudio.col1Title,
