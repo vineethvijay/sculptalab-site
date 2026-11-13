@@ -502,8 +502,9 @@ em{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-.0
 /* ---------- 2D muscle map player ---------- */
 .sbox-map{grid-column:1/-1}
 .mm-sub{margin-bottom:4px}
-.mmap{display:grid;grid-template-columns:minmax(180px,300px) 1fr;gap:clamp(20px,4vw,56px);align-items:center;margin-top:18px}
-.body2d{position:relative;margin:0;aspect-ratio:357/948;max-height:560px;border-radius:24px;overflow:hidden;background:#07090a;border:1px solid var(--line);box-shadow:0 30px 80px -30px rgba(0,0,0,.8),inset 0 0 60px rgba(255,138,61,.05);transform-style:preserve-3d}
+.mmap{display:grid;grid-template-columns:minmax(200px,300px) 1fr;gap:clamp(20px,4vw,56px);align-items:center;margin-top:18px}
+.mmap-col{position:relative;justify-self:center;width:100%;max-width:300px;min-width:200px}
+.body2d{position:relative;margin:0 auto;width:100%;max-width:300px;aspect-ratio:357/948;max-height:560px;height:auto;border-radius:24px;overflow:hidden;background:#07090a;border:1px solid var(--line);box-shadow:0 30px 80px -30px rgba(0,0,0,.8),inset 0 0 60px rgba(255,138,61,.05);transform-style:preserve-3d;contain:layout paint}
 .body2d img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transition:opacity .55s var(--ease)}
 .body2d .b2-hl{opacity:0}.body2d .b2-hl.on{opacity:1}
 .b2-chip{position:absolute;left:50%;bottom:14px;transform:translateX(-50%);display:flex;align-items:center;gap:8px;padding:7px 14px;border-radius:99px;background:rgba(12,10,9,.78);border:1px solid color-mix(in srgb,var(--cur,#B44DFF) 60%,transparent);font-size:13px;font-weight:600;white-space:nowrap;backdrop-filter:blur(6px)}
@@ -516,7 +517,6 @@ em{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-.0
 .mmap .mlist li.on{background:color-mix(in srgb,var(--mc) 14%,transparent);box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--mc) 45%,transparent)}
 .mmap .mlist li.on .bar i{background:var(--mc)!important}
 .mmap .mlist li{grid-template-columns:120px 1fr}
-.mmap-col{position:relative;justify-self:center}
 .mmap-flip-hit{position:absolute;right:100%;top:50%;width:clamp(28px,8vw,48px);height:min(420px,56vw);margin-right:10px;transform:translateY(-50%);z-index:4;cursor:pointer;border-radius:12px;background:linear-gradient(90deg,transparent,rgba(255,138,61,.06))}
 .mmap-flip-hit:focus-visible{outline:2px solid var(--b2);outline-offset:2px}
 .sc-feature .phone{margin:14px auto 0}
