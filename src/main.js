@@ -149,8 +149,11 @@ if (!reduced) {
     gsap.from(h.querySelectorAll(".wd"), { yPercent: 60, opacity: 0, rotateX: -40, duration: 1.1, stagger: 0.06, ease: "expo.out",
       scrollTrigger: { trigger: h, start: "top 85%" } });
   });
-  gsap.utils.toArray(".fcard,.bx,.sc-card").forEach((el, i) => {
+  gsap.utils.toArray(".fcard,.bx,.sc-card,.sc-feature,.evidence-card").forEach((el, i) => {
     gsap.from(el, { y: 60, opacity: 0, duration: 1.1, ease: "expo.out", delay: (i % 3) * 0.08, scrollTrigger: { trigger: el, start: "top 90%" } });
+  });
+  gsap.utils.toArray(".showcase .spark path, .s-dash .spark path").forEach((p) => {
+    gsap.fromTo(p, { strokeDasharray: 1, strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 2, ease: "power2.inOut", scrollTrigger: { trigger: p, start: "top 88%" } });
   });
   gsap.from(".dl-mark", { scale: 0.4, rotate: -90, opacity: 0, duration: 1.4, ease: "expo.out", scrollTrigger: { trigger: ".download", start: "top 70%" } });
   gsap.fromTo(".dl-glow", { scale: 0.6 }, { scale: 1.15, ease: "none", scrollTrigger: { trigger: ".download", start: "top bottom", end: "bottom bottom", scrub: true } });
@@ -249,7 +252,8 @@ if (!reduced) {
   gsap.to(".tc-btn", { boxShadow: "0 0 0 6px rgba(30,20,16,.15)", duration: 1.2, yoyo: true, repeat: -1, ease: "sine.inOut" });
   // muscle bars breathing (app + scores section + dashboard)
   gsap.utils.toArray(".mb i, .mlist .bar i, .comp .bar i, .parts i").forEach((b, i) => {
-    gsap.to(b, { "--k": () => gsap.utils.random(.9, 1.06), duration: () => gsap.utils.random(2, 3.5), yoyo: true, repeat: -1, ease: "sine.inOut", delay: 2 + i * .1 });
+    // start from --k:1 (unset custom props tween from 0, collapsing bars)
+    gsap.fromTo(b, { "--k": 1 }, { "--k": () => gsap.utils.random(.9, 1.06), duration: () => gsap.utils.random(2, 3.5), yoyo: true, repeat: -1, ease: "sine.inOut", delay: 2 + i * .1 });
   });
   // plan rows stagger when visible, then the 'now' row glows
   gsap.to(".plan-row.now .pc", { boxShadow: "0 0 24px rgba(255,138,61,.45)", duration: 1.4, yoyo: true, repeat: -1 });
@@ -330,19 +334,53 @@ if (!reduced) {
   if (!fig || !items.length) return;
   const hls = [...fig.querySelectorAll(".b2-hl")];
   const chip = fig.querySelector(".b2-chip span");
+  const sideOf = (key) => (key.startsWith("front-") ? "front" : "back");
+  const viewSide = () => (fig.classList.contains("is-front") ? "front" : "back");
   let idx = 0, timer = 0, hold = 0, visible = false;
   const set = (i) => {
     idx = i; const li = items[i]; const key = li.dataset.m;
+    if (sideOf(key) !== viewSide()) {
+      fig.classList.toggle("is-front", sideOf(key) === "front");
+      fig.classList.toggle("is-back", sideOf(key) === "back");
+    }
     items.forEach((x) => x.classList.toggle("on", x === li));
     hls.forEach((h) => h.classList.toggle("on", h.dataset.for === key));
     fig.style.setProperty("--cur", li.style.getPropertyValue("--mc"));
     chip.textContent = li.querySelector("span").textContent;
   };
-  const tick = () => { if (visible && Date.now() > hold) set((idx + 1) % items.length); };
+  const flip = () => {
+    const front = viewSide() === "back";
+    fig.classList.toggle("is-front", front);
+    fig.classList.toggle("is-back", !front);
+    hold = Date.now() + 7000;
+    const side = viewSide();
+    if (sideOf(items[idx].dataset.m) !== side) {
+      const j = items.findIndex((li) => sideOf(li.dataset.m) === side);
+      if (j >= 0) set(j);
+      else {
+        hls.forEach((h) => h.classList.remove("on"));
+        chip.textContent = side === "front" ? "Front view" : "Back view";
+      }
+    } else set(idx);
+    if (!reduced) gsap.fromTo(fig, { rotateY: front ? -12 : 12 }, { rotateY: 0, duration: 0.65, ease: "expo.out" });
+  };
+  const tick = () => {
+    if (!visible || Date.now() <= hold) return;
+    const side = viewSide();
+    const pool = items.map((_, k) => k).filter((k) => sideOf(items[k].dataset.m) === side);
+    if (!pool.length) return;
+    const pos = pool.indexOf(idx);
+    set(pool[(pos + 1) % pool.length]);
+  };
   items.forEach((li, i) => {
     const go = () => { hold = Date.now() + 7000; set(i); };
     li.addEventListener("click", go); li.addEventListener("mouseenter", go);
     li.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); go(); } });
+  });
+  fig.querySelector(".b2-flip")?.addEventListener("click", (e) => { e.stopPropagation(); flip(); });
+  document.querySelector(".mmap-flip-hit")?.addEventListener("click", flip);
+  document.querySelector(".mmap-flip-hit")?.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" || e.key === " ") { e.preventDefault(); flip(); }
   });
   new IntersectionObserver((es) => { visible = es[0].isIntersecting; }, { threshold: 0.3 }).observe(fig);
   set(0);
@@ -354,15 +392,21 @@ import { NL } from "./i18n-nl.js";
 (function langToggle() {
   const norm = (t) => t.replace(/\s+/g, " ").trim();
   const sel = "header nav a, .nav-r .btn, h1 .w, main h2, main h3, main p, .eyebrow, .mm-sub";
+  const selResearch =
+    ".evidence-card .chip.o, .evidence-card .ev-meter label span, .evidence-card .ev-meter label b, .research-wrap .phone .chip.o, .research-wrap .phone .ev-meter label span, .research-wrap .phone .ev-meter label b";
   const orig = new Map();
+  const applyOne = (el, lang) => {
+    if (!orig.has(el)) orig.set(el, el.innerHTML);
+    if (lang === "nl") { const nl = NL[norm(el.textContent)]; if (nl) el.innerHTML = nl; }
+    else el.innerHTML = orig.get(el);
+  };
   const apply = (lang) => {
     document.documentElement.lang = lang;
     document.querySelectorAll(sel).forEach((el) => {
       if (el.closest(".phone, .app, .browser, .dash")) return;
-      if (!orig.has(el)) orig.set(el, el.innerHTML);
-      if (lang === "nl") { const nl = NL[norm(el.textContent)]; if (nl) el.innerHTML = nl; }
-      else el.innerHTML = orig.get(el);
+      applyOne(el, lang);
     });
+    document.querySelectorAll(selResearch).forEach((el) => applyOne(el, lang));
     document.querySelectorAll(".lang-tg button").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.lang === lang)));
     try { localStorage.setItem("sl-lang", lang); } catch {}
   };
