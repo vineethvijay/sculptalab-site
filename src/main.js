@@ -252,7 +252,8 @@ if (!reduced) {
   gsap.to(".tc-btn", { boxShadow: "0 0 0 6px rgba(30,20,16,.15)", duration: 1.2, yoyo: true, repeat: -1, ease: "sine.inOut" });
   // muscle bars breathing (app + scores section + dashboard)
   gsap.utils.toArray(".mb i, .mlist .bar i, .comp .bar i, .parts i").forEach((b, i) => {
-    gsap.to(b, { "--k": () => gsap.utils.random(.9, 1.06), duration: () => gsap.utils.random(2, 3.5), yoyo: true, repeat: -1, ease: "sine.inOut", delay: 2 + i * .1 });
+    // start from --k:1 (unset custom props tween from 0, collapsing bars)
+    gsap.fromTo(b, { "--k": 1 }, { "--k": () => gsap.utils.random(.9, 1.06), duration: () => gsap.utils.random(2, 3.5), yoyo: true, repeat: -1, ease: "sine.inOut", delay: 2 + i * .1 });
   });
   // plan rows stagger when visible, then the 'now' row glows
   gsap.to(".plan-row.now .pc", { boxShadow: "0 0 24px rgba(255,138,61,.45)", duration: 1.4, yoyo: true, repeat: -1 });
