@@ -391,15 +391,21 @@ import { NL } from "./i18n-nl.js";
 (function langToggle() {
   const norm = (t) => t.replace(/\s+/g, " ").trim();
   const sel = "header nav a, .nav-r .btn, h1 .w, main h2, main h3, main p, .eyebrow, .mm-sub";
+  const selResearch =
+    ".evidence-card .chip.o, .evidence-card .ev-meter label span, .evidence-card .ev-meter label b, .research-wrap .phone .chip.o, .research-wrap .phone .ev-meter label span, .research-wrap .phone .ev-meter label b";
   const orig = new Map();
+  const applyOne = (el, lang) => {
+    if (!orig.has(el)) orig.set(el, el.innerHTML);
+    if (lang === "nl") { const nl = NL[norm(el.textContent)]; if (nl) el.innerHTML = nl; }
+    else el.innerHTML = orig.get(el);
+  };
   const apply = (lang) => {
     document.documentElement.lang = lang;
     document.querySelectorAll(sel).forEach((el) => {
       if (el.closest(".phone, .app, .browser, .dash")) return;
-      if (!orig.has(el)) orig.set(el, el.innerHTML);
-      if (lang === "nl") { const nl = NL[norm(el.textContent)]; if (nl) el.innerHTML = nl; }
-      else el.innerHTML = orig.get(el);
+      applyOne(el, lang);
     });
+    document.querySelectorAll(selResearch).forEach((el) => applyOne(el, lang));
     document.querySelectorAll(".lang-tg button").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.lang === lang)));
     try { localStorage.setItem("sl-lang", lang); } catch {}
   };
