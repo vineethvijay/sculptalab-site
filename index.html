@@ -15,6 +15,60 @@
 <meta property="og:description" content="Sculpt your foundation. Personal plans, a score for every muscle, live form tracking." />
 <meta property="og:image" content="/og.png" />
 <meta property="og:type" content="website" />
+<style>
+.showcase,.research{padding:clamp(100px,16vh,180px) max(24px,6vw);max-width:1440px;margin:0 auto}
+.showcase-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(20px,3vw,28px);margin-top:48px}
+.sc-feature{padding:24px;border-radius:28px;background:linear-gradient(180deg,rgba(42,33,29,.65),rgba(28,21,18,.4));border:1px solid var(--line)}
+.sc-feature h3{font-size:18px;margin-bottom:14px;letter-spacing:-.02em}
+.sc-feature .phone.sc-phone{width:min(240px,100%);margin:0 auto}
+.sc-feature .screen{position:relative;inset:auto;border-radius:28px;min-height:380px;padding:48px 14px 14px;font-size:11px}
+.mmap-body{position:relative;justify-self:center}
+.b2-flip{position:absolute;top:10px;right:10px;z-index:3;width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:rgba(12,10,9,.85);color:var(--ink);font-size:18px;cursor:pointer;backdrop-filter:blur(8px)}
+.body2d .b2-front{display:none}
+.cal-mo{font-size:13px;font-weight:700;margin-bottom:10px}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;text-align:center;font-size:9px;color:var(--muted)}
+.cal-grid b{display:grid;place-items:center;aspect-ratio:1;border-radius:8px;background:rgba(255,255,255,.04);position:relative}
+.cal-grid b.sel{background:rgba(255,138,61,.22);box-shadow:inset 0 0 0 1px rgba(255,138,61,.45);color:var(--ink)}
+.cal-grid b .dots{position:absolute;bottom:3px;left:50%;transform:translateX(-50%);display:flex;gap:2px}
+.cal-grid b .dots i{width:4px;height:4px;border-radius:50%}
+.cal-panel{margin-top:10px;padding:10px;border-radius:14px;background:rgba(255,255,255,.04);border:1px solid var(--line)}
+.s-dash .spark{width:72px;height:28px;flex:none}
+.s-dash .dash-mini{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
+.s-dash .radar-mini{height:88px}
+.s-dash .parts-mini{display:grid;grid-template-columns:1fr 1fr;gap:4px;font-size:9px}
+.s-dash .parts-mini div{display:flex;align-items:center;gap:4px}
+.s-dash .parts-mini i{flex:1;height:4px;border-radius:4px;background:rgba(255,255,255,.08);position:relative;overflow:hidden}
+.s-dash .parts-mini i::after{content:"";position:absolute;inset:0;width:var(--v,50%);background:var(--grad)}
+.stat-strip{display:flex;gap:8px;margin-top:8px;font-size:9px}
+.stat-strip span{flex:1;padding:6px;border-radius:10px;background:rgba(255,255,255,.05);text-align:center}
+.stat-strip b{display:block;font-size:13px}
+.led-row{display:grid;gap:8px;margin-top:4px}
+.led-row .lr{display:grid;grid-template-columns:72px 1fr auto;gap:8px;align-items:center;font-size:10px}
+.led-track{position:relative;height:22px;border-radius:8px;background:rgba(255,255,255,.06);overflow:hidden}
+.led-track s{position:absolute;top:4px;bottom:4px;left:28%;right:22%;border:1px dashed rgba(255,255,255,.25);border-radius:4px}
+.led-track i{position:absolute;inset:3px auto 3px 0;width:var(--v,50%);border-radius:6px;background:var(--grad)}
+.sess-head{font-size:12px;font-weight:700}
+.sess-meta{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0;font-size:9px;color:var(--muted)}
+.sess-meta span{padding:4px 8px;border-radius:999px;background:rgba(255,255,255,.06)}
+.research-wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,48px);align-items:start;margin-top:48px}
+.research-wrap .phone{width:min(280px,100%);margin:0 auto}
+.evidence-card{padding:28px;border-radius:28px;background:linear-gradient(180deg,rgba(42,33,29,.72),rgba(28,21,18,.45));border:1px solid var(--line)}
+.evidence-card .chip.o{margin-bottom:12px}
+.ev-meter{margin:12px 0}
+.ev-meter label{display:flex;justify-content:space-between;font-size:12px;margin-bottom:4px}
+.ev-meter .bar{height:6px;border-radius:6px;background:rgba(255,255,255,.08);overflow:hidden}
+.ev-meter .bar i{display:block;height:100%;width:var(--v,80%);background:var(--grad);border-radius:6px}
+.research-strip{margin-top:16px;padding-top:12px;border-top:1px solid var(--line);font-size:11px;color:var(--muted)}
+.research-strip span{display:block;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--b1);margin-bottom:6px}
+@media (max-width:900px){.showcase-grid{grid-template-columns:1fr}.research-wrap{grid-template-columns:1fr}.evidence-card{display:none}}
+@media (min-width:901px){.research-wrap .phone{display:block}}
+.bx-settings{min-height:200px}
+.bx-settings .fico{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;background:rgba(255,138,61,.12);margin-bottom:12px}
+.bx-settings .fico svg{width:22px;height:22px;stroke:var(--b1);fill:none;stroke-width:1.8}
+.hero .scard .spark{width:64px;height:22px;margin-left:auto}
+.hero .scard .row.end{align-items:center;gap:10px}
+@media (max-width:700px){.nav nav{gap:14px;font-size:12.5px;flex-wrap:wrap}}
+</style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -44,6 +98,8 @@
   <nav aria-label="Primary">
     <a href="#features">Features</a>
     <a href="#scores">Scores</a>
+    <a href="#showcase">In the app</a>
+    <a href="#research">Research</a>
     <a href="#form">Form</a>
     <a href="#trainer">Trainers</a>
     <a href="#soon">Coming soon</a>
@@ -114,8 +170,8 @@
           <div class="row sm"><span>✎ Log set</span><span>▦ Calendar</span></div>
         </div>
         <div class="acard scard">
-          <div class="row"><span class="kick muted">WEEKLY SCULPTA SCORE</span><span class="chip o">Shaping</span></div>
-          <div class="row end"><b class="bigscore" data-count="78">78</b><div class="r"><b><span data-count="9">9</span> / 13 sets</b><small>3 workouts · 6w streak</small></div></div>
+          <div class="row"><span class="kick muted">SCULPTA SCORE</span><span class="chip o">Shaping</span></div>
+          <div class="row end"><b class="bigscore" data-count="78">78</b><svg class="spark" viewBox="0 0 120 40" aria-hidden="true"><path pathLength="1" d="M0 34 L17 32 L34 30 L51 26 L68 22 L85 18 L102 12 L120 8" fill="none" stroke="url(#sg2)" stroke-width="3" stroke-linecap="round"/></svg><div class="r"><b><span data-count="9">9</span> / 13 sets</b><small>3 workouts · 6w streak</small></div></div>
           <div class="pbar"><i style="--v:.69"></i></div>
           <div class="row sm"><span>92% plan adherence</span><span>12 pts to Sculpted</span></div>
         </div>
@@ -256,13 +312,17 @@
   <div class="scores-grid">
     <article class="sbox sbox-map">
       <h3>Your muscle map</h3>
-      <p class="mm-sub">Tap a muscle and watch it light up on the 2D body.</p>
+      <p class="mm-sub">Tap a muscle to light it up. Tap ↻ beside the body to flip front and back.</p>
       <div class="mmap">
-      <figure class="body2d" aria-label="SculptaLab 2D muscle map, female back view, glutes highlighted">
-        <img class="b2-base" src="/anatomy/back.webp" width="357" height="948" alt="" loading="lazy" decoding="async" />
+      <div class="mmap-body">
+        <button type="button" class="b2-flip" aria-label="Flip body front or back">↻</button>
+      <figure class="body2d" aria-label="SculptaLab 2D muscle map; use ↻ to flip front and back; glutes highlighted on back view">
+        <img class="b2-base b2-back" src="/anatomy/back.webp" width="357" height="948" alt="" loading="lazy" decoding="async" />
+        <img class="b2-base b2-front" src="/anatomy/front.webp" width="357" height="948" alt="" loading="lazy" decoding="async" hidden />
         <img class="b2-hl on" data-for="back-glutes" src="/anatomy/back-glutes.webp" width="357" height="948" alt="" loading="lazy" decoding="async" /><img class="b2-hl" data-for="back-hamstrings" src="/anatomy/back-hamstrings.webp" width="357" height="948" alt="" loading="lazy" decoding="async" /><img class="b2-hl" data-for="front-quads" src="/anatomy/front-quads.webp" width="357" height="948" alt="" loading="lazy" decoding="async" /><img class="b2-hl" data-for="back-calves" src="/anatomy/back-calves.webp" width="357" height="948" alt="" loading="lazy" decoding="async" /><img class="b2-hl" data-for="back-back" src="/anatomy/back-back.webp" width="357" height="948" alt="" loading="lazy" decoding="async" /><img class="b2-hl" data-for="back-shoulders" src="/anatomy/back-shoulders.webp" width="357" height="948" alt="" loading="lazy" decoding="async" /><img class="b2-hl" data-for="back-arms" src="/anatomy/back-arms.webp" width="357" height="948" alt="" loading="lazy" decoding="async" /><img class="b2-hl" data-for="front-core" src="/anatomy/front-core.webp" width="357" height="948" alt="" loading="lazy" decoding="async" />
         <figcaption class="b2-chip"><i></i><span>Glutes</span></figcaption>
       </figure>
+      </div>
       <ul class="mlist">
         <li data-m="back-glutes" style="--mc:#B44DFF" tabindex="0"><span>Glutes</span><b class="bar"><i style="--v:.98"></i><s style="--a:.55;--b:.85"></s></b></li>
         <li data-m="back-hamstrings" style="--mc:#FDE047" tabindex="0"><span>Hamstrings</span><b class="bar"><i style="--v:.72"></i><s style="--a:.45;--b:.8"></s></b></li>
@@ -299,6 +359,101 @@
   <p class="cap center">Example values for illustration</p>
 </section>
 
+<!-- IN THE APP -->
+<section class="showcase" id="showcase">
+  <div class="scores-head">
+    <p class="eyebrow">In the app</p>
+    <h2 class="h2" data-split>See your training <em>clearly.</em></h2>
+    <p class="lede">Calendar, home dashboard, volume ledger and session detail — the same surfaces you use between workouts, with your plan, Sculpta score and muscle targets in one place.</p>
+  </div>
+  <div class="showcase-grid">
+    <article class="sc-feature">
+      <h3>Sessions calendar</h3>
+      <div class="phone sc-phone">
+        <div class="screen app s-cal">
+          <div class="sb"><span>9:41</span><span class="sb-r"></span></div>
+          <p class="cal-mo">November</p>
+          <div class="cal-grid" aria-hidden="true">
+            <span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span>
+            <span></span><span></span><b>1</b><b>2</b><b>3</b><b>4</b><b class="sel">5<span class="dots"><i style="background:#B44DFF"></i></span></b>
+            <b>6</b><b>7</b><b>8</b><b class="sel">9<span class="dots"><i style="background:#22D3EE"></i><i style="background:#FF5FA2"></i></span></b><b>10</b><b>11</b><b>12</b>
+            <b>13</b><b>14</b><b class="sel">15<span class="dots"><i style="background:#FDE047"></i></span></b><b>16</b><b>17</b><b>18</b><b>19</b>
+            <b>20</b><b>21</b><b>22</b><b>23</b><b>24</b><b>25</b><b>26</b>
+          </div>
+          <div class="cal-panel">
+            <span class="kick muted">MON 15 · GLUTES FOCUS</span>
+            <ul class="exl hx"><li>Hip thrust<em>4×8 · 1.9 t</em></li><li>RDL<em>3×10 · 1.2 t</em></li><li>Cable kickback<em>3×12 · 0.4 t</em></li></ul>
+            <div class="row sm"><span>13 sets logged</span><span>2.8 t volume</span></div>
+          </div>
+        </div>
+      </div>
+    </article>
+    <article class="sc-feature">
+      <h3>Home dashboard</h3>
+      <div class="phone sc-phone">
+        <div class="screen app s-dash">
+          <div class="sb"><span>9:41</span><span class="sb-r"></span></div>
+          <div class="app-hd"><svg viewBox="0 0 100 100" width="20" height="20"><use href="#s-mark"/></svg><div><b>SCULPTALAB</b><small>Home</small></div></div>
+          <div class="acard scard">
+            <div class="row"><span class="kick muted">SCULPTA SCORE</span><span class="chip o">Shaping</span></div>
+            <div class="row end"><b class="bigscore">82</b><svg class="spark" viewBox="0 0 120 40" aria-hidden="true"><path pathLength="1" d="M0 34 L30 28 L60 26 L90 18 L120 10" fill="none" stroke="url(#sg2)" stroke-width="3" stroke-linecap="round"/></svg></div>
+            <div class="stat-strip"><span><b>92%</b>adherence</span><span><b>6</b>wk streak</span><span><b>41</b>sets</span></div>
+          </div>
+          <div class="dash-mini">
+            <div class="acard">
+              <span class="kick muted">BALANCE</span>
+              <svg class="radar-mini" viewBox="-10 0 220 180" aria-hidden="true"><g fill="none" stroke="#ffffff14"><polygon points="100,55 114,60 120,75 114,90 100,95 86,90 80,75 86,60"/><polygon points="100,35 128,48 140,75 128,102 100,115 72,102 60,75 72,48"/></g>
+              <polygon points="100,38 125,52 138,75 115,108 100,118 78,100 62,75 70,45" fill="rgba(255,138,61,.28)" stroke="url(#sg2)" stroke-width="2"/></svg>
+            </div>
+            <div class="acard parts-mini">
+              <span class="kick muted">BODY PARTS</span>
+              <div><span>Glu</span><b>96</b><i style="--v:96%"></i></div>
+              <div><span>Hams</span><b>81</b><i style="--v:81%"></i></div>
+              <div><span>Qua</span><b>74</b><i style="--v:74%"></i></div>
+              <div><span>Sho</span><b>49</b><i style="--v:49%"></i></div>
+              <div><span>Back</span><b>68</b><i style="--v:68%"></i></div>
+              <div><span>Core</span><b>70</b><i style="--v:70%"></i></div>
+              <div><span>Arms</span><b>58</b><i style="--v:58%"></i></div>
+              <div><span>Cal</span><b>61</b><i style="--v:61%"></i></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+    <article class="sc-feature">
+      <h3>Volume ledger</h3>
+      <div class="phone sc-phone">
+        <div class="screen app s-ledger">
+          <div class="sb"><span>9:41</span><span class="sb-r"></span></div>
+          <h3 style="font-size:14px;margin-bottom:8px">Weekly sets · vs target</h3>
+          <div class="led-row">
+            <div class="lr"><span>Glutes</span><div class="led-track"><s></s><i style="--v:94%"></i></div><span class="chip">Strong</span></div>
+            <div class="lr"><span>Hamstrings</span><div class="led-track"><s></s><i style="--v:72%"></i></div><span class="chip o">Shaping</span></div>
+            <div class="lr"><span>Quads</span><div class="led-track"><s></s><i style="--v:68%"></i></div><span class="chip o">Shaping</span></div>
+            <div class="lr"><span>Shoulders</span><div class="led-track"><s></s><i style="--v:32%"></i></div><span class="chip lag">Lagging</span></div>
+          </div>
+        </div>
+      </div>
+    </article>
+    <article class="sc-feature">
+      <h3>Session detail</h3>
+      <div class="phone sc-phone">
+        <div class="screen app s-sess">
+          <div class="sb"><span>18:42</span><span class="sb-r"></span></div>
+          <p class="sess-head">Volume · Thu 14 Nov</p>
+          <div class="sess-meta"><span>52 min</span><span>2.8 t total</span><span>91% clean reps</span></div>
+          <div class="acard ex">
+            <ul class="exl"><li>Barbell Hip Thrust<em>4×8 · 1.9 t</em></li><li>Romanian Deadlift<em>3×10 · 0.7 t</em></li><li>Cable Face Pull<em>2×15 · 0.2 t</em></li></ul>
+          </div>
+          <span class="kick muted">REP QUALITY</span>
+          <div class="comp mini"><div><span>ROM</span><i style="--v:.92"></i></div><div><span>Tempo</span><i style="--v:.84"></i></div><div><span>Stability</span><i style="--v:.88"></i></div></div>
+        </div>
+      </div>
+    </article>
+  </div>
+  <p class="cap center">Illustrative mockup data · screens shown for demo</p>
+</section>
+
 <!-- FORM AI deep dive -->
 <section class="formai" id="form">
   <div class="formai-head">
@@ -311,6 +466,40 @@
     <article class="fcard"><div class="fico"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div><h3>Clean-rep counting</h3><p>Only reps that hit the mark count. The rest get flagged so you know why.</p></article>
     <article class="fcard"><div class="fico"><svg viewBox="0 0 24 24"><path d="M12 16V4m0 0L7 9m5-5 5 5M5 20h14"/></svg></div><h3>Upload &amp; score</h3><p>Filmed it earlier? Upload the video and get your reps scored afterwards, with an honest label for when it was recorded.</p></article>
     <article class="fcard"><div class="fico"><svg viewBox="0 0 24 24"><circle cx="7" cy="7" r="2.5"/><circle cx="17" cy="7" r="2.5"/><path d="M4 20c0-4 2-6 3-6s3 2 3 6M14 20c0-4 2-6 3-6s3 2 3 6"/></svg></div><h3>Learn every move</h3><p>Nearly 80 exercises, upper and lower body, each with how-to steps and short science notes.</p></article>
+  </div>
+</section>
+
+<!-- RESEARCH -->
+<section class="research" id="research">
+  <div class="scores-head">
+    <p class="eyebrow">Exercise selection</p>
+    <h2 class="h2" data-split>Why <em>this</em> exercise?</h2>
+    <p class="lede">SculptaLab suggests swaps and progressions using published exercise-science research — training guidance, not medical advice. See why a move fits your goal before you load the bar.</p>
+  </div>
+  <div class="research-wrap">
+    <div class="phone" aria-hidden="true">
+      <div class="screen app s-learn">
+        <div class="sb"><span>9:41</span><span class="sb-r"></span></div>
+        <div class="app-hd"><svg viewBox="0 0 100 100" width="20" height="20"><use href="#s-mark"/></svg><div><b>SCULPTALAB</b><small>Exercise info</small></div></div>
+        <div class="acard ex">
+          <div class="row"><div class="exi">⌂</div><div class="f1"><b>Barbell Hip Thrust</b><small>Glutes · compound</small></div></div>
+          <span class="chip o">Best for side glutes</span>
+          <div class="ev-meter"><label><span>Activation</span><b>High · ~88%</b></label><div class="bar"><i style="--v:88%"></i></div></div>
+          <div class="ev-meter"><label><span>Growth potential</span><b>~82%</b></label><div class="bar"><i style="--v:82%"></i></div></div>
+          <p class="t-ex" style="margin-top:10px">EMG reviews often rank hip thrusts among the highest glute activators. Squats and hip thrusts can grow glutes similarly when volume is matched; deeper squats tend to outdo half squats for quad and glute stimulus in lab studies.</p>
+          <div class="research-strip"><span>Backed by research</span>Neto 2020 · Plotkin 2023 · Kubo 2019</div>
+        </div>
+      </div>
+    </div>
+    <article class="evidence-card" aria-label="Barbell Hip Thrust research summary">
+      <h3>Barbell Hip Thrust</h3>
+      <span class="chip o">Best for side glutes</span>
+      <div class="ev-meter"><label><span>Activation</span><b>High · ~88%</b></label><div class="bar"><i style="--v:88%"></i></div></div>
+      <div class="ev-meter"><label><span>Growth potential</span><b>~82%</b></label><div class="bar"><i style="--v:82%"></i></div></div>
+      <p>EMG syntheses report strong gluteus maximus activation during loaded hip thrusts. Head-to-head training studies suggest squats and hip thrusts can produce comparable glute hypertrophy when sets are equated. Squat depth matters: full-depth squats often beat partial reps for lower-body muscle stimulus in controlled trials.</p>
+      <p class="fine-c">Summaries for education only — not a diagnosis or treatment recommendation.</p>
+      <div class="research-strip"><span>Backed by research</span>Neto 2020 · Plotkin 2023 · Kubo 2019</div>
+    </article>
   </div>
 </section>
 
@@ -350,6 +539,11 @@
       <div class="lang" aria-hidden="true"><span>Hallo!</span><span>Hi!</span></div>
       <h3>Spreekt Nederlands</h3>
       <p>The whole app in English or Dutch. It follows your phone, or switch in Settings.</p>
+    </article>
+    <article class="bx bx-settings">
+      <div class="fico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="3.5"/><path d="M5 20c1.5-3.5 4-5 7-5s5.5 1.5 7 5"/><path d="M17 4.5l1.5 2.8 3 .4-2.2 2.1.5 3-2.7-1.5-2.7 1.5.5-3L12 7.7l3-.4z" opacity=".5"/></svg></div>
+      <h3>Account &amp; sync</h3>
+      <p>Sign in once, then manage your profile or sign out from Settings — workouts stay on your account until you choose to leave.</p>
     </article>
   </div>
 </section>
